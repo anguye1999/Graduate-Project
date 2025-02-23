@@ -1,0 +1,29 @@
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9fafb;
+    margin-top: 4rem;
+    padding-bottom: 4rem; /* Changed from margin-bottom to padding-bottom */
+  }
+  
+  .content-container {
+    text-align: center;
+  }
+  
+  .logo {
+    margin: 0 auto 1.5rem;
+    max-width: 500px;  /* Increased from 200px to 500px */
+    width: 100%;       /* This ensures the image is responsive */
+    height: auto;      /* This maintains the aspect ratio */
+  }
+  
+  .welcome-text {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0; /* Ensure no extra margin at bottom */
+  }

@@ -1,0 +1,13 @@
+# Node.js (React frontend)
+frontend/node_modules/
+frontend/.env
+frontend/build/
+
+# Python (Flask backend)
+backend/venv/
+backend/__pycache__/
+backend/.env
+
+# General
+.DS_Store
+*.log
