@@ -22,7 +22,7 @@
   position: fixed;
   bottom: 5rem;
   right: 1.5rem;
-  width: 24rem;
+  width: 20rem;
   min-width: 300px;
   min-height: 400px;
   max-width: 80vw;
@@ -56,7 +56,8 @@
 
 .header-title {
   color: black;
-  font-weight: 600;
+  font-weight: 00;
+  font-size: 18px;
 }
 
 .close-button {
