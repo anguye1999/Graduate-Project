@@ -1,0 +1,632 @@
+{
+  "program": "Computer Science",
+  "institution": "Towson University",
+  "catalogYearStart": "2023",
+  "catalogYearEnd": "2024",
+  "requiredCourses": [
+    {
+      "courseCode": "CIS 377",
+      "title": "Intro to Cybersecurity",
+      "units": 3,
+      "prerequisites": [
+        "Sophomore Status"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 236",
+      "title": "Intro to Computer Science I",
+      "units": 4,
+      "prerequisites": [
+        "MATH 117/119",
+        "Placement Exam",
+        "COSC 175"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring",
+        "Summer"
+      ]
+    },
+    {
+      "courseCode": "COSC 237",
+      "title": "Intro to Computer Science II",
+      "units": 4,
+      "prerequisites": [
+        "COSC 236"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring",
+        "Summer"
+      ]
+    },
+    {
+      "courseCode": "COSC 290",
+      "title": "Principles of Computer Organization",
+      "units": 4,
+      "prerequisites": [
+        "COSC 236"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 336",
+      "title": "Data Structures & Algorithm Analysis",
+      "units": 4,
+      "prerequisites": [
+        "COSC 237"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 350",
+      "title": "Data Communications & Networking",
+      "units": 3,
+      "prerequisites": [
+        "COSC 336"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 412",
+      "title": "Software Engineering",
+      "units": 3,
+      "prerequisites": [
+        "COSC 336"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 439",
+      "title": "Operating Systems",
+      "units": 3,
+      "prerequisites": [
+        "COSC 336"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 455",
+      "title": "Programming Languages",
+      "units": 3,
+      "prerequisites": [
+        "COSC 336"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 457",
+      "title": "Database Management Systems",
+      "units": 3,
+      "prerequisites": [
+        "COSC 336"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    }
+  ],
+  "electiveCourses": {
+    "groupA": {
+      "description": "At least 2 of the following",
+      "courses": [
+        {
+          "courseCode": "COSC 417",
+          "title": "Intro to Computing Theory",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 432",
+          "title": "Requirements Analysis & Modeling",
+          "units": 3,
+          "prerequisites": [
+            "COSC 412"
+          ],
+          "offerings": [
+            "Fall"
+          ]
+        },
+        {
+          "courseCode": "COSC 436",
+          "title": "Object-Oriented Design & Programming",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Fall",
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 459",
+          "title": "Computer Simulation & Modeling",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336",
+            "MATH 330"
+          ],
+          "offerings": [
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 461",
+          "title": "Artificial Intelligence",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 467",
+          "title": "Data Mining",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Fall",
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 471",
+          "title": "Computer Graphics",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Occasionally"
+          ]
+        },
+        {
+          "courseCode": "COSC 483",
+          "title": "Design & Analysis of Algorithms",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Fall"
+          ]
+        }
+      ]
+    },
+    "groupB": {
+      "description": "At least 2 of the following (only one of COSC 397/COSC 495 may be used)",
+      "courses": [
+        {
+          "courseCode": "COSC 397",
+          "title": "Internship in COSC",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336",
+            "2.75 GPA",
+            "instructor consent"
+          ],
+          "offerings": [
+            "Fall",
+            "Spring",
+            "Summer"
+          ]
+        },
+        {
+          "courseCode": "COSC 431",
+          "title": "Special Topics",
+          "units": 3,
+          "prerequisites": [
+            "9 units of CS courses",
+            "instructor consent"
+          ],
+          "offerings": [
+            "Fall",
+            "Spring",
+            "Summer"
+          ]
+        },
+        {
+          "courseCode": "COSC 435",
+          "title": "Mobile App Development",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Fall",
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 440",
+          "title": "Operating Systems Security",
+          "units": 3,
+          "prerequisites": [
+            "COSC 439"
+          ],
+          "offerings": [
+            "Fall"
+          ]
+        },
+        {
+          "courseCode": "COSC 442",
+          "title": "Software Assurance & Testing",
+          "units": 3,
+          "prerequisites": [
+            "COSC 412"
+          ],
+          "offerings": [
+            "Fall",
+            "Spring"
+          ]
+        },
+        {
+          "courseCode": "COSC 450",
+          "title": "Network Security",
+          "units": 3,
+          "prerequisites": [
+            "COSC 350",
+            "MATH 314"
+          ],
+          "offerings": [
+            "Fall"
+          ]
+        },
+        {
+          "courseCode": "COSC 458",
+          "title": "Application Software Security",
+          "units": 3,
+          "prerequisites": [
+            "COSC 455"
+          ],
+          "corequisites": [
+            "COSC 457"
+          ],
+          "offerings": [
+            "Fall"
+          ]
+        },
+        {
+          "courseCode": "COSC 465",
+          "title": "Robotics",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Occasionally"
+          ]
+        },
+        {
+          "courseCode": "COSC 484",
+          "title": "Web-Based Programming",
+          "units": 3,
+          "prerequisites": [
+            "COSC 336"
+          ],
+          "offerings": [
+            "Fall"
+          ]
+        },
+        {
+          "courseCode": "COSC 495",
+          "title": "Independent Study",
+          "units": 3,
+          "prerequisites": [
+            "Senior Standing",
+            "instructor consent"
+          ],
+          "offerings": [
+            "By Permission"
+          ]
+        }
+      ]
+    }
+  },
+  "requiredMathematics": [
+    {
+      "courseCode": "MATH 263",
+      "title": "Discrete Mathematics",
+      "units": 3,
+      "alternateWith": "MATH 267",
+      "prerequisites": [
+        "MATH 119",
+        "COSC 236"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "MATH 267",
+      "title": "Intro to Abstract Mathematics",
+      "units": 4,
+      "alternateWith": "MATH 263",
+      "prerequisites": [
+        "MATH 273"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "MATH 273",
+      "title": "Calculus I",
+      "units": 4,
+      "prerequisites": [
+        "MATH 117",
+        "MATH 119",
+        "Math Placement"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "MATH 274",
+      "title": "Calculus II",
+      "units": 4,
+      "prerequisites": [
+        "MATH 273"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "MATH 330",
+      "title": "Intro to Statistical Methods",
+      "units": 4,
+      "prerequisites": [
+        "MATH 274"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    }
+  ],
+  "requiredCore": [
+    {
+      "courseCode": "COMM 131",
+      "title": "Public Speaking (Core 5)",
+      "units": 3,
+      "prerequisites": [],
+      "offerings": [
+        "Fall",
+        "Spring",
+        "Summer"
+      ]
+    },
+    {
+      "courseCode": "ENGL 317",
+      "title": "Writing for Business & Industry (Core 9)",
+      "units": 3,
+      "prerequisites": [
+        "ENGL 102",
+        "ENGL 190",
+        "Equivalent"
+      ],
+      "offerings": [
+        "Fall",
+        "Spring"
+      ]
+    },
+    {
+      "courseCode": "COSC 418",
+      "title": "Ethical & Societal Concerns CS (Core 14)",
+      "units": 3,
+      "prerequisites": [],
+      "offerings": [
+        "Fall",
+        "Spring",
+        "Summer"
+      ]
+    }
+  ],
+  "requiredScience": {
+    "description": "Select 2 lab science courses from the following (8 Units total)",
+    "courses": [
+      {
+        "courseCode": "BIOL 200 + L",
+        "title": "Intro to Cell Biology",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "BIOL 206 + L",
+        "title": "Intro to Ecology/Evolution",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "CHEM 131 + L",
+        "title": "General Chemistry",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "CHEM 132 + L",
+        "title": "General Chemistry II",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "GEOL 121",
+        "title": "Physical Geology",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "PHYS 241",
+        "title": "General Physics I",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "PHYS 242",
+        "title": "General Physics II",
+        "units": 4,
+        "prerequisites": [],
+        "offerings": []
+      }
+    ]
+  },
+  "electiveMath": {
+    "description": "Select one math course from the following (3-4 Units)",
+    "courses": [
+      {
+        "courseCode": "MATH 265",
+        "title": "Elementary Linear Algebra",
+        "units": 4,
+        "prerequisites": [
+          "MATH 211 OR 273"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 275",
+        "title": "Calculus III",
+        "units": 4,
+        "prerequisites": [
+          "MATH 274"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 314",
+        "title": "Cryptography",
+        "units": 3,
+        "prerequisites": [
+          "COSC 236",
+          "MATH 265 or 267",
+          "MATH 330"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 315",
+        "title": "Applied Combinatorics",
+        "units": 3,
+        "prerequisites": [
+          "MATH 263, 265 or 267"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 369",
+        "title": "Intro to Abstract Algebra",
+        "units": 3,
+        "prerequisites": [],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 374",
+        "title": "Differential Equations",
+        "units": 3,
+        "prerequisites": [
+          "MATH 274"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 377",
+        "title": "Mathematical Models",
+        "units": 3,
+        "prerequisites": [
+          "MATH 265, 274, COSC 236"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 378",
+        "title": "Scientific Modeling & Simulation",
+        "units": 3,
+        "prerequisites": [
+          "MATH 274, COSC 236"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 435",
+        "title": "Numerical Analysis I",
+        "units": 3,
+        "prerequisites": [
+          "MATH 265, 274, COSC 236"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 436",
+        "title": "Numerical Analysis II",
+        "units": 3,
+        "prerequisites": [
+          "MATH 435"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 437",
+        "title": "Operations Research",
+        "units": 3,
+        "prerequisites": [
+          "MATH 265, 331"
+        ],
+        "offerings": []
+      },
+      {
+        "courseCode": "MATH 451",
+        "title": "Graph Theory",
+        "units": 3,
+        "prerequisites": [
+          "MATH 263 OR 267"
+        ],
+        "offerings": []
+      }
+    ]
+  },
+  "totalUnits": "81-83"
+}
