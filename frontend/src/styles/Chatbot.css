@@ -167,8 +167,6 @@
 
 .messages-container::-webkit-scrollbar-thumb:hover {
   background: #FFC000;
-<<<<<<< HEAD
-=======
 }
 
 .message.user .message-content {
@@ -211,5 +209,4 @@
     transform: scale(1.2);
     opacity: 1;
   }
->>>>>>> 8a501b1 (OpenAI integration with chatbot and backend)
 }
