@@ -1,0 +1,342 @@
+{
+    "majorTitle": "Computer and Mathematical Sciences",
+    "coreRequirements": {
+      "requiredCourses": [
+        {
+          "code": "CIS 377",
+          "title": "INTRODUCTION TO CYBERSECURITY",
+          "units": 3
+        },
+        {
+          "code": "COSC 236",
+          "title": "INTRODUCTION TO COMPUTER SCIENCE I",
+          "units": 4,
+          "prerequisites": ["COSC 175 is a prerequisite for COSC 236"]
+        },
+        {
+          "code": "COSC 237",
+          "title": "INTRODUCTION TO COMPUTER SCIENCE II",
+          "units": 4,
+          "prerequisites": ["COSC 236; MATH 211 or MATH 273 is a prerequisite for COSC 237"]
+        },
+        {
+          "code": "COSC 290",
+          "title": "PRINCIPLES OF COMPUTER ORGANIZATION",
+          "units": 4,
+          "prerequisites": ["COSC 236 and MATH 263 or MATH 267 is a prerequisite for COSC 290"]
+        },
+        {
+          "code": "COSC 336",
+          "title": "DATA STRUCTURES AND ALGORITHM ANALYSIS",
+          "units": 4,
+          "prerequisites": ["COSC 237 and MATH 274 or MATH 274 is a prerequisite for COSC 336"]
+        },
+        {
+          "code": "COSC 350",
+          "title": "DATA COMMUNICATIONS AND NETWORKING",
+          "units": 3,
+          "prerequisites": ["COSC 290 is a prerequisite for COSC 350"]
+        },
+        {
+          "code": "COSC 412",
+          "title": "SOFTWARE ENGINEERING",
+          "units": 3,
+          "prerequisites": ["COSC 336 is a prerequisite for COSC 412"]
+        },
+        {
+          "code": "COSC 418",
+          "title": "ETHICAL AND SOCIETAL CONCERNS OF COMPUTER SCIENTISTS (Core 14)",
+          "units": 3,
+          "prerequisites": ["Junior or Senior standing; ENGL 317 or BUSX 301 prerequisite for COSC 418"]
+        },
+        {
+          "code": "COSC 439",
+          "title": "OPERATING SYSTEMS",
+          "units": 3,
+          "prerequisites": ["COSC 336 is a prerequisite for COSC 439"]
+        },
+        {
+          "code": "COSC 455",
+          "title": "PROGRAMMING LANGUAGES: DESIGN & IMPLEMENTATION",
+          "units": 3,
+          "prerequisites": ["COSC 336 is a prerequisite for COSC 455"]
+        },
+        {
+          "code": "COSC 457",
+          "title": "DATABASE MANAGEMENT SYSTEMS",
+          "units": 3,
+          "prerequisites": ["COSC 336 is a prerequisite for COSC 457"]
+        },
+        {
+          "code": "MATH 265",
+          "title": "ELEMENTARY LINEAR ALGEBRA",
+          "units": 4,
+          "prerequisites": ["Not open to students who successfully completed MATH 365 or MATH 463. MATH 211 or MATH 273 is a prerequisite for MATH 265"]
+        },
+        {
+          "code": "MATH 267",
+          "title": "INTRODUCTION TO ABSTRACT MATHEMATICS",
+          "units": 4,
+          "prerequisites": ["Not open to those who successfully completed MATH 361 or MATH 467. MATH 273 and MATH 265 or consent of the instructor is a prerequisite for MATH 267"]
+        },
+        {
+          "code": "MATH 273",
+          "title": "CALCULUS I",
+          "units": 4,
+          "prerequisites": ["Qualifying score on Math Placement exam or MATH 117 or MATH 119 is a prerequisite for MATH 273"]
+        },
+        {
+          "code": "MATH 274",
+          "title": "CALCULUS II",
+          "units": 4,
+          "prerequisites": ["MATH 273 is a prerequisite for MATH 274"]
+        },
+        {
+          "code": "MATH 275",
+          "title": "CALCULUS III",
+          "units": 4,
+          "prerequisites": ["MATH 274 is a prerequisite for MATH 275"]
+        },
+        {
+          "code": "MATH 330 or MATH 331",
+          "title": "INTRODUCTION TO STATISTICAL METHODS or PROBABILITY",
+          "units": 4,
+          "prerequisites": ["Students in the Computational Data Science Track must select MATH 331 which is a prerequisite for MATH 332"]
+        },
+        {
+          "code": "MATH 369 or MATH 372",
+          "title": "INTRODUCTION TO ABSTRACT ALGEBRA or REAL ANALYSIS I",
+          "units": 4
+        }
+      ],
+      "requiredCoreCourses": [
+        {
+          "code": "COMM 131",
+          "title": "PUBLIC SPEAKING",
+          "units": 3
+        },
+        {
+          "code": "ENGL 317",
+          "title": "WRITING FOR BUSINESS AND INDUSTRY",
+          "units": 3,
+          "notes": ["ENGL 102 or ENGL 190 or equivalent is a prerequisite for ENGL 317"]
+        }
+      ],
+      "totalCoreUnits": 71
+    },
+    "tracks": [
+      {
+        "name": "Applied Mathematics and Computer Science Concentration",
+        "requirements": [
+          {
+            "category": "Required Courses",
+            "courses": [
+              {
+                "code": "MATH 369 or MATH 372",
+                "title": "INTRODUCTION TO ABSTRACT ALGEBRA or REAL ANALYSIS I",
+                "units": 4,
+                "note": "Whichever was not taken to satisfy the core requirement"
+              }
+            ]
+          },
+          {
+            "category": "Computer Science Elective Courses",
+            "description": "Select two of the following:",
+            "totalUnits": 6,
+            "courses": [
+              {
+                "code": "COSC 397 or COSC 495",
+                "title": "INTERNSHIP IN COSC or INDEPENDENT STUDY"
+              },
+              {
+                "code": "COSC 417",
+                "title": "INTRODUCTION TO THE THEORY OF COMPUTING"
+              },
+              {
+                "code": "COSC 459",
+                "title": "COMPUTER SIMULATION & MODELING"
+              },
+              {
+                "code": "COSC 461",
+                "title": "ARTIFICIAL INTELLIGENCE"
+              },
+              {
+                "code": "COSC 465",
+                "title": "ROBOTICS"
+              },
+              {
+                "code": "COSC 471",
+                "title": "COMPUTER GRAPHICS"
+              },
+              {
+                "code": "COSC 483",
+                "title": "DESIGN & ANALYSIS ALGORITHMS"
+              }
+            ]
+          },
+          {
+            "category": "Math Elective Courses – Group 1",
+            "description": "Select two of the following:",
+            "totalUnits": 7,
+            "courses": [
+              {
+                "code": "MATH 314",
+                "title": "INTRODUCTION TO CRYPTOGRAPHY"
+              },
+              {
+                "code": "MATH 331",
+                "title": "PROBABILITY",
+                "prerequisites": ["MATH 331 may apply as an elective if not already selected to fulfill the requirement of MATH 330 or MATH 331 in the Required Mathematics Courses area"]
+              },
+              {
+                "code": "MATH 332",
+                "title": "MATHEMATICAL STATISTICS"
+              },
+              {
+                "code": "MATH 374",
+                "title": "DIFFERENTIAL EQUATIONS"
+              },
+              {
+                "code": "MATH 377",
+                "title": "MATHEMATICAL MODELS"
+              },
+              {
+                "code": "MATH 379",
+                "title": "FOURIER ANALYSIS WITH APPLICATIONS"
+              },
+              {
+                "code": "MATH 435",
+                "title": "NUMERICAL ANALYSIS I"
+              },
+              {
+                "code": "MATH 437",
+                "title": "OPERATIONS RESEARCH"
+              },
+              {
+                "code": "MATH 439",
+                "title": "COMPUTATIONAL PROBABILITY MODELS"
+              }
+            ]
+          },
+          {
+            "category": "Math Elective Courses – Group 2",
+            "description": "Select two of the following:",
+            "totalUnits": 7,
+            "courses": [
+              {
+                "code": "MATH 315",
+                "title": "APPLIED COMBINATORICS"
+              },
+              {
+                "code": "MATH 451",
+                "title": "GRAPH THEORY"
+              },
+              {
+                "code": "MATH 457",
+                "title": "DIFFERENTIAL GEOMETRY"
+              },
+              {
+                "code": "MATH 463",
+                "title": "LINEAR ALGEBRA"
+              },
+              {
+                "code": "MATH 465",
+                "title": "NUMBER THEORY"
+              },
+              {
+                "code": "MATH 467",
+                "title": "ALGEBRAIC STRUCTURES"
+              },
+              {
+                "code": "MATH 472",
+                "title": "REAL ANALYSIS II"
+              },
+              {
+                "code": "MATH 475",
+                "title": "COMPLEX ANALYSIS"
+              },
+              {
+                "code": "MATH 477",
+                "title": "TOPOLOGY"
+              }
+            ]
+          }
+        ],
+        "totalTrackUnits": 24
+      },
+      {
+        "name": "Computational Data Science Track",
+        "requirements": [
+          {
+            "category": "Required Courses",
+            "courses": [
+              {
+                "code": "COSC 461",
+                "title": "ARTIFICIAL INTELLIGENCE",
+                "units": 3
+              },
+              {
+                "code": "COSC 467",
+                "title": "FOUNDATIONS OF DATA MINING",
+                "units": 3
+              },
+              {
+                "code": "MATH 332",
+                "title": "MATHEMATICAL STATISTICS",
+                "units": 3
+              },
+              {
+                "code": "MATH 371",
+                "title": "INTRODUCTION TO MACHINE LEARNING",
+                "units": 3
+              },
+              {
+                "code": "MATH 471",
+                "title": "SEMINAR IN COMPUTATIONAL DATA SCIENCE",
+                "units": 3
+              }
+            ]
+          },
+          {
+            "category": "Mathematics Elective Courses",
+            "description": "Select two of the following:",
+            "totalUnits": "6-8",
+            "courses": [
+              {
+                "code": "MATH 372",
+                "title": "REAL ANALYSIS I"
+              },
+              {
+                "code": "MATH 435",
+                "title": "NUMERICAL ANALYSIS I"
+              },
+              {
+                "code": "MATH 437",
+                "title": "OPERATIONS RESEARCH"
+              },
+              {
+                "code": "MATH 451",
+                "title": "GRAPH THEORY"
+              },
+              {
+                "code": "MATH 463",
+                "title": "LINEAR ALGEBRA"
+              },
+              {
+                "code": "MATH 477",
+                "title": "TOPOLOGY"
+              }
+            ]
+          }
+        ],
+        "totalTrackUnits": "21-23"
+      }
+    ],
+    "notes": [
+      "COSC 175 is a prerequisite for COSC 236.",
+      "Students in the Computational Data Science Track must select MATH 331 which is a prerequisite for MATH 332.",
+      "MATH 331 may apply as an elective if not already selected to fulfill the requirement of MATH 330 or MATH 331 in the Required Mathematics Courses area.",
+      "The selected course sequence is an example of the simplest path to degree completion. Based on course schedules, student needs, and student choice, individual plans may vary.",
+      "Students should consult with their adviser to make the most appropriate elective choices and to ensure that they have completed the required number of units (120) to graduate."
+    ]
+  }
