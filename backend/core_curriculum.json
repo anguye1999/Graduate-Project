@@ -1,2061 +1,2085 @@
 {
-    "title": "Core Curriculum Requirements",
+    "coreCurriculum": "Core Curriculum Requirements",
     "core_categories": [
       {
         "core_number": 1,
-        "title": "TOWSON SEMINAR",
+        "coreTitle": "TOWSON SEMINAR",
         "units": 3,
         "description": "Focusing on exploration and discovery, this course introduces students to the academic expectations for college-level work and to the intellectual, communication, and collaborative skills needed for academic success. Seminar format emphasizing active learning, with variable content in different Towson-Seminar courses. Introduces multiple perspectives and may draw from more than one discipline.",
         "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used.",
         "courses": [
           {
-            "course_code": "TSEM 102",
-            "title": "Towson Seminar"
+            "courseCode": "TSEM 102",
+            "courseTitle": "Towson Seminar",
+            "units": 3
           },
           {
             "core_number": 13,
-            "title": "DIVERSITY & DIFFERENCE",
+            "coreTitle": "DIVERSITY & DIFFERENCE",
             "units": 3,
             "description": "Courses in Diversity and Difference will explore relationships of distinctiveness and interdependence, conflict and cooperation, between and among people with varying cultures, beliefs, identities, and capabilities. Courses will cultivate in students the ability to examine and articulate differences of conviction and perception through open exchange and civil discourse. As part of that process, students will also come to understand more fully the lenses through which they view the world.",
             "courses": [
               {
-                "course_code": "AFST 201",
-                "title": "Main Themes in African and African-American Studies"
+                "courseCode": "AFST 201",
+                "courseTitle": "Main Themes in African and African-American Studies",
+                "units": 3
               },
               {
-                "course_code": "ARTH 108",
-                "title": "Introduction to Non-Western Art"
+                "courseCode": "ARTH 108",
+                "courseTitle": "Introduction to Non-Western Art",
+                "units": 3
               },
               {
-                "course_code": "DANC 210",
-                "title": "The Gender Dance"
+                "courseCode": "DANC 210",
+                "courseTitle": "The Gender Dance",
+                "units": 3
               },
               {
-                "course_code": "DFST 101",
-                "title": "Introduction to Deaf Studies"
+                "courseCode": "DFST 101",
+                "courseTitle": "Introduction to Deaf Studies",
+                "units": 3
               },
               {
-                "course_code": "EDUC 203",
-                "title": "Teaching and Learning in a Diverse Society"
+                "courseCode": "EDUC 203",
+                "courseTitle": "Teaching and Learning in a Diverse Society",
+                "units": 3
               },
               {
-                "course_code": "EMF 205",
-                "title": "Gender in Film and Media"
+                "courseCode": "EMF 205",
+                "courseTitle": "Gender in Film and Media",
+                "units": 3
               },
               {
-                "course_code": "EMF 210",
-                "title": "African-American Cinema"
+                "courseCode": "EMF 210",
+                "courseTitle": "African-American Cinema",
+                "units": 3
               },
               {
-                "course_code": "ENGL 233",
-                "title": "Survey of African-American Literature"
+                "courseCode": "ENGL 233",
+                "courseTitle": "Survey of African-American Literature",
+                "units": 3
               },
               {
-                "course_code": "ENGL 234",
-                "title": "Major Writers in African-American Literature"
+                "courseCode": "ENGL 234",
+                "courseTitle": "Major Writers in African-American Literature",
+                "units": 3
               },
               {
-                "course_code": "ENGL 235",
-                "title": "Ethnic-American Literature"
+                "courseCode": "ENGL 235",
+                "courseTitle": "Ethnic-American Literature",
+                "units": 3
               },
               {
-                "course_code": "ENGL 239",
-                "title": "Modern Jewish Literature"
+                "courseCode": "ENGL 239",
+                "courseTitle": "Modern Jewish Literature",
+                "units": 3
               },
               {
-                "course_code": "FMST 310",
-                "title": "Lesbian, Gay, Bisexual, and Transgender Families"
+                "courseCode": "FMST 310",
+                "courseTitle": "Lesbian, Gay, Bisexual, and Transgender Families",
+                "units": 3
               },
               {
-                "course_code": "FMST 311",
-                "title": "African American Families"
+                "courseCode": "FMST 311",
+                "courseTitle": "African American Families",
+                "units": 3
               },
               {
-                "course_code": "FMST 360",
-                "title": "Diversity Culture and Team Dynamics"
+                "courseCode": "FMST 360",
+                "courseTitle": "Diversity Culture and Team Dynamics",
+                "units": 3
               },
               {
-                "course_code": "FMST 465",
-                "title": "Jewish Families Under Nazi Rule"
+                "courseCode": "FMST 465",
+                "courseTitle": "Jewish Families Under Nazi Rule",
+                "units": 3
               },
               {
-                "course_code": "FORL 325",
-                "title": "Stories of Migration"
+                "courseCode": "FORL 325",
+                "courseTitle": "Stories of Migration",
+                "units": 3
               },
               {
-                "course_code": "HLTH 220",
-                "title": "Sexuality in a Diverse Society"
+                "courseCode": "HLTH 220",
+                "courseTitle": "Sexuality in a Diverse Society",
+                "units": 3
               },
               {
-                "course_code": "HONR 240",
-                "title": "Honors Seminar in Western Heritage Plurality and Diversity"
+                "courseCode": "HONR 240",
+                "courseTitle": "Honors Seminar in Western Heritage Plurality and Diversity",
+                "units": 3
               },
               {
-                "course_code": "IDHP 300",
-                "title": "Individuals on the Autism Spectrum"
+                "courseCode": "IDHP 300",
+                "courseTitle": "Individuals on the Autism Spectrum",
+                "units": 3
               },
               {
-                "course_code": "KNES 441",
-                "title": "Women, Gender, and Sport"
+                "courseCode": "KNES 441",
+                "courseTitle": "Women, Gender, and Sport",
+                "units": 3
               },
               {
-                "course_code": "LGBT 101",
-                "title": "Introduction to LGBT Studies"
+                "courseCode": "LGBT 101",
+                "courseTitle": "Introduction to LGBT Studies",
+                "units": 3
               },
               {
-                "course_code": "MUSC 205",
-                "title": "Women in Western Music"
+                "courseCode": "MUSC 205",
+                "courseTitle": "Women in Western Music",
+                "units": 3
               },
               {
-                "course_code": "MUSC 115",
-                "title": "Music, Identity, and Difference"
+                "courseCode": "MUSC 115",
+                "courseTitle": "Music, Identity, and Difference",
+                "units": 3
               },
               {
-                "course_code": "NURS 416",
-                "title": "Diversity and Social Justice in Health Care"
+                "courseCode": "NURS 416",
+                "courseTitle": "Diversity and Social Justice in Health Care"
               },
               {
-                "course_code": "PHIL 204",
-                "title": "Race, Class and Gender"
+                "courseCode": "PHIL 204",
+                "courseTitle": "Race, Class and Gender"
               },
               {
-                "course_code": "RLST 205",
-                "title": "Women in World Religions"
+                "courseCode": "RLST 205",
+                "courseTitle": "Women in World Religions"
               },
               {
-                "course_code": "RLST 206",
-                "title": "Judaism, Christianity, and Islam"
+                "courseCode": "RLST 206",
+                "courseTitle": "Judaism, Christianity, and Islam"
               },
               {
-                "course_code": "RLST 209",
-                "title": "Religious Traditions of Asia"
+                "courseCode": "RLST 209",
+                "courseTitle": "Religious Traditions of Asia"
               },
               {
-                "course_code": "RLST 210",
-                "title": "Introduction to Judaism"
+                "courseCode": "RLST 210",
+                "courseTitle": "Introduction to Judaism"
               },
               {
-                "course_code": "SEMS 260",
-                "title": "Diversity and Difference in the STEM Classroom"
+                "courseCode": "SEMS 260",
+                "courseTitle": "Diversity and Difference in the STEM Classroom"
               },
               {
-                "course_code": "SOCI 241",
-                "title": "Blacks in America: Myths and Reality"
+                "courseCode": "SOCI 241",
+                "courseTitle": "Blacks in America: Myths and Reality"
               },
               {
-                "course_code": "SOCI 243",
-                "title": "Sociology of Race, Class and Gender"
+                "courseCode": "SOCI 243",
+                "courseTitle": "Sociology of Race, Class and Gender"
               },
               {
-                "course_code": "THEA 303",
-                "title": "Cultural Diversity in Contemporary Theatre"
+                "courseCode": "THEA 303",
+                "courseTitle": "Cultural Diversity in Contemporary Theatre"
               },
               {
-                "course_code": "THEA 304",
-                "title": "Honors Cultural Diversity in Contemporary Theatre"
+                "courseCode": "THEA 304",
+                "courseTitle": "Honors Cultural Diversity in Contemporary Theatre"
               },
               {
-                "course_code": "THEA 316",
-                "title": "Theatre of Crossing Cultures"
+                "courseCode": "THEA 316",
+                "courseTitle": "Theatre of Crossing Cultures"
               },
               {
-                "course_code": "THEA 380",
-                "title": "Topics in Diversity"
+                "courseCode": "THEA 380",
+                "courseTitle": "Topics in Diversity"
               },
               {
-                "course_code": "WMST 231",
-                "title": "Women in Perspective"
+                "courseCode": "WMST 231",
+                "courseTitle": "Women in Perspective"
               },
               {
-                "course_code": "WMST 232",
-                "title": "Honors Women in Perspective"
+                "courseCode": "WMST 232",
+                "courseTitle": "Honors Women in Perspective"
               },
               {
                 "core_number": 12,
-                "title": "GLOBAL PERSPECTIVES",
+                "coreTitle": "GLOBAL PERSPECTIVES",
                 "units": 3,
                 "description": "Courses in Global Perspectives examine how the global environment is changing, and is being changed, by major social, cultural, religious, economic, political, and technological forces, and how new patterns of relationships are shaping and being shaped by the global environment.",
                 "courses": [
                   {
-                    "course_code": "ANTH 207",
-                    "title": "Cultural Anthropology"
+                    "courseCode": "ANTH 207",
+                    "courseTitle": "Cultural Anthropology"
                   },
                   {
-                    "course_code": "ANTH 210",
-                    "title": "Honors Cultural Anthropology"
+                    "courseCode": "ANTH 210",
+                    "courseTitle": "Honors Cultural Anthropology"
                   },
                   {
-                    "course_code": "ARAB 102",
-                    "title": "Arabic Elements II"
+                    "courseCode": "ARAB 102",
+                    "courseTitle": "Arabic Elements II"
                   },
                   {
-                    "course_code": "ARAB 202",
-                    "title": "Arabic Intermediate II"
+                    "courseCode": "ARAB 202",
+                    "courseTitle": "Arabic Intermediate II"
                   },
                   {
-                    "course_code": "ARAB 302",
-                    "title": "Arabic Composition and Conversation II"
+                    "courseCode": "ARAB 302",
+                    "courseTitle": "Arabic Composition and Conversation II"
                   },
                   {
-                    "course_code": "ARTH 107",
-                    "title": "Art: Themes, Dreams and Visions"
+                    "courseCode": "ARTH 107",
+                    "courseTitle": "Art: Themes, Dreams and Visions"
                   },
                   {
-                    "course_code": "ASST 201",
-                    "title": "Introduction to Asian Studies"
+                    "courseCode": "ASST 201",
+                    "courseTitle": "Introduction to Asian Studies"
                   },
                   {
-                    "course_code": "CHNS 102",
-                    "title": "Elementary Chinese II"
+                    "courseCode": "CHNS 102",
+                    "courseTitle": "Elementary Chinese II"
                   },
                   {
-                    "course_code": "CHNS 202",
-                    "title": "Intermediate Chinese II"
+                    "courseCode": "CHNS 202",
+                    "courseTitle": "Intermediate Chinese II"
                   },
                   {
-                    "course_code": "CHNS 302",
-                    "title": "Chinese Composition and Conversation II"
+                    "courseCode": "CHNS 302",
+                    "courseTitle": "Chinese Composition and Conversation II"
                   },
                   {
-                    "course_code": "DANC 125",
-                    "title": "Introduction to Dance: Global Perspective"
+                    "courseCode": "DANC 125",
+                    "courseTitle": "Introduction to Dance: Global Perspective"
                   },
                   {
-                    "course_code": "ENGL 229",
-                    "title": "Modern Irish Literature"
+                    "courseCode": "ENGL 229",
+                    "courseTitle": "Modern Irish Literature"
                   },
                   {
-                    "course_code": "ENGL 241",
-                    "title": "Major Works of World Literature"
+                    "courseCode": "ENGL 241",
+                    "courseTitle": "Major Works of World Literature"
                   },
                   {
-                    "course_code": "ENGL 246",
-                    "title": "Texts About Travel"
+                    "courseCode": "ENGL 246",
+                    "courseTitle": "Texts About Travel"
                   },
                   {
-                    "course_code": "ENGL 248",
-                    "title": "Literature of Global Experience"
+                    "courseCode": "ENGL 248",
+                    "courseTitle": "Literature of Global Experience"
                   },
                   {
-                    "course_code": "ENGL 348",
-                    "title": "Literature of African Diaspora"
+                    "courseCode": "ENGL 348",
+                    "courseTitle": "Literature of African Diaspora"
                   },
                   {
-                    "course_code": "FMST 210",
-                    "title": "Families in Global Perspective"
+                    "courseCode": "FMST 210",
+                    "courseTitle": "Families in Global Perspective"
                   },
                   {
-                    "course_code": "FORL 102",
-                    "title": "Intro to Foreign Language II"
+                    "courseCode": "FORL 102",
+                    "courseTitle": "Intro to Foreign Language II"
                   },
                   {
-                    "course_code": "FORL 202",
-                    "title": "Intermed Foreign Language II"
+                    "courseCode": "FORL 202",
+                    "courseTitle": "Intermed Foreign Language II"
                   },
                   {
-                    "course_code": "FORL 360",
-                    "title": "Italian Culture in Global Context"
+                    "courseCode": "FORL 360",
+                    "courseTitle": "Italian Culture in Global Context"
                   },
                   {
-                    "course_code": "FREN 102",
-                    "title": "French Elements II"
+                    "courseCode": "FREN 102",
+                    "courseTitle": "French Elements II"
                   },
                   {
-                    "course_code": "FREN 202",
-                    "title": "French Intermediate II"
+                    "courseCode": "FREN 202",
+                    "courseTitle": "French Intermediate II"
                   },
                   {
-                    "course_code": "FREN 302",
-                    "title": "Advanced Composition"
+                    "courseCode": "FREN 302",
+                    "courseTitle": "Advanced Composition"
                   },
                   {
-                    "course_code": "GEOG 102",
-                    "title": "World Regional Geography"
+                    "courseCode": "GEOG 102",
+                    "courseTitle": "World Regional Geography"
                   },
                   {
-                    "course_code": "GEOG 105",
-                    "title": "Geography of International Affairs"
+                    "courseCode": "GEOG 105",
+                    "courseTitle": "Geography of International Affairs"
                   },
                   {
-                    "course_code": "GEOG 109",
-                    "title": "Introduction to Human Geography"
+                    "courseCode": "GEOG 109",
+                    "courseTitle": "Introduction to Human Geography"
                   },
                   {
-                    "course_code": "GEOG 110",
-                    "title": "Honors Intro to Human Geography"
+                    "courseCode": "GEOG 110",
+                    "courseTitle": "Honors Intro to Human Geography"
                   },
                   {
-                    "course_code": "GEOG 112",
-                    "title": "Honors World Regional Geog"
+                    "courseCode": "GEOG 112",
+                    "courseTitle": "Honors World Regional Geog"
                   },
                   {
-                    "course_code": "GERM 102",
-                    "title": "German Elements II"
+                    "courseCode": "GERM 102",
+                    "courseTitle": "German Elements II"
                   },
                   {
-                    "course_code": "GERM 202",
-                    "title": "German Intermediate II"
+                    "courseCode": "GERM 202",
+                    "courseTitle": "German Intermediate II"
                   },
                   {
-                    "course_code": "GERM 302",
-                    "title": "German Composition and Conversation II"
+                    "courseCode": "GERM 302",
+                    "courseTitle": "German Composition and Conversation II"
                   },
                   {
-                    "course_code": "GRK 104",
-                    "title": "Ancient Greek Elements II"
+                    "courseCode": "GRK 104",
+                    "courseTitle": "Ancient Greek Elements II"
                   },
                   {
-                    "course_code": "GRK 204",
-                    "title": "Ancient Greek Intermediate II"
+                    "courseCode": "GRK 204",
+                    "courseTitle": "Ancient Greek Intermediate II"
                   },
                   {
-                    "course_code": "HEBR 102",
-                    "title": "Elements of Hebrew II"
+                    "courseCode": "HEBR 102",
+                    "courseTitle": "Elements of Hebrew II"
                   },
                   {
-                    "course_code": "HEBR 104",
-                    "title": "Biblical Hebrew II"
+                    "courseCode": "HEBR 104",
+                    "courseTitle": "Biblical Hebrew II"
                   },
                   {
-                    "course_code": "HEBR 202",
-                    "title": "Hebrew Intermediate II"
+                    "courseCode": "HEBR 202",
+                    "courseTitle": "Hebrew Intermediate II"
                   },
                   {
-                    "course_code": "HEBR 204",
-                    "title": "Biblical Hebrew IV"
+                    "courseCode": "HEBR 204",
+                    "courseTitle": "Biblical Hebrew IV"
                   },
                   {
-                    "course_code": "HEBR 302",
-                    "title": "Hebrew Composition and Conversation II"
+                    "courseCode": "HEBR 302",
+                    "courseTitle": "Hebrew Composition and Conversation II"
                   },
                   {
-                    "course_code": "HIST 110",
-                    "title": "East Asian Civilization to the 19th Century"
+                    "courseCode": "HIST 110",
+                    "courseTitle": "East Asian Civilization to the 19th Century"
                   },
                   {
-                    "course_code": "HIST 111",
-                    "title": "Modern East Asia since 19th Century"
+                    "courseCode": "HIST 111",
+                    "courseTitle": "Modern East Asia since 19th Century"
                   },
                   {
-                    "course_code": "HIST 117",
-                    "title": "Islamic History: From the Rise of Islam to the Rise of the Ottomans"
+                    "courseCode": "HIST 117",
+                    "courseTitle": "Islamic History: From the Rise of Islam to the Rise of the Ottomans"
                   },
                   {
-                    "course_code": "HIST 118",
-                    "title": "Modern Middle East History"
+                    "courseCode": "HIST 118",
+                    "courseTitle": "Modern Middle East History"
                   },
                   {
-                    "course_code": "HIST 121",
-                    "title": "Latin America: Colonial Period"
+                    "courseCode": "HIST 121",
+                    "courseTitle": "Latin America: Colonial Period"
                   },
                   {
-                    "course_code": "HIST 122",
-                    "title": "Latin America: National Period"
+                    "courseCode": "HIST 122",
+                    "courseTitle": "Latin America: National Period"
                   },
                   {
-                    "course_code": "HIST 135",
-                    "title": "History of Africa to 1900"
+                    "courseCode": "HIST 135",
+                    "courseTitle": "History of Africa to 1900"
                   },
                   {
-                    "course_code": "HIST 136",
-                    "title": "Africa since 1900"
+                    "courseCode": "HIST 136",
+                    "courseTitle": "Africa since 1900"
                   },
                   {
-                    "course_code": "HIST 160",
-                    "title": "World History Before 1300"
+                    "courseCode": "HIST 160",
+                    "courseTitle": "World History Before 1300"
                   },
                   {
-                    "course_code": "HIST 161",
-                    "title": "World History Since 1300"
+                    "courseCode": "HIST 161",
+                    "courseTitle": "World History Since 1300"
                   },
                   {
-                    "course_code": "HIST 342",
-                    "title": "Sailors, Merchants, Spies: Portuguese Encounters, 1400-1700"
+                    "courseCode": "HIST 342",
+                    "courseTitle": "Sailors, Merchants, Spies: Portuguese Encounters, 1400-1700"
                   },
                   {
-                    "course_code": "HONR 243",
-                    "title": "Honors Seminar in Non-Western Cultures, Languages, and Traditions"
+                    "courseCode": "HONR 243",
+                    "courseTitle": "Honors Seminar in Non-Western Cultures, Languages, and Traditions"
                   },
                   {
-                    "course_code": "ITAL 102",
-                    "title": "Italian Elements II"
+                    "courseCode": "ITAL 102",
+                    "courseTitle": "Italian Elements II"
                   },
                   {
-                    "course_code": "ITAL 202",
-                    "title": "Italian Intermediate II"
+                    "courseCode": "ITAL 202",
+                    "courseTitle": "Italian Intermediate II"
                   },
                   {
-                    "course_code": "ITAL 302",
-                    "title": "Italian Culture & Writing"
+                    "courseCode": "ITAL 302",
+                    "courseTitle": "Italian Culture & Writing"
                   },
                   {
-                    "course_code": "JPNS 102",
-                    "title": "Japanese Elements II"
+                    "courseCode": "JPNS 102",
+                    "courseTitle": "Japanese Elements II"
                   },
                   {
-                    "course_code": "JPNS 202",
-                    "title": "Japanese Intermediate II"
+                    "courseCode": "JPNS 202",
+                    "courseTitle": "Japanese Intermediate II"
                   },
                   {
-                    "course_code": "JPNS 302",
-                    "title": "Japanese Composition and Conversation II"
+                    "courseCode": "JPNS 302",
+                    "courseTitle": "Japanese Composition and Conversation II"
                   },
                   {
-                    "course_code": "KNES 285",
-                    "title": "Sport: Cross-Cultural Perspective"
+                    "courseCode": "KNES 285",
+                    "courseTitle": "Sport: Cross-Cultural Perspective"
                   },
                   {
-                    "course_code": "LAST 100",
-                    "title": "Latin America: Issues and Approaches"
+                    "courseCode": "LAST 100",
+                    "courseTitle": "Latin America: Issues and Approaches"
                   },
                   {
-                    "course_code": "LATN 102",
-                    "title": "Latin Elements II"
+                    "courseCode": "LATN 102",
+                    "courseTitle": "Latin Elements II"
                   },
                   {
-                    "course_code": "LATN 202",
-                    "title": "Latin Intermediate II"
+                    "courseCode": "LATN 202",
+                    "courseTitle": "Latin Intermediate II"
                   },
                   {
-                    "course_code": "LATN 302",
-                    "title": "Advanced Readings in Latin II"
+                    "courseCode": "LATN 302",
+                    "courseTitle": "Advanced Readings in Latin II"
                   },
                   {
-                    "course_code": "MUSC 202",
-                    "title": "Music Cultures of the World"
+                    "courseCode": "MUSC 202",
+                    "courseTitle": "Music Cultures of the World"
                   },
                   {
-                    "course_code": "PHIL 219",
-                    "title": "Introduction to Asian Philosophy"
+                    "courseCode": "PHIL 219",
+                    "courseTitle": "Introduction to Asian Philosophy"
                   },
                   {
-                    "course_code": "PORT 102",
-                    "title": "Portuguese Elements II"
+                    "courseCode": "PORT 102",
+                    "courseTitle": "Portuguese Elements II"
                   },
                   {
-                    "course_code": "PORT 202",
-                    "title": "Portuguese Intermediate II"
+                    "courseCode": "PORT 202",
+                    "courseTitle": "Portuguese Intermediate II"
                   },
                   {
-                    "course_code": "POSC 105",
-                    "title": "Governments of the World"
+                    "courseCode": "POSC 105",
+                    "courseTitle": "Governments of the World"
                   },
                   {
-                    "course_code": "POSC 107",
-                    "title": "Introduction to International Relations"
+                    "courseCode": "POSC 107",
+                    "courseTitle": "Introduction to International Relations"
                   },
                   {
-                    "course_code": "POSC 108",
-                    "title": "Honors Intro to International Relations"
+                    "courseCode": "POSC 108",
+                    "courseTitle": "Honors Intro to International Relations"
                   },
                   {
-                    "course_code": "RLST 105",
-                    "title": "Introduction to the Study of Religion"
+                    "courseCode": "RLST 105",
+                    "courseTitle": "Introduction to the Study of Religion"
                   },
                   {
-                    "course_code": "RLST 203",
-                    "title": "Introduction to Islam"
+                    "courseCode": "RLST 203",
+                    "courseTitle": "Introduction to Islam"
                   },
                   {
-                    "course_code": "RLST 207",
-                    "title": "Introduction to Buddhism"
+                    "courseCode": "RLST 207",
+                    "courseTitle": "Introduction to Buddhism"
                   },
                   {
-                    "course_code": "RLST 208",
-                    "title": "Introduction to Hinduism"
+                    "courseCode": "RLST 208",
+                    "courseTitle": "Introduction to Hinduism"
                   },
                   {
-                    "course_code": "RUSS 102",
-                    "title": "Russian Elements II"
+                    "courseCode": "RUSS 102",
+                    "courseTitle": "Russian Elements II"
                   },
                   {
-                    "course_code": "RUSS 202",
-                    "title": "Russian Intermediate II"
+                    "courseCode": "RUSS 202",
+                    "courseTitle": "Russian Intermediate II"
                   },
                   {
-                    "course_code": "RUSS 302",
-                    "title": "Composition and Conversation II"
+                    "courseCode": "RUSS 302",
+                    "courseTitle": "Composition and Conversation II"
                   },
                   {
-                    "course_code": "SPAN 102",
-                    "title": "Spanish Elements II"
+                    "courseCode": "SPAN 102",
+                    "courseTitle": "Spanish Elements II"
                   },
                   {
-                    "course_code": "SPAN 202",
-                    "title": "Spanish Intermediate II"
+                    "courseCode": "SPAN 202",
+                    "courseTitle": "Spanish Intermediate II"
                   },
                   {
-                    "course_code": "SPAN 204",
-                    "title": "Honors Spanish Intermediate II"
+                    "courseCode": "SPAN 204",
+                    "courseTitle": "Honors Spanish Intermediate II"
                   },
                   {
-                    "course_code": "SPAN 302",
-                    "title": "Composition and Conversation II"
+                    "courseCode": "SPAN 302",
+                    "courseTitle": "Composition and Conversation II"
                   },
                   {
-                    "course_code": "SPAN 304",
-                    "title": "Spanish for Heritage Speakers II"
+                    "courseCode": "SPAN 304",
+                    "courseTitle": "Spanish for Heritage Speakers II"
                   },
                   {
-                    "course_code": "WMST 233",
-                    "title": "International Perspectives of Women"
+                    "courseCode": "WMST 233",
+                    "courseTitle": "International Perspectives of Women"
                   }
                 ]
               },
               {
                 "core_number": 14,
-                "title": "ETHICAL ISSUES & PERSPECTIVES",
+                "coreTitle": "ETHICAL ISSUES & PERSPECTIVES",
                 "units": 3,
                 "description": "Courses in Ethical Issues and Perspectives will develop one or more ethical issues of current importance to any of a broad range of academic disciplines. These courses are designed to help students understand different perspectives on ethical problems and different processes and techniques helpful in reaching sound judgments.",
                 "note": "Courses from Core 14 are considered as a discipline in the Arts & Humanities regardless of the subject code.",
                 "courses": [
                   {
-                    "course_code": "ARED 377",
-                    "title": "Engaging Public Sites"
+                    "courseCode": "ARED 377",
+                    "courseTitle": "Engaging Public Sites"
                   },
                   {
-                    "course_code": "ASTR 301",
-                    "title": "Cosmic Origins"
+                    "courseCode": "ASTR 301",
+                    "courseTitle": "Cosmic Origins"
                   },
                   {
-                    "course_code": "BIOL 306",
-                    "title": "Human Ecology and Sustainability"
+                    "courseCode": "BIOL 306",
+                    "courseTitle": "Human Ecology and Sustainability"
                   },
                   {
-                    "course_code": "CLST 311",
-                    "title": "Science, Technology and Culture"
+                    "courseCode": "CLST 311",
+                    "courseTitle": "Science, Technology and Culture"
                   },
                   {
-                    "course_code": "COMM 220",
-                    "title": "Communication Ethics"
+                    "courseCode": "COMM 220",
+                    "courseTitle": "Communication Ethics"
                   },
                   {
-                    "course_code": "COSC 418",
-                    "title": "Ethical and Societal Concerns of Computer Scientists"
+                    "courseCode": "COSC 418",
+                    "courseTitle": "Ethical and Societal Concerns of Computer Scientists"
                   },
                   {
-                    "course_code": "ENGL 301",
-                    "title": "Rhetoric and Science"
+                    "courseCode": "ENGL 301",
+                    "courseTitle": "Rhetoric and Science"
                   },
                   {
-                    "course_code": "ENGL 305",
-                    "title": "Ethical Issues in Literature"
+                    "courseCode": "ENGL 305",
+                    "courseTitle": "Ethical Issues in Literature"
                   },
                   {
-                    "course_code": "FMST 325",
-                    "title": "Ethics in Human Service"
+                    "courseCode": "FMST 325",
+                    "courseTitle": "Ethics in Human Service"
                   },
                   {
-                    "course_code": "HCMN 441",
-                    "title": "Legal and Ethical Issues in Health Administration"
+                    "courseCode": "HCMN 441",
+                    "courseTitle": "Legal and Ethical Issues in Health Administration"
                   },
                   {
-                    "course_code": "HIST 200",
-                    "title": "Introduction to Human Rights"
+                    "courseCode": "HIST 200",
+                    "courseTitle": "Introduction to Human Rights"
                   },
                   {
-                    "course_code": "HIST 205",
-                    "title": "Ethical Perspectives in History"
+                    "courseCode": "HIST 205",
+                    "courseTitle": "Ethical Perspectives in History"
                   },
                   {
-                    "course_code": "HIST 330",
-                    "title": "Ethical Dilemmas in the History of Science and Technology"
+                    "courseCode": "HIST 330",
+                    "courseTitle": "Ethical Dilemmas in the History of Science and Technology"
                   },
                   {
-                    "course_code": "HONR 345",
-                    "title": "Honors Seminar in Ethical Issues and Perspectives"
+                    "courseCode": "HONR 345",
+                    "courseTitle": "Honors Seminar in Ethical Issues and Perspectives"
                   },
                   {
-                    "course_code": "IDHP 325",
-                    "title": "Ethics for the Healthcare Professional"
+                    "courseCode": "IDHP 325",
+                    "courseTitle": "Ethics for the Healthcare Professional"
                   },
                   {
-                    "course_code": "LIBR 300",
-                    "title": "The Information Process"
+                    "courseCode": "LIBR 300",
+                    "courseTitle": "The Information Process"
                   },
                   {
-                    "course_code": "MNGT 482",
-                    "title": "Business Ethics and Sustainability"
+                    "courseCode": "MNGT 482",
+                    "courseTitle": "Business Ethics and Sustainability"
                   },
                   {
-                    "course_code": "MUSC 355",
-                    "title": "Ethics Issues and Perspectives in Music"
+                    "courseCode": "MUSC 355",
+                    "courseTitle": "Ethics Issues and Perspectives in Music"
                   },
                   {
-                    "course_code": "PHIL 103",
-                    "title": "Introduction to Ethics"
+                    "courseCode": "PHIL 103",
+                    "courseTitle": "Introduction to Ethics"
                   },
                   {
-                    "course_code": "PHIL 212",
-                    "title": "Honors: Special Studies in Philosophy"
+                    "courseCode": "PHIL 212",
+                    "courseTitle": "Honors: Special Studies in Philosophy"
                   },
                   {
-                    "course_code": "PHIL 255",
-                    "title": "Environmental Ethics"
+                    "courseCode": "PHIL 255",
+                    "courseTitle": "Environmental Ethics"
                   },
                   {
-                    "course_code": "PHIL 340",
-                    "title": "Plato's Ethics"
+                    "courseCode": "PHIL 340",
+                    "courseTitle": "Plato's Ethics"
                   },
                   {
-                    "course_code": "PHIL 342",
-                    "title": "What Makes Us Moral"
+                    "courseCode": "PHIL 342",
+                    "courseTitle": "What Makes Us Moral"
                   },
                   {
-                    "course_code": "PHIL 361",
-                    "title": "Biomedical Ethics"
+                    "courseCode": "PHIL 361",
+                    "courseTitle": "Biomedical Ethics"
                   },
                   {
-                    "course_code": "PHIL 371",
-                    "title": "Business Ethics"
+                    "courseCode": "PHIL 371",
+                    "courseTitle": "Business Ethics"
                   },
                   {
-                    "course_code": "RLST 305",
-                    "title": "Faith Perspectives in Medical Ethics"
+                    "courseCode": "RLST 305",
+                    "courseTitle": "Faith Perspectives in Medical Ethics"
                   },
                   {
-                    "course_code": "RLST 310",
-                    "title": "Jewish Law and Ethics"
+                    "courseCode": "RLST 310",
+                    "courseTitle": "Jewish Law and Ethics"
                   },
                   {
-                    "course_code": "RLST 313",
-                    "title": "Islamic Ethics"
+                    "courseCode": "RLST 313",
+                    "courseTitle": "Islamic Ethics"
                   },
                   {
-                    "course_code": "SCED 304",
-                    "title": "Education, Ethics and Change"
+                    "courseCode": "SCED 304",
+                    "courseTitle": "Education, Ethics and Change"
                   },
                   {
-                    "course_code": "THEA 310",
-                    "title": "Theater for Social Change"
+                    "courseCode": "THEA 310",
+                    "courseTitle": "Theater for Social Change"
                   },
                   {
-                    "course_code": "WMST 382",
-                    "title": "Christian Sexual Ethics"
+                    "courseCode": "WMST 382",
+                    "courseTitle": "Christian Sexual Ethics"
                   },
                   {
-                    "course_code": "WMST 383",
-                    "title": "Animal Rights, Human Rights"
+                    "courseCode": "WMST 383",
+                    "courseTitle": "Animal Rights, Human Rights"
                   }
                 ]
               },
               {
                 "core_number": 10,
-                "title": "METROPOLITAN PERSPECTIVES",
+                "coreTitle": "METROPOLITAN PERSPECTIVES",
                 "units": 3,
                 "description": "Courses in Metropolitan Perspectives examine and explore the metropolis (as broadly conceived) in its past and present complexities. The category includes courses that describe characteristics of specific places, like the Baltimore-Washington metropolitan areas, or that describe characteristics or dynamics of metropolises in general, whether in the US or in other countries, whether contemporary or historic, through the lens of an appropriate discipline.",
                 "note": "Courses from Core 10 are considered as a discipline in the social and behavioral sciences regardless of the subject code.",
                 "courses": [
                   {
-                    "course_code": "EDUC 202",
-                    "title": "Historical and Contemporary Perspectives: America's Urban Schools"
+                    "courseCode": "EDUC 202",
+                    "courseTitle": "Historical and Contemporary Perspectives: America's Urban Schools"
                   },
                   {
-                    "course_code": "EDUC 204",
-                    "title": "Honors Historical and Contemporary Perspectives: America's Urban Schools"
+                    "courseCode": "EDUC 204",
+                    "courseTitle": "Honors Historical and Contemporary Perspectives: America's Urban Schools"
                   },
                   {
-                    "course_code": "EMF 215",
-                    "title": "City Cinema"
+                    "courseCode": "EMF 215",
+                    "courseTitle": "City Cinema"
                   },
                   {
-                    "course_code": "ENGL 347",
-                    "title": "Cities in World Literature Written in English"
+                    "courseCode": "ENGL 347",
+                    "courseTitle": "Cities in World Literature Written in English"
                   },
                   {
-                    "course_code": "FIN 202",
-                    "title": "Perspectives on Money"
+                    "courseCode": "FIN 202",
+                    "courseTitle": "Perspectives on Money"
                   },
                   {
-                    "course_code": "FMST 201",
-                    "title": "Family Resources"
+                    "courseCode": "FMST 201",
+                    "courseTitle": "Family Resources"
                   },
                   {
-                    "course_code": "GEOG 251",
-                    "title": "Introduction to Urban Planning"
+                    "courseCode": "GEOG 251",
+                    "courseTitle": "Introduction to Urban Planning"
                   },
                   {
-                    "course_code": "HIST 202",
-                    "title": "Cities of the Ancient World"
+                    "courseCode": "HIST 202",
+                    "courseTitle": "Cities of the Ancient World"
                   },
                   {
-                    "course_code": "HIST 203",
-                    "title": "Seven Wonders of the Ancient World"
+                    "courseCode": "HIST 203",
+                    "courseTitle": "Seven Wonders of the Ancient World"
                   },
                   {
-                    "course_code": "HIST 210",
-                    "title": "Urban Asia: Past and Present"
+                    "courseCode": "HIST 210",
+                    "courseTitle": "Urban Asia: Past and Present"
                   },
                   {
-                    "course_code": "HIST 337",
-                    "title": "History of Baltimore: From Mobtown to Charm City"
+                    "courseCode": "HIST 337",
+                    "courseTitle": "History of Baltimore: From Mobtown to Charm City"
                   },
                   {
-                    "course_code": "HIST 338",
-                    "title": "The Middle East: An Urban Perspective"
+                    "courseCode": "HIST 338",
+                    "courseTitle": "The Middle East: An Urban Perspective"
                   },
                   {
-                    "course_code": "HIST 375",
-                    "title": "The City in American History"
+                    "courseCode": "HIST 375",
+                    "courseTitle": "The City in American History"
                   },
                   {
-                    "course_code": "HIST 390",
-                    "title": "Medieval Cities of Europe: a Comparative History"
+                    "courseCode": "HIST 390",
+                    "courseTitle": "Medieval Cities of Europe: a Comparative History"
                   },
                   {
-                    "course_code": "HONR 229",
-                    "title": "Honors Seminar in Metropolitan Perspectives"
+                    "courseCode": "HONR 229",
+                    "courseTitle": "Honors Seminar in Metropolitan Perspectives"
                   },
                   {
-                    "course_code": "HONR 290",
-                    "title": "Honors Research Seminar on Water and Urban Environments"
+                    "courseCode": "HONR 290",
+                    "courseTitle": "Honors Research Seminar on Water and Urban Environments"
                   },
                   {
-                    "course_code": "HLTH 350",
-                    "title": "Urban Food Systems"
+                    "courseCode": "HLTH 350",
+                    "courseTitle": "Urban Food Systems"
                   },
                   {
-                    "course_code": "IDFA 201",
-                    "title": "American Vision: Baltimore Arts"
+                    "courseCode": "IDFA 201",
+                    "courseTitle": "American Vision: Baltimore Arts"
                   },
                   {
-                    "course_code": "ITEC 201",
-                    "title": "Metropolitan Information Technology Infrastructure"
+                    "courseCode": "ITEC 201",
+                    "courseTitle": "Metropolitan Information Technology Infrastructure"
                   },
                   {
-                    "course_code": "KNES 320",
-                    "title": "Culture, Health, and the City"
+                    "courseCode": "KNES 320",
+                    "courseTitle": "Culture, Health, and the City"
                   },
                   {
-                    "course_code": "LING 330",
-                    "title": "Sociolinguis Diversity in the City"
+                    "courseCode": "LING 330",
+                    "courseTitle": "Sociolinguis Diversity in the City"
                   },
                   {
-                    "course_code": "MTRO 101",
-                    "title": "Introduction to Metropolitan Studies"
+                    "courseCode": "MTRO 101",
+                    "courseTitle": "Introduction to Metropolitan Studies"
                   },
                   {
-                    "course_code": "MUSC 117",
-                    "title": "Sound of the City: Music in Urban Spaces"
+                    "courseCode": "MUSC 117",
+                    "courseTitle": "Sound of the City: Music in Urban Spaces"
                   },
                   {
-                    "course_code": "PHIL 260",
-                    "title": "Philosophy of the Prison Industrial Complex"
+                    "courseCode": "PHIL 260",
+                    "courseTitle": "Philosophy of the Prison Industrial Complex"
                   },
                   {
-                    "course_code": "PHIL 290",
-                    "title": "Topics on Philosophy of the City"
+                    "courseCode": "PHIL 290",
+                    "courseTitle": "Topics on Philosophy of the City"
                   },
                   {
-                    "course_code": "POSC 304",
-                    "title": "Politics of Metropolitan Growth and Change"
+                    "courseCode": "POSC 304",
+                    "courseTitle": "Politics of Metropolitan Growth and Change"
                   },
                   {
-                    "course_code": "POSC 305",
-                    "title": "Urban Government and Politics"
+                    "courseCode": "POSC 305",
+                    "courseTitle": "Urban Government and Politics"
                   }
                 ]
               },
               {
                 "core_number": 11,
-                "title": "UNITED STATES AS A NATION",
+                "coreTitle": "UNITED STATES AS A NATION",
                 "units": 3,
                 "description": "Courses addressing The United States as a Nation explore the institutions, history, culture, or traditions of the United States with an emphasis on addressing through a particular subject matter the broader experience of the nation as a whole.",
                 "courses": [
                   {
-                    "course_code": "AMST 201",
-                    "title": "Introduction to American Studies"
+                    "courseCode": "AMST 201",
+                    "courseTitle": "Introduction to American Studies"
                   },
                   {
-                    "course_code": "ANTH 209",
-                    "title": "Anthropology of American Culture"
+                    "courseCode": "ANTH 209",
+                    "courseTitle": "Anthropology of American Culture"
                   },
                   {
-                    "course_code": "ARTH 113",
-                    "title": "Myths and Stories in American Art"
+                    "courseCode": "ARTH 113",
+                    "courseTitle": "Myths and Stories in American Art"
                   },
                   {
-                    "course_code": "CLST 201",
-                    "title": "Introduction to Cultural Studies"
+                    "courseCode": "CLST 201",
+                    "courseTitle": "Introduction to Cultural Studies"
                   },
                   {
-                    "course_code": "CLST 202",
-                    "title": "Honors Introduction to Cultural Studies"
+                    "courseCode": "CLST 202",
+                    "courseTitle": "Honors Introduction to Cultural Studies"
                   },
                   {
-                    "course_code": "CRMJ 254",
-                    "title": "Introduction to Criminal Justice"
+                    "courseCode": "CRMJ 254",
+                    "courseTitle": "Introduction to Criminal Justice"
                   },
                   {
-                    "course_code": "CRMJ 255",
-                    "title": "Honors Introductions to Criminal Justice"
+                    "courseCode": "CRMJ 255",
+                    "courseTitle": "Honors Introductions to Criminal Justice"
                   },
                   {
-                    "course_code": "DANC 127",
-                    "title": "Intro to Dance: American Experience"
+                    "courseCode": "DANC 127",
+                    "courseTitle": "Intro to Dance: American Experience"
                   },
                   {
-                    "course_code": "ENGL 238",
-                    "title": "Survey of American Literature"
+                    "courseCode": "ENGL 238",
+                    "courseTitle": "Survey of American Literature"
                   },
                   {
-                    "course_code": "FMST 315",
-                    "title": "American Families on Television: Representation and Reality"
+                    "courseCode": "FMST 315",
+                    "courseTitle": "American Families on Television: Representation and Reality"
                   },
                   {
-                    "course_code": "HIST 145",
-                    "title": "History of the United States to the Civil War"
+                    "courseCode": "HIST 145",
+                    "courseTitle": "History of the United States to the Civil War"
                   },
                   {
-                    "course_code": "HIST 146",
-                    "title": "History of the United States Since the Civil War"
+                    "courseCode": "HIST 146",
+                    "courseTitle": "History of the United States Since the Civil War"
                   },
                   {
-                    "course_code": "HIST 147",
-                    "title": "Honors History of the United States to the Civil War"
+                    "courseCode": "HIST 147",
+                    "courseTitle": "Honors History of the United States to the Civil War"
                   },
                   {
-                    "course_code": "HIST 148",
-                    "title": "Honors History of the United States Since the Civil War"
+                    "courseCode": "HIST 148",
+                    "courseTitle": "Honors History of the United States Since the Civil War"
                   },
                   {
-                    "course_code": "HLTH 101",
-                    "title": "Wellness for a Diverse Society"
+                    "courseCode": "HLTH 101",
+                    "courseTitle": "Wellness for a Diverse Society"
                   },
                   {
-                    "course_code": "HLTH 102",
-                    "title": "Honors Wellness for a Diverse Society"
+                    "courseCode": "HLTH 102",
+                    "courseTitle": "Honors Wellness for a Diverse Society"
                   },
                   {
-                    "course_code": "HLTH 207",
-                    "title": "Health Care in the U.S."
+                    "courseCode": "HLTH 207",
+                    "courseTitle": "Health Care in the U.S."
                   },
                   {
-                    "course_code": "HLTH 217",
-                    "title": "Honors Health Care in the U.S"
+                    "courseCode": "HLTH 217",
+                    "courseTitle": "Honors Health Care in the U.S"
                   },
                   {
-                    "course_code": "HONR 230",
-                    "title": "Honors Seminar in the United States as a Nation"
+                    "courseCode": "HONR 230",
+                    "courseTitle": "Honors Seminar in the United States as a Nation"
                   },
                   {
-                    "course_code": "KNES 235",
-                    "title": "Foundations of Fitness and Wellness"
+                    "courseCode": "KNES 235",
+                    "courseTitle": "Foundations of Fitness and Wellness"
                   },
                   {
-                    "course_code": "KNES 251",
-                    "title": "History of Sport in America"
+                    "courseCode": "KNES 251",
+                    "courseTitle": "History of Sport in America"
                   },
                   {
-                    "course_code": "LEGL 225",
-                    "title": "Legal Environment of Business"
+                    "courseCode": "LEGL 225",
+                    "courseTitle": "Legal Environment of Business"
                   },
                   {
-                    "course_code": "MUSC 111",
-                    "title": "Introduction to Music in the U.S."
+                    "courseCode": "MUSC 111",
+                    "courseTitle": "Introduction to Music in the U.S."
                   },
                   {
-                    "course_code": "MUSC 123",
-                    "title": "Jazz History for Non-Majors"
+                    "courseCode": "MUSC 123",
+                    "courseTitle": "Jazz History for Non-Majors"
                   },
                   {
-                    "course_code": "MUSC 125",
-                    "title": "Honors History of Jazz for Non-Majors"
+                    "courseCode": "MUSC 125",
+                    "courseTitle": "Honors History of Jazz for Non-Majors"
                   },
                   {
-                    "course_code": "MUSC 201",
-                    "title": "Music in the United States"
+                    "courseCode": "MUSC 201",
+                    "courseTitle": "Music in the United States"
                   },
                   {
-                    "course_code": "MUSC 204",
-                    "title": "Hip-Hop Music and Culture"
+                    "courseCode": "MUSC 204",
+                    "courseTitle": "Hip-Hop Music and Culture"
                   },
                   {
-                    "course_code": "POSC 103",
-                    "title": "American National Government"
+                    "courseCode": "POSC 103",
+                    "courseTitle": "American National Government"
                   },
                   {
-                    "course_code": "POSC 207",
-                    "title": "State Government"
+                    "courseCode": "POSC 207",
+                    "courseTitle": "State Government"
                   },
                   {
-                    "course_code": "POSC 209",
-                    "title": "Introduction to Law"
+                    "courseCode": "POSC 209",
+                    "courseTitle": "Introduction to Law"
                   },
                   {
-                    "course_code": "POSC 212",
-                    "title": "Honors in Political Science"
+                    "courseCode": "POSC 212",
+                    "courseTitle": "Honors in Political Science"
                   },
                   {
-                    "course_code": "POSC 343",
-                    "title": "African-American Politics"
+                    "courseCode": "POSC 343",
+                    "courseTitle": "African-American Politics"
                   },
                   {
-                    "course_code": "RLST 204",
-                    "title": "Christianities in America"
+                    "courseCode": "RLST 204",
+                    "courseTitle": "Christianities in America"
                   },
                   {
-                    "course_code": "RLST 225",
-                    "title": "American Jewish Humor"
+                    "courseCode": "RLST 225",
+                    "courseTitle": "American Jewish Humor"
                   },
                   {
-                    "course_code": "RLST 320",
-                    "title": "American Religions"
+                    "courseCode": "RLST 320",
+                    "courseTitle": "American Religions"
                   },
                   {
-                    "course_code": "SOCI 210",
-                    "title": "Sociology of Sport"
+                    "courseCode": "SOCI 210",
+                    "courseTitle": "Sociology of Sport"
                   },
                   {
-                    "course_code": "THEA 103",
-                    "title": "Introduction to American Theater"
+                    "courseCode": "THEA 103",
+                    "courseTitle": "Introduction to American Theater"
                   },
                   {
-                    "course_code": "WMST 235",
-                    "title": "American Women and Popular Culture"
+                    "courseCode": "WMST 235",
+                    "courseTitle": "American Women and Popular Culture"
                   }
                 ]
               },
               {
-                "course_code": "TSEM 190",
-                "title": "Honors Towson Seminar"
+                "courseCode": "TSEM 190",
+                "courseTitle": "Honors Towson Seminar"
               }
             ]
           },
           {
             "core_number": 9,
-            "title": "ADVANCED WRITING SEMINAR",
+            "coreTitle": "ADVANCED WRITING SEMINAR",
             "units": "3-4",
             "description": "Courses in this category will address (1) the discourse models and practices important to a specific discipline and (2) techniques of formatting and reporting, validation and documentation, required to write with authority and authenticity within the discipline.",
             "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used unless course is a requirement for the major.",
             "courses": [
               {
-                "course_code": "AADS 405",
-                "title": "Research Methods in Adult Disability Studies"
+                "courseCode": "AADS 405",
+                "courseTitle": "Research Methods in Adult Disability Studies"
               },
               {
-                "course_code": "AHLT 440",
-                "title": "Professional Issues in Allied Health"
+                "courseCode": "AHLT 440",
+                "courseTitle": "Professional Issues in Allied Health"
               },
               {
-                "course_code": "ANTH 401",
-                "title": "Anthropological Theory"
+                "courseCode": "ANTH 401",
+                "courseTitle": "Anthropological Theory"
               },
               {
-                "course_code": "ART 351",
-                "title": "Writing About Art"
+                "courseCode": "ART 351",
+                "courseTitle": "Writing About Art"
               },
               {
-                "course_code": "BIOL 381",
-                "title": "Writing in the Biological Sciences"
+                "courseCode": "BIOL 381",
+                "courseTitle": "Writing in the Biological Sciences"
               },
               {
-                "course_code": "BUSX 301",
-                "title": "Business Communications"
+                "courseCode": "BUSX 301",
+                "courseTitle": "Business Communications"
               },
               {
-                "course_code": "CHEM 301",
-                "title": "Professional Ethics for Scientists"
+                "courseCode": "CHEM 301",
+                "courseTitle": "Professional Ethics for Scientists"
               },
               {
-                "course_code": "CLST 300",
-                "title": "Methods of Cultural Inquiry"
+                "courseCode": "CLST 300",
+                "courseTitle": "Methods of Cultural Inquiry"
               },
               {
-                "course_code": "COMM 300",
-                "title": "Research Methods"
+                "courseCode": "COMM 300",
+                "courseTitle": "Research Methods"
               },
               {
-                "course_code": "DANC 321",
-                "title": "Responding to Dance"
+                "courseCode": "DANC 321",
+                "courseTitle": "Responding to Dance"
               },
               {
-                "course_code": "ECED 422",
-                "title": "Writing Techniques for Teachers in Early Childhood Education"
+                "courseCode": "ECED 422",
+                "courseTitle": "Writing Techniques for Teachers in Early Childhood Education"
               },
               {
-                "course_code": "EDUC 301",
-                "title": "Writing and Communication Skills for Teachers"
+                "courseCode": "EDUC 301",
+                "courseTitle": "Writing and Communication Skills for Teachers"
               },
               {
-                "course_code": "ELED 320",
-                "title": "Writing for Elementary Educators"
+                "courseCode": "ELED 320",
+                "courseTitle": "Writing for Elementary Educators"
               },
               {
-                "course_code": "EMF 377",
-                "title": "Broadcast/Film Writing"
+                "courseCode": "EMF 377",
+                "courseTitle": "Broadcast/Film Writing"
               },
               {
-                "course_code": "ENGL 310",
-                "title": "Writing Argument"
+                "courseCode": "ENGL 310",
+                "courseTitle": "Writing Argument"
               },
               {
-                "course_code": "ENGL 313",
-                "title": "Academic Essay"
+                "courseCode": "ENGL 313",
+                "courseTitle": "Academic Essay"
               },
               {
-                "course_code": "ENGL 314",
-                "title": "Teaching Writing"
+                "courseCode": "ENGL 314",
+                "courseTitle": "Teaching Writing"
               },
               {
-                "course_code": "ENGL 316",
-                "title": "Writing About Literature"
+                "courseCode": "ENGL 316",
+                "courseTitle": "Writing About Literature"
               },
               {
-                "course_code": "ENGL 317",
-                "title": "Writing for Business and Industry"
+                "courseCode": "ENGL 317",
+                "courseTitle": "Writing for Business and Industry"
               },
               {
-                "course_code": "ENGL 318",
-                "title": "Technical and Scientific Writing"
+                "courseCode": "ENGL 318",
+                "courseTitle": "Technical and Scientific Writing"
               },
               {
-                "course_code": "FMST 485",
-                "title": "Research Methods in Family Studies"
+                "courseCode": "FMST 485",
+                "courseTitle": "Research Methods in Family Studies"
               },
               {
-                "course_code": "GEOG 383",
-                "title": "Natural Resources and Society: a Geographic Perspective"
+                "courseCode": "GEOG 383",
+                "courseTitle": "Natural Resources and Society: a Geographic Perspective"
               },
               {
-                "course_code": "GEOG 401",
-                "title": "Growth of Geographic Thought"
+                "courseCode": "GEOG 401",
+                "courseTitle": "Growth of Geographic Thought"
               },
               {
-                "course_code": "HIST 300",
-                "title": "Introduction to Historical Study"
+                "courseCode": "HIST 300",
+                "courseTitle": "Introduction to Historical Study"
               },
               {
-                "course_code": "HLTH 315",
-                "title": "Curriculum and Planning"
+                "courseCode": "HLTH 315",
+                "courseTitle": "Curriculum and Planning"
               },
               {
-                "course_code": "KNES 351",
-                "title": "Philosophy: The Sport Experience"
+                "courseCode": "KNES 351",
+                "courseTitle": "Philosophy: The Sport Experience"
               },
               {
-                "course_code": "KNES 353",
-                "title": "Sport & Society"
+                "courseCode": "KNES 353",
+                "courseTitle": "Sport & Society"
               },
               {
-                "course_code": "KNES 354",
-                "title": "Honors Sport and Society"
+                "courseCode": "KNES 354",
+                "courseTitle": "Honors Sport and Society"
               },
               {
-                "course_code": "KNES 417",
-                "title": "Organization and Administration of Athletic Training"
+                "courseCode": "KNES 417",
+                "courseTitle": "Organization and Administration of Athletic Training"
               },
               {
-                "course_code": "KNES 469",
-                "title": "Advanced Writing for Research in Exercise Science"
+                "courseCode": "KNES 469",
+                "courseTitle": "Advanced Writing for Research in Exercise Science"
               },
               {
-                "course_code": "LING 320",
-                "title": "Language Acquisition"
+                "courseCode": "LING 320",
+                "courseTitle": "Language Acquisition"
               },
               {
-                "course_code": "MATH 310",
-                "title": "Functions and Modeling for Secondary School Teachers"
+                "courseCode": "MATH 310",
+                "courseTitle": "Functions and Modeling for Secondary School Teachers"
               },
               {
-                "course_code": "MCOM 356",
-                "title": "Feature Writing"
+                "courseCode": "MCOM 356",
+                "courseTitle": "Feature Writing"
               },
               {
-                "course_code": "MCOM 357",
-                "title": "Public Relations Writing"
+                "courseCode": "MCOM 357",
+                "courseTitle": "Public Relations Writing"
               },
               {
-                "course_code": "MUED 311",
-                "title": "Research and Assessment Methods in Music Education"
+                "courseCode": "MUED 311",
+                "courseTitle": "Research and Assessment Methods in Music Education"
               },
               {
-                "course_code": "NURS 333",
-                "title": "Writing for Evidence-Based Practice: Issues in Professional Nursing"
+                "courseCode": "NURS 333",
+                "courseTitle": "Writing for Evidence-Based Practice: Issues in Professional Nursing"
               },
               {
-                "course_code": "OCTH 430",
-                "title": "Research Methods in Occupational Therapy"
+                "courseCode": "OCTH 430",
+                "courseTitle": "Research Methods in Occupational Therapy"
               },
               {
-                "course_code": "PHIL 460",
-                "title": "Writing Seminar in Philosophical Studies"
+                "courseCode": "PHIL 460",
+                "courseTitle": "Writing Seminar in Philosophical Studies"
               },
               {
-                "course_code": "PHSC 312",
-                "title": "History of Science"
+                "courseCode": "PHSC 312",
+                "courseTitle": "History of Science"
               },
               {
-                "course_code": "POSC 376",
-                "title": "Writing for Public Administration"
+                "courseCode": "POSC 376",
+                "courseTitle": "Writing for Public Administration"
               },
               {
-                "course_code": "PSYC 313",
-                "title": "Research Design and Statistical Analysis in Psychology II"
+                "courseCode": "PSYC 313",
+                "courseTitle": "Research Design and Statistical Analysis in Psychology II"
               },
               {
-                "course_code": "PSYC 314",
-                "title": "Research Methods in Psychology"
+                "courseCode": "PSYC 314",
+                "courseTitle": "Research Methods in Psychology"
               },
               {
-                "course_code": "RLST 354",
-                "title": "Religion and Science"
+                "courseCode": "RLST 354",
+                "courseTitle": "Religion and Science"
               },
               {
-                "course_code": "RLST 411",
-                "title": "The American Jewish Experience"
+                "courseCode": "RLST 411",
+                "courseTitle": "The American Jewish Experience"
               },
               {
-                "course_code": "SOCI 300",
-                "title": "Sociological Analysis"
+                "courseCode": "SOCI 300",
+                "courseTitle": "Sociological Analysis"
               },
               {
-                "course_code": "SPPA 417",
-                "title": "Research and Clinical Writing in Communications Disorders"
+                "courseCode": "SPPA 417",
+                "courseTitle": "Research and Clinical Writing in Communications Disorders"
               },
               {
-                "course_code": "THEA 307",
-                "title": "Theories of Theatre"
+                "courseCode": "THEA 307",
+                "courseTitle": "Theories of Theatre"
               },
               {
-                "course_code": "WMST 333",
-                "title": "Women's Words, Women's Lives"
+                "courseCode": "WMST 333",
+                "courseTitle": "Women's Words, Women's Lives"
               }
             ]
           },
           {
             "core_number": 2,
-            "title": "ENGLISH COMPOSITION",
+            "coreTitle": "ENGLISH COMPOSITION",
             "units": 3,
             "description": "This course focuses on exploring ways of writing and thinking in the branches of knowledge and on developing rhetorical strategies for successful college-level expository writing. Requires grade of C or better to fulfill Core requirement.",
             "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used unless ENGL 102(109) is a requirement for the major.",
             "courses": [
               {
-                "course_code": "ENGL 102",
-                "title": "Writing for a Liberal Education"
+                "courseCode": "ENGL 102",
+                "courseTitle": "Writing for a Liberal Education"
               },
               {
-                "course_code": "ENGL 190",
-                "title": "Honors Writing Seminar"
+                "courseCode": "ENGL 190",
+                "courseTitle": "Honors Writing Seminar"
               }
             ]
           },
           {
             "core_number": 3,
-            "title": "MATHEMATICS",
+            "coreTitle": "MATHEMATICS",
             "units": 3,
             "description": "Requires skills at the level of college algebra or above. Treat concepts and skills in the mathematical sciences and emphasize both theoretical foundations and problem-solving applications such as finite mathematics, statistics, discrete mathematics, and mathematical survey courses.",
             "courses": [
               {
-                "course_code": "ECON 205",
-                "title": "Statistics for Business and Economics I"
+                "courseCode": "ECON 205",
+                "courseTitle": "Statistics for Business and Economics I"
               },
               {
-                "course_code": "MATH 105",
-                "title": "Mathematical Ideas"
+                "courseCode": "MATH 105",
+                "courseTitle": "Mathematical Ideas"
               },
               {
-                "course_code": "MATH 109",
-                "title": "Transition to Algebra for Applications"
+                "courseCode": "MATH 109",
+                "courseTitle": "Transition to Algebra for Applications"
               },
               {
-                "course_code": "MATH 111",
-                "title": "Finite Mathematics"
+                "courseCode": "MATH 111",
+                "courseTitle": "Finite Mathematics"
               },
               {
-                "course_code": "MATH 115",
-                "title": "College Algebra"
+                "courseCode": "MATH 115",
+                "courseTitle": "College Algebra"
               },
               {
-                "course_code": "MATH 119",
-                "title": "Pre-Calculus"
+                "courseCode": "MATH 119",
+                "courseTitle": "Pre-Calculus"
               },
               {
-                "course_code": "MATH 205",
-                "title": "Mathematical Concepts & Structure II"
+                "courseCode": "MATH 205",
+                "courseTitle": "Mathematical Concepts & Structure II"
               },
               {
-                "course_code": "MATH 211",
-                "title": "Calculus for Application"
+                "courseCode": "MATH 211",
+                "courseTitle": "Calculus for Application"
               },
               {
-                "course_code": "MATH 231",
-                "title": "Basic Statistics"
+                "courseCode": "MATH 231",
+                "courseTitle": "Basic Statistics"
               },
               {
-                "course_code": "MATH 233",
-                "title": "Honors Basic Statistics"
+                "courseCode": "MATH 233",
+                "courseTitle": "Honors Basic Statistics"
               },
               {
-                "course_code": "MATH 237",
-                "title": "Elementary Biostatistics"
+                "courseCode": "MATH 237",
+                "courseTitle": "Elementary Biostatistics"
               },
               {
-                "course_code": "MATH 273",
-                "title": "Calculus I"
+                "courseCode": "MATH 273",
+                "courseTitle": "Calculus I"
               },
               {
-                "course_code": "MATH 274",
-                "title": "Calculus II"
+                "courseCode": "MATH 274",
+                "courseTitle": "Calculus II"
               },
               {
-                "course_code": "MATH 283",
-                "title": "Honors Calculus I"
+                "courseCode": "MATH 283",
+                "courseTitle": "Honors Calculus I"
               },
               {
-                "course_code": "MATH 293",
-                "title": "Honors Seminar in Mathematics"
+                "courseCode": "MATH 293",
+                "courseTitle": "Honors Seminar in Mathematics"
               }
             ]
           },
           {
             "core_number": 4,
-            "title": "CREATIVITY & CREATIVE DEVELOPMENT",
+            "coreTitle": "CREATIVITY & CREATIVE DEVELOPMENT",
             "units": 3,
             "description": "Specific creative activity emphasizing symbolic, affective, and imaginative thinking in the creative activity and understanding the creative process through participating in it. Reflect current scholarship in the field, provide reference to theoretical frameworks and methods, and explore the critical standards central to the genre or medium.",
             "courses": [
               {
-                "course_code": "ART 102",
-                "title": "2D Process for Non-Art Majors"
+                "courseCode": "ART 102",
+                "courseTitle": "2D Process for Non-Art Majors"
               },
               {
-                "course_code": "ART 103",
-                "title": "2D Process"
+                "courseCode": "ART 103",
+                "courseTitle": "2D Process"
               },
               {
-                "course_code": "ART 106",
-                "title": "Drawing for Non-Majors"
+                "courseCode": "ART 106",
+                "courseTitle": "Drawing for Non-Majors"
               },
               {
-                "course_code": "ART 107",
-                "title": "Ceramics for Non-Art Majors"
+                "courseCode": "ART 107",
+                "courseTitle": "Ceramics for Non-Art Majors"
               },
               {
-                "course_code": "ART 109",
-                "title": "Sculpture for Non-Majors"
+                "courseCode": "ART 109",
+                "courseTitle": "Sculpture for Non-Majors"
               },
               {
-                "course_code": "ART 113",
-                "title": "Painting for Non-Majors"
+                "courseCode": "ART 113",
+                "courseTitle": "Painting for Non-Majors"
               },
               {
-                "course_code": "ART 114",
-                "title": "Sculpture: Wood and Metal for Non-Art Majors"
+                "courseCode": "ART 114",
+                "courseTitle": "Sculpture: Wood and Metal for Non-Art Majors"
               },
               {
-                "course_code": "ART 117",
-                "title": "Printmaking for Non-Art Majors"
+                "courseCode": "ART 117",
+                "courseTitle": "Printmaking for Non-Art Majors"
               },
               {
-                "course_code": "ART 118",
-                "title": "Jewelry for Non-Art Majors"
+                "courseCode": "ART 118",
+                "courseTitle": "Jewelry for Non-Art Majors"
               },
               {
-                "course_code": "ART 146",
-                "title": "Honors Drawing for Non-Art Majors"
+                "courseCode": "ART 146",
+                "courseTitle": "Honors Drawing for Non-Art Majors"
               },
               {
-                "course_code": "ART 147",
-                "title": "Silkscreen Printmaking for Non-Art Majors"
+                "courseCode": "ART 147",
+                "courseTitle": "Silkscreen Printmaking for Non-Art Majors"
               },
               {
-                "course_code": "ART 156",
-                "title": "Artist Books for Non-Art Majors"
+                "courseCode": "ART 156",
+                "courseTitle": "Artist Books for Non-Art Majors"
               },
               {
-                "course_code": "ART 157",
-                "title": "Letterpress for Non-Art Majors"
+                "courseCode": "ART 157",
+                "courseTitle": "Letterpress for Non-Art Majors"
               },
               {
-                "course_code": "ART 161",
-                "title": "Digital Object Design for Non-Art Majors"
+                "courseCode": "ART 161",
+                "courseTitle": "Digital Object Design for Non-Art Majors"
               },
               {
-                "course_code": "COMM 233",
-                "title": "Performing Literature"
+                "courseCode": "COMM 233",
+                "courseTitle": "Performing Literature"
               },
               {
-                "course_code": "COSC 109",
-                "title": "Computers and Creativity"
+                "courseCode": "COSC 109",
+                "courseTitle": "Computers and Creativity"
               },
               {
-                "course_code": "DANC 106",
-                "title": "Fundamentals of Dance Movement for Non-Majors"
+                "courseCode": "DANC 106",
+                "courseTitle": "Fundamentals of Dance Movement for Non-Majors"
               },
               {
-                "course_code": "DANC 235",
-                "title": "Dance Composition I"
+                "courseCode": "DANC 235",
+                "courseTitle": "Dance Composition I"
               },
               {
-                "course_code": "EMF 110",
-                "title": "Digital Storytelling for Non-Majors"
+                "courseCode": "EMF 110",
+                "courseTitle": "Digital Storytelling for Non-Majors"
               },
               {
-                "course_code": "ENGL 283",
-                "title": "Introduction to Creative Writing"
+                "courseCode": "ENGL 283",
+                "courseTitle": "Introduction to Creative Writing"
               },
               {
-                "course_code": "ENGL 311",
-                "title": "Writing Poetry"
+                "courseCode": "ENGL 311",
+                "courseTitle": "Writing Poetry"
               },
               {
-                "course_code": "ENGL 312",
-                "title": "Writing Fiction"
+                "courseCode": "ENGL 312",
+                "courseTitle": "Writing Fiction"
               },
               {
-                "course_code": "ENGL 315",
-                "title": "Writing Creative Non-Fiction"
+                "courseCode": "ENGL 315",
+                "courseTitle": "Writing Creative Non-Fiction"
               },
               {
-                "course_code": "ENGL 332",
-                "title": "Honors Writing Fiction"
+                "courseCode": "ENGL 332",
+                "courseTitle": "Honors Writing Fiction"
               },
               {
-                "course_code": "EPHY 155",
-                "title": "Engineering Design for Society"
+                "courseCode": "EPHY 155",
+                "courseTitle": "Engineering Design for Society"
               },
               {
-                "course_code": "HONR 225",
-                "title": "Honors Seminar in Creativity and Creative Development"
+                "courseCode": "HONR 225",
+                "courseTitle": "Honors Seminar in Creativity and Creative Development"
               },
               {
-                "course_code": "IDFA 203",
-                "title": "Creativity in Arts, Media, and Communication"
+                "courseCode": "IDFA 203",
+                "courseTitle": "Creativity in Arts, Media, and Communication"
               },
               {
-                "course_code": "MUSC 105",
-                "title": "Music Theory for Non-Majors"
+                "courseCode": "MUSC 105",
+                "courseTitle": "Music Theory for Non-Majors"
               },
               {
-                "course_code": "MUSC 116",
-                "title": "Songwriting and Basic Music Composition for Non-Majors"
+                "courseCode": "MUSC 116",
+                "courseTitle": "Songwriting and Basic Music Composition for Non-Majors"
               },
               {
-                "course_code": "MUSC 287",
-                "title": "Creative Music Technology"
+                "courseCode": "MUSC 287",
+                "courseTitle": "Creative Music Technology"
               },
               {
-                "course_code": "THEA 101",
-                "title": "Acting I"
+                "courseCode": "THEA 101",
+                "courseTitle": "Acting I"
               },
               {
-                "course_code": "THEA 102",
-                "title": "Honors Acting I"
+                "courseCode": "THEA 102",
+                "courseTitle": "Honors Acting I"
               },
               {
-                "course_code": "THEA 142",
-                "title": "Introduction to Theatre Design"
+                "courseCode": "THEA 142",
+                "courseTitle": "Introduction to Theatre Design"
               },
               {
-                "course_code": "THEA 204",
-                "title": "Creating Communities of Action"
+                "courseCode": "THEA 204",
+                "courseTitle": "Creating Communities of Action"
               }
             ]
           },
           {
             "core_number": 5,
-            "title": "ARTS & HUMANITIES",
+            "coreTitle": "ARTS & HUMANITIES",
             "units": 3,
             "description": "The arts examine aesthetics and the development of the aesthetic form. Courses in this area may include, but are not limited to fine, performing and studio art, appreciation of the arts, and history of the arts. All courses, including fine, performing and studio arts, will explore the relationship between theory and practice. The humanities examine the values and cultural heritage that establish the framework for inquiry into the meaning of life. Courses in the humanities may include but are not limited to, the language, history, literature, and philosophy of Western and other culture.",
             "requirements": "Must be different discipline than Core 4",
             "courses": [
               {
-                "course_code": "ARAB 101",
-                "title": "Arabic Elements I"
+                "courseCode": "ARAB 101",
+                "courseTitle": "Arabic Elements I"
               },
               {
-                "course_code": "ARAB 201",
-                "title": "Arabic Intermediate I"
+                "courseCode": "ARAB 201",
+                "courseTitle": "Arabic Intermediate I"
               },
               {
-                "course_code": "ARAB 301",
-                "title": "Arabic Composition and Conversation I"
+                "courseCode": "ARAB 301",
+                "courseTitle": "Arabic Composition and Conversation I"
               },
               {
-                "course_code": "ARTH 105",
-                "title": "Art in Culture"
+                "courseCode": "ARTH 105",
+                "courseTitle": "Art in Culture"
               },
               {
-                "course_code": "ARTH 109",
-                "title": "Art and the Human Body"
+                "courseCode": "ARTH 109",
+                "courseTitle": "Art and the Human Body"
               },
               {
-                "course_code": "ARTH 221",
-                "title": "Survey of Global Art I"
+                "courseCode": "ARTH 221",
+                "courseTitle": "Survey of Global Art I"
               },
               {
-                "course_code": "ARTH 222",
-                "title": "Survey of Global Art II"
+                "courseCode": "ARTH 222",
+                "courseTitle": "Survey of Global Art II"
               },
               {
-                "course_code": "CHNS 101",
-                "title": "Elementary Chinese I"
+                "courseCode": "CHNS 101",
+                "courseTitle": "Elementary Chinese I"
               },
               {
-                "course_code": "CHNS 201",
-                "title": "Intermediate Chinese I"
+                "courseCode": "CHNS 201",
+                "courseTitle": "Intermediate Chinese I"
               },
               {
-                "course_code": "CHNS 301",
-                "title": "Chinese Composition and Conversation I"
+                "courseCode": "CHNS 301",
+                "courseTitle": "Chinese Composition and Conversation I"
               },
               {
-                "course_code": "COMM 131",
-                "title": "Public Speaking"
+                "courseCode": "COMM 131",
+                "courseTitle": "Public Speaking"
               },
               {
-                "course_code": "COMM 132",
-                "title": "Honors Public Speaking"
+                "courseCode": "COMM 132",
+                "courseTitle": "Honors Public Speaking"
               },
               {
-                "course_code": "DANC 101",
-                "title": "The Alexander Technique"
+                "courseCode": "DANC 101",
+                "courseTitle": "The Alexander Technique"
               },
               {
-                "course_code": "DANC 105",
-                "title": "Movement Skills Enhancement for Men"
+                "courseCode": "DANC 105",
+                "courseTitle": "Movement Skills Enhancement for Men"
               },
               {
-                "course_code": "DANC 130",
-                "title": "Dance and Myth"
+                "courseCode": "DANC 130",
+                "courseTitle": "Dance and Myth"
               },
               {
-                "course_code": "DFST 104",
-                "title": "American Sign Language I"
+                "courseCode": "DFST 104",
+                "courseTitle": "American Sign Language I"
               },
               {
-                "course_code": "DFST 114",
-                "title": "Honors American Sign Language I"
+                "courseCode": "DFST 114",
+                "courseTitle": "Honors American Sign Language I"
               },
               {
-                "course_code": "EMF 313",
-                "title": "Film History"
+                "courseCode": "EMF 313",
+                "courseTitle": "Film History"
               },
               {
-                "course_code": "ENGL 205",
-                "title": "Shakespeare for Non-Majors"
+                "courseCode": "ENGL 205",
+                "courseTitle": "Shakespeare for Non-Majors"
               },
               {
-                "course_code": "ENGL 221",
-                "title": "British Literature to 1798"
+                "courseCode": "ENGL 221",
+                "courseTitle": "British Literature to 1798"
               },
               {
-                "course_code": "ENGL 222",
-                "title": "British Literature Since 1798"
+                "courseCode": "ENGL 222",
+                "courseTitle": "British Literature Since 1798"
               },
               {
-                "course_code": "ENGL 240",
-                "title": "Classics of the Western Heritage"
+                "courseCode": "ENGL 240",
+                "courseTitle": "Classics of the Western Heritage"
               },
               {
-                "course_code": "ENGL 243",
-                "title": "Introduction to Classical Mythology"
+                "courseCode": "ENGL 243",
+                "courseTitle": "Introduction to Classical Mythology"
               },
               {
-                "course_code": "ENGL 244",
-                "title": "World Folklore"
+                "courseCode": "ENGL 244",
+                "courseTitle": "World Folklore"
               },
               {
-                "course_code": "ENGL 261",
-                "title": "Elements of Poetry"
+                "courseCode": "ENGL 261",
+                "courseTitle": "Elements of Poetry"
               },
               {
-                "course_code": "ENGL 263",
-                "title": "Elements of Fiction"
+                "courseCode": "ENGL 263",
+                "courseTitle": "Elements of Fiction"
               },
               {
-                "course_code": "ENGL 290",
-                "title": "Honors Seminar in Literature"
+                "courseCode": "ENGL 290",
+                "courseTitle": "Honors Seminar in Literature"
               },
               {
-                "course_code": "FORL 101",
-                "title": "Intro Foreign Language I"
+                "courseCode": "FORL 101",
+                "courseTitle": "Intro Foreign Language I"
               },
               {
-                "course_code": "FORL 201",
-                "title": "Intermed Foreign Language I"
+                "courseCode": "FORL 201",
+                "courseTitle": "Intermed Foreign Language I"
               },
               {
-                "course_code": "FREN 101",
-                "title": "French Elements I"
+                "courseCode": "FREN 101",
+                "courseTitle": "French Elements I"
               },
               {
-                "course_code": "FREN 201",
-                "title": "French Intermediate I"
+                "courseCode": "FREN 201",
+                "courseTitle": "French Intermediate I"
               },
               {
-                "course_code": "FREN 301",
-                "title": "Advanced Conversation"
+                "courseCode": "FREN 301",
+                "courseTitle": "Advanced Conversation"
               },
               {
-                "course_code": "GERM 101",
-                "title": "German Elements I"
+                "courseCode": "GERM 101",
+                "courseTitle": "German Elements I"
               },
               {
-                "course_code": "GERM 201",
-                "title": "German Intermediate I"
+                "courseCode": "GERM 201",
+                "courseTitle": "German Intermediate I"
               },
               {
-                "course_code": "GERM 301",
-                "title": "German Composition and Conversation I"
+                "courseCode": "GERM 301",
+                "courseTitle": "German Composition and Conversation I"
               },
               {
-                "course_code": "GRK 103",
-                "title": "Ancient Greek Elements I"
+                "courseCode": "GRK 103",
+                "courseTitle": "Ancient Greek Elements I"
               },
               {
-                "course_code": "GRK 203",
-                "title": "Intermediate Ancient Greek I"
+                "courseCode": "GRK 203",
+                "courseTitle": "Intermediate Ancient Greek I"
               },
               {
-                "course_code": "HEBR 101",
-                "title": "Elements of Hebrew I"
+                "courseCode": "HEBR 101",
+                "courseTitle": "Elements of Hebrew I"
               },
               {
-                "course_code": "HEBR 103",
-                "title": "Biblical Hebrew I"
+                "courseCode": "HEBR 103",
+                "courseTitle": "Biblical Hebrew I"
               },
               {
-                "course_code": "HEBR 201",
-                "title": "Hebrew Intermediate I"
+                "courseCode": "HEBR 201",
+                "courseTitle": "Hebrew Intermediate I"
               },
               {
-                "course_code": "HEBR 203",
-                "title": "Biblical Hebrew III"
+                "courseCode": "HEBR 203",
+                "courseTitle": "Biblical Hebrew III"
               },
               {
-                "course_code": "HEBR 301",
-                "title": "Hebrew Composition and Conversation I"
+                "courseCode": "HEBR 301",
+                "courseTitle": "Hebrew Composition and Conversation I"
               },
               {
-                "course_code": "HIST 101",
-                "title": "Introduction to Ancient Civilization"
+                "courseCode": "HIST 101",
+                "courseTitle": "Introduction to Ancient Civilization"
               },
               {
-                "course_code": "HIST 102",
-                "title": "Europe: From the Age of Caeser to the Age of Calvin, First to Seventeenth Century"
+                "courseCode": "HIST 102",
+                "courseTitle": "Europe: From the Age of Caeser to the Age of Calvin, First to Seventeenth Century"
               },
               {
-                "course_code": "HIST 103",
-                "title": "History of European Civilization from 17th Century"
+                "courseCode": "HIST 103",
+                "courseTitle": "History of European Civilization from 17th Century"
               },
               {
-                "course_code": "HIST 206",
-                "title": "Introduction to Digital Humanities (only counts for Core if taken Fall 2024 or later)"
+                "courseCode": "HIST 206",
+                "courseTitle": "Introduction to Digital Humanities (only counts for Core if taken Fall 2024 or later)"
               },
               {
-                "course_code": "HONR 235",
-                "title": "Honors Seminar in Western Heritage Arts and Humanities"
+                "courseCode": "HONR 235",
+                "courseTitle": "Honors Seminar in Western Heritage Arts and Humanities"
               },
               {
-                "course_code": "ITAL 101",
-                "title": "Italian Elements I"
+                "courseCode": "ITAL 101",
+                "courseTitle": "Italian Elements I"
               },
               {
-                "course_code": "ITAL 111",
-                "title": "Italian Elements for Music"
+                "courseCode": "ITAL 111",
+                "courseTitle": "Italian Elements for Music"
               },
               {
-                "course_code": "ITAL 201",
-                "title": "Italian Intermediate I"
+                "courseCode": "ITAL 201",
+                "courseTitle": "Italian Intermediate I"
               },
               {
-                "course_code": "ITAL 301",
-                "title": "Italian Culture & Conversation"
+                "courseCode": "ITAL 301",
+                "courseTitle": "Italian Culture & Conversation"
               },
               {
-                "course_code": "JPNS 101",
-                "title": "Japanese Elements I"
+                "courseCode": "JPNS 101",
+                "courseTitle": "Japanese Elements I"
               },
               {
-                "course_code": "JPNS 201",
-                "title": "Japanese Intermediate I"
+                "courseCode": "JPNS 201",
+                "courseTitle": "Japanese Intermediate I"
               },
               {
-                "course_code": "JPNS 301",
-                "title": "Japanese Composition and Conversation I"
+                "courseCode": "JPNS 301",
+                "courseTitle": "Japanese Composition and Conversation I"
               },
               {
-                "course_code": "LATN 101",
-                "title": "Latin Elements I"
+                "courseCode": "LATN 101",
+                "courseTitle": "Latin Elements I"
               },
               {
-                "course_code": "LATN 201",
-                "title": "Latin Intermediate I"
+                "courseCode": "LATN 201",
+                "courseTitle": "Latin Intermediate I"
               },
               {
-                "course_code": "LATN 301",
-                "title": "Advanced Readings in Latin I"
+                "courseCode": "LATN 301",
+                "courseTitle": "Advanced Readings in Latin I"
               },
               {
-                "course_code": "MUSC 101",
-                "title": "Introduction to Music of the Western Heritage"
+                "courseCode": "MUSC 101",
+                "courseTitle": "Introduction to Music of the Western Heritage"
               },
               {
-                "course_code": "MUSC 114",
-                "title": "Music, Technology and Culture"
+                "courseCode": "MUSC 114",
+                "courseTitle": "Music, Technology and Culture"
               },
               {
-                "course_code": "MUSC 127",
-                "title": "Elements of the History of Rock Music"
+                "courseCode": "MUSC 127",
+                "courseTitle": "Elements of the History of Rock Music"
               },
               {
-                "course_code": "PHIL 101",
-                "title": "Introduction to Philosophy"
+                "courseCode": "PHIL 101",
+                "courseTitle": "Introduction to Philosophy"
               },
               {
-                "course_code": "PHIL 111",
-                "title": "Introduction to Logic"
+                "courseCode": "PHIL 111",
+                "courseTitle": "Introduction to Logic"
               },
               {
-                "course_code": "PHIL 221",
-                "title": "Ancient Greek Philosophy"
+                "courseCode": "PHIL 221",
+                "courseTitle": "Ancient Greek Philosophy"
               },
               {
-                "course_code": "PORT 101",
-                "title": "Portuguese Elements I"
+                "courseCode": "PORT 101",
+                "courseTitle": "Portuguese Elements I"
               },
               {
-                "course_code": "PORT 201",
-                "title": "Portuguese Intermediate I"
+                "courseCode": "PORT 201",
+                "courseTitle": "Portuguese Intermediate I"
               },
               {
-                "course_code": "PORT 301",
-                "title": "Composition and Conversation in Portuguese"
+                "courseCode": "PORT 301",
+                "courseTitle": "Composition and Conversation in Portuguese"
               },
               {
-                "course_code": "RLST 103",
-                "title": "Exploring Biblical Archeology"
+                "courseCode": "RLST 103",
+                "courseTitle": "Exploring Biblical Archeology"
               },
               {
-                "course_code": "RLST 201",
-                "title": "Introduction to the Hebrew Bible"
+                "courseCode": "RLST 201",
+                "courseTitle": "Introduction to the Hebrew Bible"
               },
               {
-                "course_code": "RLST 202",
-                "title": "Introduction to Christianity"
+                "courseCode": "RLST 202",
+                "courseTitle": "Introduction to Christianity"
               },
               {
-                "course_code": "RLST 211",
-                "title": "Introduction to Jewish Thought"
+                "courseCode": "RLST 211",
+                "courseTitle": "Introduction to Jewish Thought"
               },
               {
-                "course_code": "RLST 325",
-                "title": "Jewish Graphic Novels"
+                "courseCode": "RLST 325",
+                "courseTitle": "Jewish Graphic Novels"
               },
               {
-                "course_code": "RUSS 101",
-                "title": "Russian Elements I"
+                "courseCode": "RUSS 101",
+                "courseTitle": "Russian Elements I"
               },
               {
-                "course_code": "RUSS 201",
-                "title": "Russian Intermediate I"
+                "courseCode": "RUSS 201",
+                "courseTitle": "Russian Intermediate I"
               },
               {
-                "course_code": "RUSS 301",
-                "title": "Composition and Conversation I"
+                "courseCode": "RUSS 301",
+                "courseTitle": "Composition and Conversation I"
               },
               {
-                "course_code": "SEMS 250",
-                "title": "Perspectives in Science and Mathematics"
+                "courseCode": "SEMS 250",
+                "courseTitle": "Perspectives in Science and Mathematics"
               },
               {
-                "course_code": "SPAN 101",
-                "title": "Spanish Elements I"
+                "courseCode": "SPAN 101",
+                "courseTitle": "Spanish Elements I"
               },
               {
-                "course_code": "SPAN 201",
-                "title": "Spanish Intermediate I"
+                "courseCode": "SPAN 201",
+                "courseTitle": "Spanish Intermediate I"
               },
               {
-                "course_code": "SPAN 203",
-                "title": "Honors Spanish Intermediate I"
+                "courseCode": "SPAN 203",
+                "courseTitle": "Honors Spanish Intermediate I"
               },
               {
-                "course_code": "SPAN 301",
-                "title": "Composition and Conversation I"
+                "courseCode": "SPAN 301",
+                "courseTitle": "Composition and Conversation I"
               },
               {
-                "course_code": "SPAN 303",
-                "title": "Spanish for Heritage Speakers I"
+                "courseCode": "SPAN 303",
+                "courseTitle": "Spanish for Heritage Speakers I"
               },
               {
-                "course_code": "THEA 100",
-                "title": "Introduction to Theatre"
+                "courseCode": "THEA 100",
+                "courseTitle": "Introduction to Theatre"
               },
               {
-                "course_code": "THEA 242",
-                "title": "Costume, Dress and Society"
+                "courseCode": "THEA 242",
+                "courseTitle": "Costume, Dress and Society"
               }
             ]
           },
           {
             "core_number": 6,
-            "title": "SOCIAL & BEHAVIORAL SCIENCE",
+            "coreTitle": "SOCIAL & BEHAVIORAL SCIENCE",
             "units": 3,
             "description": "The social and behavioral sciences examine the psychology of individuals and the ways in which individuals, groups, or segments of society behave, function, and influence one another. They include, but are not limited to, subjects that focus on history and cultural diversity; on the concepts of groups, work, and political systems; on the applications of qualitative and quantitative data to social issues; and on the interdependence of individuals, society, and the physical environment.",
             "courses": [
               {
-                "course_code": "CRMJ 201",
-                "title": "Introduction to Criminology (effective Spring 2025)"
+                "courseCode": "CRMJ 201",
+                "courseTitle": "Introduction to Criminology (effective Spring 2025)"
               },
               {
-                "course_code": "ECON 201",
-                "title": "Microeconomic Principles"
+                "courseCode": "ECON 201",
+                "courseTitle": "Microeconomic Principles"
               },
               {
-                "course_code": "ECON 202",
-                "title": "Macroeconomic Principles"
+                "courseCode": "ECON 202",
+                "courseTitle": "Macroeconomic Principles"
               },
               {
-                "course_code": "ECON 203",
-                "title": "Honors Microeconomic Principles"
+                "courseCode": "ECON 203",
+                "courseTitle": "Honors Microeconomic Principles"
               },
               {
-                "course_code": "ECON 204",
-                "title": "Honors Macroeconomic Principles"
+                "courseCode": "ECON 204",
+                "courseTitle": "Honors Macroeconomic Principles"
               },
               {
-                "course_code": "FMST 101",
-                "title": "Introduction to Family Studies"
+                "courseCode": "FMST 101",
+                "courseTitle": "Introduction to Family Studies"
               },
               {
-                "course_code": "FMST 102",
-                "title": "Honors Introduction to Family Studies"
+                "courseCode": "FMST 102",
+                "courseTitle": "Honors Introduction to Family Studies"
               },
               {
-                "course_code": "GEOG 201",
-                "title": "Environment and Society"
+                "courseCode": "GEOG 201",
+                "courseTitle": "Environment and Society"
               },
               {
-                "course_code": "GERO 101",
-                "title": "Introduction to Gerontology"
+                "courseCode": "GERO 101",
+                "courseTitle": "Introduction to Gerontology"
               },
               {
-                "course_code": "HIST 280",
-                "title": "Themes in the History of Science, Medicine, & Tech"
+                "courseCode": "HIST 280",
+                "courseTitle": "Themes in the History of Science, Medicine, & Tech"
               },
               {
-                "course_code": "LING 111",
-                "title": "Introduction to Human Language"
+                "courseCode": "LING 111",
+                "courseTitle": "Introduction to Human Language"
               },
               {
-                "course_code": "MCOM 101",
-                "title": "Introduction to Mass Communication"
+                "courseCode": "MCOM 101",
+                "courseTitle": "Introduction to Mass Communication"
               },
               {
-                "course_code": "MCOM 102",
-                "title": "Honors Introduction to Mass Communication"
+                "courseCode": "MCOM 102",
+                "courseTitle": "Honors Introduction to Mass Communication"
               },
               {
-                "course_code": "POSC 101",
-                "title": "Introduction to Political Science"
+                "courseCode": "POSC 101",
+                "courseTitle": "Introduction to Political Science"
               },
               {
-                "course_code": "POSC 102",
-                "title": "Honors Introduction to Political Science"
+                "courseCode": "POSC 102",
+                "courseTitle": "Honors Introduction to Political Science"
               },
               {
-                "course_code": "PSYC 101",
-                "title": "Introduction to Psychology"
+                "courseCode": "PSYC 101",
+                "courseTitle": "Introduction to Psychology"
               },
               {
-                "course_code": "PSYC 102",
-                "title": "Honors Introduction to Psychology"
+                "courseCode": "PSYC 102",
+                "courseTitle": "Honors Introduction to Psychology"
               },
               {
-                "course_code": "SOCI 101",
-                "title": "Introduction to Sociology"
+                "courseCode": "SOCI 101",
+                "courseTitle": "Introduction to Sociology"
               },
               {
-                "course_code": "SOCI 102",
-                "title": "Honors Introduction to Sociology"
+                "courseCode": "SOCI 102",
+                "courseTitle": "Honors Introduction to Sociology"
               }
             ]
           },
           {
             "core_number": 7,
-            "title": "BIOLOGICAL & PHYSICAL SCIENCES WITH LAB",
+            "coreTitle": "BIOLOGICAL & PHYSICAL SCIENCES WITH LAB",
             "units": "4-5",
             "description": "The Biological and Physical Sciences systematically investigate living systems and the physical universe and introduce students to methods used to collect, quantify, and interpret scientific data and to synthesize and apply scientific concepts. Courses in this category present the historical development and structural nature of the subject, illustrate the predictive nature of these sciences, and employ mathematics and computing techniques as appropriate. Students must take two courses in the Biological and Physical Sciences categories with at least one four-unit course that includes a laboratory. The laboratory experience will emphasize hands-on investigations and scientific inquiry.",
             "requirements": "Courses taken to fulfill Core 7 and Core 8 must be from different disciplines or two sequenced courses within one discipline. Courses that are bolded and listed within parenthesis are sequential courses.",
             "courses": [
               {
-                "course_code": "ASTR 161",
-                "title": "The Sky and the Solar System"
+                "courseCode": "ASTR 161",
+                "courseTitle": "The Sky and the Solar System"
               },
               {
-                "course_code": "ASTR 181",
-                "title": "Stars, Galaxies, and the Early Universe"
+                "courseCode": "ASTR 181",
+                "courseTitle": "Stars, Galaxies, and the Early Universe"
               },
               {
-                "course_code": "ASTR 261",
-                "title": "Introduction to Astrophysics"
+                "courseCode": "ASTR 261",
+                "courseTitle": "Introduction to Astrophysics"
               },
               {
-                "course_code": "BIOL 117",
-                "title": "Honors Biology: The Science of Life"
+                "courseCode": "BIOL 117",
+                "courseTitle": "Honors Biology: The Science of Life"
               },
               {
-                "course_code": "BIOL 120 + 120L",
-                "title": "Principles of Biology [Lecture]"
+                "courseCode": "BIOL 120 + 120L",
+                "courseTitle": "Principles of Biology [Lecture]"
               },
               {
-                "course_code": "BIOL 191 + 191L",
-                "title": "Introductory Biology Health Professions"
+                "courseCode": "BIOL 191 + 191L",
+                "courseTitle": "Introductory Biology Health Professions"
               },
               {
-                "course_code": "BIOL 192",
-                "title": "Honors Introductory Biology for the Health Professions"
+                "courseCode": "BIOL 192",
+                "courseTitle": "Honors Introductory Biology for the Health Professions"
               },
               {
-                "course_code": "BIOL 200 + 200L",
-                "title": "Biology I: Cellular Biology & Genetics",
+                "courseCode": "BIOL 200 + 200L",
+                "courseTitle": "Biology I: Cellular Biology & Genetics",
                 "sequence": true
               },
               {
-                "course_code": "BIOL 206 + 206L",
-                "title": "Biology II: Introduction to Ecology and Evolution",
+                "courseCode": "BIOL 206 + 206L",
+                "courseTitle": "Biology II: Introduction to Ecology and Evolution",
                 "sequence": true
               },
               {
-                "course_code": "BIOL 203",
-                "title": "Honors Biology I: Cellular Biology and Genetics"
+                "courseCode": "BIOL 203",
+                "courseTitle": "Honors Biology I: Cellular Biology and Genetics"
               },
               {
-                "course_code": "CHEM 104",
-                "title": "Introduction to Environmental Chemistry"
+                "courseCode": "CHEM 104",
+                "courseTitle": "Introduction to Environmental Chemistry"
               },
               {
-                "course_code": "CHEM 115",
-                "title": "Honors Chemistry for Allied Health Professionals I"
+                "courseCode": "CHEM 115",
+                "courseTitle": "Honors Chemistry for Allied Health Professionals I"
               },
               {
-                "course_code": "CHEM 121 + 121L",
-                "title": "Chemistry Allied Health Professionals I"
+                "courseCode": "CHEM 121 + 121L",
+                "courseTitle": "Chemistry Allied Health Professionals I"
               },
               {
-                "course_code": "CHEM 131+ 131L",
-                "title": "General Chemistry",
+                "courseCode": "CHEM 131+ 131L",
+                "courseTitle": "General Chemistry",
                 "sequence": true
               },
               {
-                "course_code": "CHEM 132 + 132L",
-                "title": "General Chemistry II",
+                "courseCode": "CHEM 132 + 132L",
+                "courseTitle": "General Chemistry II",
                 "sequence": true
               },
               {
-                "course_code": "GEOL 121",
-                "title": "Physical Geology"
+                "courseCode": "GEOL 121",
+                "courseTitle": "Physical Geology"
               },
               {
-                "course_code": "GEOL 122",
-                "title": "Honors Physical Geology"
+                "courseCode": "GEOL 122",
+                "courseTitle": "Honors Physical Geology"
               },
               {
-                "course_code": "GEOL 123",
-                "title": "Historical Geology"
+                "courseCode": "GEOL 123",
+                "courseTitle": "Historical Geology"
               },
               {
-                "course_code": "PHSC 101",
-                "title": "Physical Science I"
+                "courseCode": "PHSC 101",
+                "courseTitle": "Physical Science I"
               },
               {
-                "course_code": "PHYS 131",
-                "title": "Light and Color"
+                "courseCode": "PHYS 131",
+                "courseTitle": "Light and Color"
               },
               {
-                "course_code": "PHYS 143",
-                "title": "Physics of Sound and Music (Lab)"
+                "courseCode": "PHYS 143",
+                "courseTitle": "Physics of Sound and Music (Lab)"
               },
               {
-                "course_code": "PHYS 202",
-                "title": "General Physics for the Health Sciences"
+                "courseCode": "PHYS 202",
+                "courseTitle": "General Physics for the Health Sciences"
               },
               {
-                "course_code": "PHYS 211",
-                "title": "General Physics I; Non Calculus-Based"
+                "courseCode": "PHYS 211",
+                "courseTitle": "General Physics I; Non Calculus-Based"
               },
               {
-                "course_code": "PHYS 212",
-                "title": "General Physics II; Non Calculus-Based"
+                "courseCode": "PHYS 212",
+                "courseTitle": "General Physics II; Non Calculus-Based"
               },
               {
-                "course_code": "PHYS 241",
-                "title": "General Physics I Calculus-Based"
+                "courseCode": "PHYS 241",
+                "courseTitle": "General Physics I Calculus-Based"
               },
               {
-                "course_code": "PHYS 242",
-                "title": "General Physics II Calculus-Based"
+                "courseCode": "PHYS 242",
+                "courseTitle": "General Physics II Calculus-Based"
               },
               {
-                "course_code": "PHYS 251",
-                "title": "Honors General Physics I Calculus-Based"
+                "courseCode": "PHYS 251",
+                "courseTitle": "Honors General Physics I Calculus-Based"
               },
               {
-                "course_code": "PHYS 252",
-                "title": "Honor General Physics II Calculus-Based"
+                "courseCode": "PHYS 252",
+                "courseTitle": "Honor General Physics II Calculus-Based"
               }
             ]
           },
           {
             "core_number": 8,
-            "title": "BIOLOGICAL & PHYSICAL SCIENCES (LAB & NON-LAB)",
+            "coreTitle": "BIOLOGICAL & PHYSICAL SCIENCES (LAB & NON-LAB)",
             "units": "3-4, 5",
             "description": "",
             "requirements": "Courses taken to fulfill Core 7 and Core 8 must be from different disciplines or two sequenced courses within one discipline. Courses that are bolded and listed within parenthesis are sequential courses.",
             "courses": [
               {
-                "course_code": "ANTH 212",
-                "title": "Paleoanthropology and Archeology"
+                "courseCode": "ANTH 212",
+                "courseTitle": "Paleoanthropology and Archeology"
               },
               {
-                "course_code": "ASTR 161",
-                "title": "The Sky and the Solar System"
+                "courseCode": "ASTR 161",
+                "courseTitle": "The Sky and the Solar System"
               },
               {
-                "course_code": "ASTR 181",
-                "title": "Stars, Galaxies, and the Early Universe"
+                "courseCode": "ASTR 181",
+                "courseTitle": "Stars, Galaxies, and the Early Universe"
               },
               {
-                "course_code": "ASTRO 261",
-                "title": "Introduction to Astrophysics"
+                "courseCode": "ASTRO 261",
+                "courseTitle": "Introduction to Astrophysics"
               },
               {
-                "course_code": "BIOL 105",
-                "title": "Environmental Biology"
+                "courseCode": "BIOL 105",
+                "courseTitle": "Environmental Biology"
               },
               {
-                "course_code": "BIOL 117",
-                "title": "Honors Biology: The Science of Life"
+                "courseCode": "BIOL 117",
+                "courseTitle": "Honors Biology: The Science of Life"
               },
               {
-                "course_code": "BIOL 120",
-                "title": "Principles of Biology [Lecture]"
+                "courseCode": "BIOL 120",
+                "courseTitle": "Principles of Biology [Lecture]"
               },
               {
-                "course_code": "BIOL 191 +191L",
-                "title": "Introductory Biology Health Professions"
+                "courseCode": "BIOL 191 +191L",
+                "courseTitle": "Introductory Biology Health Professions"
               },
               {
-                "course_code": "BIOL 192",
-                "title": "Honors Introductory Biology Health for the Professions"
+                "courseCode": "BIOL 192",
+                "courseTitle": "Honors Introductory Biology Health for the Professions"
               },
               {
-                "course_code": "BIOL 200 + 200L",
-                "title": "Biology I: Cellular Biology & Genetics",
+                "courseCode": "BIOL 200 + 200L",
+                "courseTitle": "Biology I: Cellular Biology & Genetics",
                 "sequence": true
               },
               {
-                "course_code": "BIOL 203",
-                "title": "Honors Biology I: Cellular Biology and Genetics"
+                "courseCode": "BIOL 203",
+                "courseTitle": "Honors Biology I: Cellular Biology and Genetics"
               },
               {
-                "course_code": "BIOL 206 + 206L",
-                "title": "Biology II: Introduction to Ecology and Evolution",
+                "courseCode": "BIOL 206 + 206L",
+                "courseTitle": "Biology II: Introduction to Ecology and Evolution",
                 "sequence": true
               },
               {
-                "course_code": "CHEM 100",
-                "title": "Chemistry and Current Problems"
+                "courseCode": "CHEM 100",
+                "courseTitle": "Chemistry and Current Problems"
               },
               {
-                "course_code": "CHEM 104",
-                "title": "Introduction to Environmental Chemistry"
+                "courseCode": "CHEM 104",
+                "courseTitle": "Introduction to Environmental Chemistry"
               },
               {
-                "course_code": "CHEM 115",
-                "title": "Honors Chemistry for Allied Health Professionals I"
+                "courseCode": "CHEM 115",
+                "courseTitle": "Honors Chemistry for Allied Health Professionals I"
               },
               {
-                "course_code": "CHEM 121 + 121L",
-                "title": "Chemistry Allied Health Professionals I"
+                "courseCode": "CHEM 121 + 121L",
+                "courseTitle": "Chemistry Allied Health Professionals I"
               },
               {
-                "course_code": "CHEM 131+ 131L",
-                "title": "General Chemistry",
+                "courseCode": "CHEM 131+ 131L",
+                "courseTitle": "General Chemistry",
                 "sequence": true
               },
               {
-                "course_code": "CHEM 132 + 132L",
-                "title": "General Chemistry II",
+                "courseCode": "CHEM 132 + 132L",
+                "courseTitle": "General Chemistry II",
                 "sequence": true
               },
               {
-                "course_code": "GEOG 101",
-                "title": "Physical Geography"
+                "courseCode": "GEOG 101",
+                "courseTitle": "Physical Geography"
               },
               {
-                "course_code": "GEOL 109",
-                "title": "Volcanoes and Earthquakes"
+                "courseCode": "GEOL 109",
+                "courseTitle": "Volcanoes and Earthquakes"
               },
               {
-                "course_code": "GEOL 121",
-                "title": "Physical Geology"
+                "courseCode": "GEOL 121",
+                "courseTitle": "Physical Geology"
               },
               {
-                "course_code": "GEOL 122",
-                "title": "Honors Physical Geology"
+                "courseCode": "GEOL 122",
+                "courseTitle": "Honors Physical Geology"
               },
               {
-                "course_code": "GEOL 123",
-                "title": "Historical Geology"
+                "courseCode": "GEOL 123",
+                "courseTitle": "Historical Geology"
               },
               {
-                "course_code": "HONR 227",
-                "title": "Honors Seminar in Scientific Inquiry"
+                "courseCode": "HONR 227",
+                "courseTitle": "Honors Seminar in Scientific Inquiry"
               },
               {
-                "course_code": "HONR 301",
-                "title": "The Polluted States of America"
+                "courseCode": "HONR 301",
+                "courseTitle": "The Polluted States of America"
               },
               {
-                "course_code": "PHSC 101",
-                "title": "Physical Science I"
+                "courseCode": "PHSC 101",
+                "courseTitle": "Physical Science I"
               },
               {
-                "course_code": "PHYS 100",
-                "title": "Understanding Physics"
+                "courseCode": "PHYS 100",
+                "courseTitle": "Understanding Physics"
               },
               {
-                "course_code": "PHYS 103",
-                "title": "How Things Work"
+                "courseCode": "PHYS 103",
+                "courseTitle": "How Things Work"
               },
               {
-                "course_code": "PHYS 131",
-                "title": "Light and Color"
+                "courseCode": "PHYS 131",
+                "courseTitle": "Light and Color"
               },
               {
-                "course_code": "PHYS 143",
-                "title": "Physics Sound and Music (Lab)"
+                "courseCode": "PHYS 143",
+                "courseTitle": "Physics Sound and Music (Lab)"
               },
               {
-                "course_code": "PHYS 202",
-                "title": "General Physics for Health Sciences"
+                "courseCode": "PHYS 202",
+                "courseTitle": "General Physics for Health Sciences"
               },
               {
-                "course_code": "PHYS 211",
-                "title": "General Physics I; Non Calculus-Based"
+                "courseCode": "PHYS 211",
+                "courseTitle": "General Physics I; Non Calculus-Based"
               },
               {
-                "course_code": "PHYS 212",
-                "title": "General Physics II; Non Calculus-Based"
+                "courseCode": "PHYS 212",
+                "courseTitle": "General Physics II; Non Calculus-Based"
               },
               {
-                "course_code": "PHYS 241",
-                "title": "General Physics I Calculus-Based"
+                "courseCode": "PHYS 241",
+                "courseTitle": "General Physics I Calculus-Based"
               },
               {
-                "course_code": "PHYS 242",
-                "title": "General Physics II Calculus-Based"
+                "courseCode": "PHYS 242",
+                "courseTitle": "General Physics II Calculus-Based"
               },
               {
-                "course_code": "PHYS 251",
-                "title": "Honors General Physics I Calculus-Based"
+                "courseCode": "PHYS 251",
+                "courseTitle": "Honors General Physics I Calculus-Based"
               },
               {
-                "course_code": "PHYS 252",
-                "title": "Honors General Physics II Calculus-Based"
+                "courseCode": "PHYS 252",
+                "courseTitle": "Honors General Physics II Calculus-Based"
               }
             ]
           }

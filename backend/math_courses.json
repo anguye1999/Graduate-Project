@@ -1,342 +1,208 @@
 {
-    "majorTitle": "Computer and Mathematical Sciences",
-    "coreRequirements": {
-      "requiredCourses": [
-        {
-          "code": "CIS 377",
-          "title": "INTRODUCTION TO CYBERSECURITY",
-          "units": 3
-        },
-        {
-          "code": "COSC 236",
-          "title": "INTRODUCTION TO COMPUTER SCIENCE I",
-          "units": 4,
-          "prerequisites": ["COSC 175 is a prerequisite for COSC 236"]
-        },
-        {
-          "code": "COSC 237",
-          "title": "INTRODUCTION TO COMPUTER SCIENCE II",
-          "units": 4,
-          "prerequisites": ["COSC 236; MATH 211 or MATH 273 is a prerequisite for COSC 237"]
-        },
-        {
-          "code": "COSC 290",
-          "title": "PRINCIPLES OF COMPUTER ORGANIZATION",
-          "units": 4,
-          "prerequisites": ["COSC 236 and MATH 263 or MATH 267 is a prerequisite for COSC 290"]
-        },
-        {
-          "code": "COSC 336",
-          "title": "DATA STRUCTURES AND ALGORITHM ANALYSIS",
-          "units": 4,
-          "prerequisites": ["COSC 237 and MATH 274 or MATH 274 is a prerequisite for COSC 336"]
-        },
-        {
-          "code": "COSC 350",
-          "title": "DATA COMMUNICATIONS AND NETWORKING",
-          "units": 3,
-          "prerequisites": ["COSC 290 is a prerequisite for COSC 350"]
-        },
-        {
-          "code": "COSC 412",
-          "title": "SOFTWARE ENGINEERING",
-          "units": 3,
-          "prerequisites": ["COSC 336 is a prerequisite for COSC 412"]
-        },
-        {
-          "code": "COSC 418",
-          "title": "ETHICAL AND SOCIETAL CONCERNS OF COMPUTER SCIENTISTS (Core 14)",
-          "units": 3,
-          "prerequisites": ["Junior or Senior standing; ENGL 317 or BUSX 301 prerequisite for COSC 418"]
-        },
-        {
-          "code": "COSC 439",
-          "title": "OPERATING SYSTEMS",
-          "units": 3,
-          "prerequisites": ["COSC 336 is a prerequisite for COSC 439"]
-        },
-        {
-          "code": "COSC 455",
-          "title": "PROGRAMMING LANGUAGES: DESIGN & IMPLEMENTATION",
-          "units": 3,
-          "prerequisites": ["COSC 336 is a prerequisite for COSC 455"]
-        },
-        {
-          "code": "COSC 457",
-          "title": "DATABASE MANAGEMENT SYSTEMS",
-          "units": 3,
-          "prerequisites": ["COSC 336 is a prerequisite for COSC 457"]
-        },
-        {
-          "code": "MATH 265",
-          "title": "ELEMENTARY LINEAR ALGEBRA",
-          "units": 4,
-          "prerequisites": ["Not open to students who successfully completed MATH 365 or MATH 463. MATH 211 or MATH 273 is a prerequisite for MATH 265"]
-        },
-        {
-          "code": "MATH 267",
-          "title": "INTRODUCTION TO ABSTRACT MATHEMATICS",
-          "units": 4,
-          "prerequisites": ["Not open to those who successfully completed MATH 361 or MATH 467. MATH 273 and MATH 265 or consent of the instructor is a prerequisite for MATH 267"]
-        },
-        {
-          "code": "MATH 273",
-          "title": "CALCULUS I",
-          "units": 4,
-          "prerequisites": ["Qualifying score on Math Placement exam or MATH 117 or MATH 119 is a prerequisite for MATH 273"]
-        },
-        {
-          "code": "MATH 274",
-          "title": "CALCULUS II",
-          "units": 4,
-          "prerequisites": ["MATH 273 is a prerequisite for MATH 274"]
-        },
-        {
-          "code": "MATH 275",
-          "title": "CALCULUS III",
-          "units": 4,
-          "prerequisites": ["MATH 274 is a prerequisite for MATH 275"]
-        },
-        {
-          "code": "MATH 330 or MATH 331",
-          "title": "INTRODUCTION TO STATISTICAL METHODS or PROBABILITY",
-          "units": 4,
-          "prerequisites": ["Students in the Computational Data Science Track must select MATH 331 which is a prerequisite for MATH 332"]
-        },
-        {
-          "code": "MATH 369 or MATH 372",
-          "title": "INTRODUCTION TO ABSTRACT ALGEBRA or REAL ANALYSIS I",
-          "units": 4
-        }
-      ],
-      "requiredCoreCourses": [
-        {
-          "code": "COMM 131",
-          "title": "PUBLIC SPEAKING",
-          "units": 3
-        },
-        {
-          "code": "ENGL 317",
-          "title": "WRITING FOR BUSINESS AND INDUSTRY",
-          "units": 3,
-          "notes": ["ENGL 102 or ENGL 190 or equivalent is a prerequisite for ENGL 317"]
-        }
-      ],
-      "totalCoreUnits": 71
+  "department": "Mathematics (MATH)",
+  "catalog_type": "Undergraduate",
+  "catalog_year": "2023-Present",
+  "courses": [
+    {
+      "courseCode": "MATH 115",
+      "courseTitle": "COLLEGE ALGEBRA",
+      "units": 3,
+      "description": "Equations and the concept of function; linear, quadratic, higher-degree polynomial, exponential, logarithmic, and rational functions; complex numbers. Not open to those who have successfully completed MATH 119.",
+      "prerequisites": ["qualifying score on Math Placement exam or MATH 102"],
+      "coreTitle": "MATHEMATICS",
+      "offerings": ["Fall", "Spring"]
     },
-    "tracks": [
-      {
-        "name": "Applied Mathematics and Computer Science Concentration",
-        "requirements": [
-          {
-            "category": "Required Courses",
-            "courses": [
-              {
-                "code": "MATH 369 or MATH 372",
-                "title": "INTRODUCTION TO ABSTRACT ALGEBRA or REAL ANALYSIS I",
-                "units": 4,
-                "note": "Whichever was not taken to satisfy the core requirement"
-              }
-            ]
-          },
-          {
-            "category": "Computer Science Elective Courses",
-            "description": "Select two of the following:",
-            "totalUnits": 6,
-            "courses": [
-              {
-                "code": "COSC 397 or COSC 495",
-                "title": "INTERNSHIP IN COSC or INDEPENDENT STUDY"
-              },
-              {
-                "code": "COSC 417",
-                "title": "INTRODUCTION TO THE THEORY OF COMPUTING"
-              },
-              {
-                "code": "COSC 459",
-                "title": "COMPUTER SIMULATION & MODELING"
-              },
-              {
-                "code": "COSC 461",
-                "title": "ARTIFICIAL INTELLIGENCE"
-              },
-              {
-                "code": "COSC 465",
-                "title": "ROBOTICS"
-              },
-              {
-                "code": "COSC 471",
-                "title": "COMPUTER GRAPHICS"
-              },
-              {
-                "code": "COSC 483",
-                "title": "DESIGN & ANALYSIS ALGORITHMS"
-              }
-            ]
-          },
-          {
-            "category": "Math Elective Courses – Group 1",
-            "description": "Select two of the following:",
-            "totalUnits": 7,
-            "courses": [
-              {
-                "code": "MATH 314",
-                "title": "INTRODUCTION TO CRYPTOGRAPHY"
-              },
-              {
-                "code": "MATH 331",
-                "title": "PROBABILITY",
-                "prerequisites": ["MATH 331 may apply as an elective if not already selected to fulfill the requirement of MATH 330 or MATH 331 in the Required Mathematics Courses area"]
-              },
-              {
-                "code": "MATH 332",
-                "title": "MATHEMATICAL STATISTICS"
-              },
-              {
-                "code": "MATH 374",
-                "title": "DIFFERENTIAL EQUATIONS"
-              },
-              {
-                "code": "MATH 377",
-                "title": "MATHEMATICAL MODELS"
-              },
-              {
-                "code": "MATH 379",
-                "title": "FOURIER ANALYSIS WITH APPLICATIONS"
-              },
-              {
-                "code": "MATH 435",
-                "title": "NUMERICAL ANALYSIS I"
-              },
-              {
-                "code": "MATH 437",
-                "title": "OPERATIONS RESEARCH"
-              },
-              {
-                "code": "MATH 439",
-                "title": "COMPUTATIONAL PROBABILITY MODELS"
-              }
-            ]
-          },
-          {
-            "category": "Math Elective Courses – Group 2",
-            "description": "Select two of the following:",
-            "totalUnits": 7,
-            "courses": [
-              {
-                "code": "MATH 315",
-                "title": "APPLIED COMBINATORICS"
-              },
-              {
-                "code": "MATH 451",
-                "title": "GRAPH THEORY"
-              },
-              {
-                "code": "MATH 457",
-                "title": "DIFFERENTIAL GEOMETRY"
-              },
-              {
-                "code": "MATH 463",
-                "title": "LINEAR ALGEBRA"
-              },
-              {
-                "code": "MATH 465",
-                "title": "NUMBER THEORY"
-              },
-              {
-                "code": "MATH 467",
-                "title": "ALGEBRAIC STRUCTURES"
-              },
-              {
-                "code": "MATH 472",
-                "title": "REAL ANALYSIS II"
-              },
-              {
-                "code": "MATH 475",
-                "title": "COMPLEX ANALYSIS"
-              },
-              {
-                "code": "MATH 477",
-                "title": "TOPOLOGY"
-              }
-            ]
-          }
-        ],
-        "totalTrackUnits": 24
-      },
-      {
-        "name": "Computational Data Science Track",
-        "requirements": [
-          {
-            "category": "Required Courses",
-            "courses": [
-              {
-                "code": "COSC 461",
-                "title": "ARTIFICIAL INTELLIGENCE",
-                "units": 3
-              },
-              {
-                "code": "COSC 467",
-                "title": "FOUNDATIONS OF DATA MINING",
-                "units": 3
-              },
-              {
-                "code": "MATH 332",
-                "title": "MATHEMATICAL STATISTICS",
-                "units": 3
-              },
-              {
-                "code": "MATH 371",
-                "title": "INTRODUCTION TO MACHINE LEARNING",
-                "units": 3
-              },
-              {
-                "code": "MATH 471",
-                "title": "SEMINAR IN COMPUTATIONAL DATA SCIENCE",
-                "units": 3
-              }
-            ]
-          },
-          {
-            "category": "Mathematics Elective Courses",
-            "description": "Select two of the following:",
-            "totalUnits": "6-8",
-            "courses": [
-              {
-                "code": "MATH 372",
-                "title": "REAL ANALYSIS I"
-              },
-              {
-                "code": "MATH 435",
-                "title": "NUMERICAL ANALYSIS I"
-              },
-              {
-                "code": "MATH 437",
-                "title": "OPERATIONS RESEARCH"
-              },
-              {
-                "code": "MATH 451",
-                "title": "GRAPH THEORY"
-              },
-              {
-                "code": "MATH 463",
-                "title": "LINEAR ALGEBRA"
-              },
-              {
-                "code": "MATH 477",
-                "title": "TOPOLOGY"
-              }
-            ]
-          }
-        ],
-        "totalTrackUnits": "21-23"
-      }
-    ],
-    "notes": [
-      "COSC 175 is a prerequisite for COSC 236.",
-      "Students in the Computational Data Science Track must select MATH 331 which is a prerequisite for MATH 332.",
-      "MATH 331 may apply as an elective if not already selected to fulfill the requirement of MATH 330 or MATH 331 in the Required Mathematics Courses area.",
-      "The selected course sequence is an example of the simplest path to degree completion. Based on course schedules, student needs, and student choice, individual plans may vary.",
-      "Students should consult with their adviser to make the most appropriate elective choices and to ensure that they have completed the required number of units (120) to graduate."
-    ]
-  }
+    {
+      "courseCode": "MATH 117",
+      "courseTitle": "TRIGONOMETRY AND ADVANCED COLLEGE ALGEBRA",
+      "units": 3,
+      "description": "The second semester in a two-semester precalculus sequence, with a primary focus on trigonometry. Angle measures; trigonometric functions and their graphs; trigonometric identities; inverse trigonometric functions and their graphs; algebraic and graphical solutions of trigonometric equations and basic trigonometric inequalities; solving triangles; linear systems in two and three variables with applications to partial fractions; conic sections. Not open to students who have successfully completed MATH 119.",
+      "prerequisites": ["MATH 115"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 119",
+      "courseTitle": "PRE-CALCULUS",
+      "units": 4,
+      "description": "An overview of functions and their graphs as well as algebraic techniques and trigonometry in preparation for Calculus I (MATH 273). Functions emphasized are polynomial, rational, exponential, logarithmic, and trigonometric.",
+      "prerequisites": ["qualifying score on Math Placement exam"],
+      "coreTitle": "MATHEMATICS",
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 211",
+      "courseTitle": "CALCULUS FOR APPLICATIONS",
+      "units": 3,
+      "description": "Intended primarily for students in biology, business, economics, psychology and the social sciences. Elements of differential and integral calculus from an intuitive standpoint with emphasis on the use of calculus in the above fields. Exponential and logarithmic functions, partial derivatives included. Not open to mathematics majors or minors.",
+      "prerequisites": ["qualifying score on the Math Placement Test or MATH 115 (recommended) or MATH 119"],
+      "coreTitle": "MATHEMATICS",
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 263",
+      "courseTitle": "DISCRETE MATHEMATICS",
+      "units": 3,
+      "description": "Sets, logic, induction, functions, relations, sequences, recursion, combinatorics, graphs and trees, matrices with an emphasis on applications in computer science.",
+      "prerequisites": ["COSC 236"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 265",
+      "courseTitle": "ELEMENTARY LINEAR ALGEBRA",
+      "units": 4,
+      "description": "Matrix calculations and determinants, vector spaces over the real numbers, linear transformations, eigenvalues, eigenvectors, and inner products with emphasis on applications. Not open to students who successfully completed MATH 365 or MATH 463.",
+      "prerequisites": ["MATH 211 or MATH 273"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 267",
+      "courseTitle": "INTRODUCTION TO ABSTRACT MATHEMATICS",
+      "units": 4,
+      "description": "Sets, mappings, relations, logic, mathematical induction, properties of the integers, Fundamental Theorem of Arithmetic, polynomials, and elementary analytic concepts. Not open to those who successfully completed MATH 361 or MATH 467.",
+      "prerequisites": ["MATH 273 and MATH 265 or consent of the instructor"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 273",
+      "courseTitle": "CALCULUS I",
+      "units": 4,
+      "description": "Functions, limits, and continuity; differentiation of algebraic and trigonometric functions; mean value theorem; differentials; introduction to integration; applications. Four lecture hours and one laboratory hour per week. Students who have successfully completed the honors version of this course (MATH 283) will not receive additional credit for this course.",
+      "prerequisites": ["qualifying score on Math Placement exam or MATH 117 or MATH 119"],
+      "coreTitle": "MATHEMATICS",
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 274",
+      "courseTitle": "CALCULUS II",
+      "units": 4,
+      "description": "Differentiation and integration of exponential, logarithmic, and inverse trigonometric functions; techniques of integration and applications; indeterminate forms; improper integrals; sequences and series of numbers; power series.",
+      "prerequisites": ["MATH 273"],
+      "coreTitle": "MATHEMATICS",
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 275",
+      "courseTitle": "CALCULUS III",
+      "units": 4,
+      "description": "Vectors in two and three dimensions, differential and integral calculus of functions of several variables. Four lecture hours and one laboratory hours per week.",
+      "prerequisites": ["MATH 274"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 314",
+      "courseTitle": "INTRODUCTION TO CRYPTOGRAPHY",
+      "units": 3,
+      "description": "A broad introduction to cryptography and its mathematical foundations: Elementary number theory; classical and modern symmetric key cryptosystems; public key cryptography; primality tests, factoring algorithms; hash functions and digital signatures. Selected further topics may include security protocols, digital cash, elliptic curve cryptography, or quantum cryptography.",
+      "prerequisites": ["COSC 236; either >MATH 263 or MATH 267; and either MATH 330 or MATH 331 (may be taken concurrently)"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 315",
+      "courseTitle": "APPLIED COMBINATORICS",
+      "units": 4,
+      "description": "General counting methods, pigeonhole principle, inclusion-exclusion principle, generating functions, recurrence relations, summation techniques, partitions, permutations and pattern avoidance, Polya's enumeration, asymptotics, select topics from graph theory.",
+      "prerequisites": ["MATH 274; MATH 263 or MATH 267"],
+      "offerings": ["Fall"]
+    },
+    {
+      "courseCode": "MATH 330",
+      "courseTitle": "INTRODUCTION TO STATISTICAL METHODS",
+      "units": 4,
+      "description": "An introductory course for students with mathematics and computing backgrounds emphasizing statistical ideas and techniques. Descriptive statistics, probability, estimation and sampling, hypothesis testing, regression and correlation, and analysis of variance. A statistical package such as MINITAB is introduced as a computational tool.",
+      "prerequisites": ["MATH 274"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 331",
+      "courseTitle": "PROBABILITY",
+      "units": 4,
+      "description": "Probability in sample spaces, discrete and continuous random variables, distribution theory, Chebyshev's Theorem, Central Limit Theorem, expected values and moments.",
+      "prerequisites": ["MATH 275 (may be taken concurrently)"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 332",
+      "courseTitle": "MATHEMATICAL STATISTICS",
+      "units": 3,
+      "description": "Sample theory and distributions, point estimation, confidence intervals, tests of hypothesis, and theory of statistical inference.",
+      "prerequisites": ["Math 331 (MATH 531)"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 369",
+      "courseTitle": "INTRODUCTION TO ABSTRACT ALGEBRA",
+      "units": 4,
+      "description": "Elementary number theory; congruences, groups up to and including the isomorphism theorems, commutative rings, polynomials, unique factorization, irreducibility, finite fields.",
+      "prerequisites": ["MATH 265, MATH 267, and MATH 274"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 371",
+      "courseTitle": "INTRODUCTION TO MACHINE LEARNING",
+      "units": 3,
+      "description": "An introduction to the theory and implementation of machine learning. Linear methods in regression and classification; feature mapping; kernels; overfitting; model selection. Additional topics may include support vector machines or unsupervised learning. Course design integrates coding, algorithmic implementation, and mathematical theory.",
+      "prerequisites": ["MATH 265 and MATH 274; MATH 331 (may be taken concurrently)"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 372",
+      "courseTitle": "REAL ANALYSIS I",
+      "units": 4,
+      "description": "An introduction to the real numbers and the analytic properties of real-valued sequences and functions. The set of real numbers; sequences and series; continuous functions and uniform continuity; differentiation; Riemann integration.",
+      "prerequisites": ["MATH 267 and MATH 275"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 374",
+      "courseTitle": "DIFFERENTIAL EQUATIONS",
+      "units": 3,
+      "description": "Theory and application of linear ordinary differential equations: homogeneous and nonhomogeneous linear equations, initial and boundary value problems, exact equations, variation of parameters, Euler equations; solutions of non-linear ordinary differential equations of the first order and second order; power series solutions; system of linear equations.",
+      "prerequisites": ["MATH 274"],
+      "offerings": ["Fall", "Spring"]
+    },
+    {
+      "courseCode": "MATH 377",
+      "courseTitle": "MATHEMATICAL MODELS",
+      "units": 3,
+      "description": "Developing appropriate mathematical models and techniques to solve mathematical problems in sociology, psychology, economics, management science, and ecology.",
+      "prerequisites": ["MATH 265, MATH 274, COSC 236 and at least junior standing"]
+    },
+    {
+      "courseCode": "MATH 435",
+      "courseTitle": "NUMERICAL ANALYSIS I",
+      "units": 3,
+      "description": "Error analysis, interpolation, numerical differentiation and integration, numerical solution of algebraic equations, direct and iterative techniques for solving linear systems of algebraic equations. Mathematical and comparable computer algebra systems will be used.",
+      "prerequisites": ["MATH 265, MATH 274, and COSC 236"],
+      "offerings": ["Fall"]
+    },
+    {
+      "courseCode": "MATH 437",
+      "courseTitle": "OPERATIONS RESEARCH",
+      "units": 3,
+      "description": "Introduction to linear, integer and nonlinear programming, the simplex method and interior point methods, duality and sensitivity analysis; formulation of optimization models and applications to problems from industry.",
+      "prerequisites": ["MATH 265 and MATH 331"]
+    },
+    {
+      "courseCode": "MATH 439",
+      "courseTitle": "COMPUTATIONAL PROBABILITY MODELS",
+      "units": 3,
+      "description": "Markov chains, exponential distribution, Poisson process, continuous time Markov chains, Brownian motion and stationary processes.",
+      "prerequisites": ["MATH 331"],
+      "offerings": ["Spring"]
+    },
+    {
+      "courseCode": "MATH 451",
+      "courseTitle": "GRAPH THEORY",
+      "units": 3,
+      "description": "Hamiltonian and Eulerian graphs, coloring graphs, planar and non-planar graphs, connectivity problems; isomorphic graphs, and advanced topics.",
+      "prerequisites": ["MATH 263 or MATH 267"]
+    },
+    {
+      "courseCode": "MATH 457",
+      "courseTitle": "DIFFERENTIAL GEOMETRY",
+      "units": 3,
+      "description": "Curvatures of curves and surfaces in three dimensional Euclidean space, geodesics, invariants, mappings, and special surfaces.",
+      "prerequisites": ["MATH 275 and MATH 265"]
+    }
+  ]
+}

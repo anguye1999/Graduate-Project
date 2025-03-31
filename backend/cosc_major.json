@@ -4,428 +4,360 @@
   "catalog_year": "2023-Present",
   "courses": [
     {
-      "course_code": "COSC 109",
-      "title": "COMPUTERS AND CREATIVITY",
+      "courseCode": "COSC 109",
+      "courseTitle": "COMPUTERS AND CREATIVITY",
       "units": 3,
       "description": "Creative activities involving symbolic manipulation and computer graphics; animation, dynamic story telling, computer music, visual effects, Web publishing, computer games, artwork and multimedia. Additional laboratory time required.",
-      "core": "Creativity & Creative Development",
+      "coreTitle": "CREATIVITY & CREATIVE DEVELOPMENT",
       "prerequisites": [], 
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 111",
-      "title": "INFORMATION AND TECHNOLOGY FOR BUSINESS",
-      "units": 3,
-      "description": "Retrieve, process, classify, sort and evaluate data and information. Problem solving techniques, creative thinking skills, communication skills, team building, and professional ethics. Laboratories covering the Internet, spreadsheets, and databases. Additional laboratory time required. Students cannot earn credit for both this course and IDNM 101.",
-      "prerequisites": []
-    },
-    {
-      "course_code": "COSC 175",
-      "title": "GEN COMPUTER SCI",
+      "courseCode": "COSC 175",
+      "courseTitle": "GENERAL COMPUTER SCIENCE",
       "units": 4,
       "description": "Computer systems overview, algorithm development, data representation, software design and testing methodologies, and brief overview of advanced topics.",
-      "prerequisites": []
+      "prerequisites": [],
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 236",
-      "title": "INTRODUCTION TO COMPUTER SCIENCE I",
+      "courseCode": "COSC 236",
+      "courseTitle": "INTRODUCTION TO COMPUTER SCIENCE I",
       "units": 4,
       "description": "Introduction to structured problem-solving, algorithm development and computer programming. Three lecture hours and two laboratory hours.",
       "prerequisites": [
         "COSC 175",
         "At least one of:",
         [
-          "MATH 115",
-          "MATH 117",
-          "MATH 119",
-          "MATH 211",
-          "MATH 231 or ECON 205",
-          "MATH 273",
-          "MATH 274",
-          "MATH 275",
+          "MATH 115", 
+          "MATH 117", 
+          "MATH 119", 
+          "MATH 211", 
+          "MATH 231 or ECON 205", 
+          "MATH 273", 
+          "MATH 274", 
+          "MATH 275", 
           "qualifying score on the Math Placement Exam"
         ]
       ],
       "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"],
       "typical_year": ["Freshman", "Sophmore"]
     },
     {
-      "course_code": "COSC 237",
-      "title": "INTRODUCTION TO COMPUTER SCIENCE II",
+      "courseCode": "COSC 237",
+      "courseTitle": "INTRODUCTION TO COMPUTER SCIENCE II",
       "units": 4,
       "description": "Development of programming and problem-solving skills, with a focus on object-oriented programming and design. Students will design and develop programs using encapsulation and information hiding, inheritance, polymorphism, and generics. Introduction to data structures and their implementations (lists, stacks, queues, and trees), recursion, and searching and sorting algorithms. Includes two laboratory hours per week.",
-      "prerequisites": [
-        "COSC 236",
-        "MATH 211 or MATH 273"
-      ],
+      "prerequisites": ["COSC 236", "MATH 211 or MATH 273"],
       "typical_year": ["Freshman", "Sophomore", "Junior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 290",
-      "title": "PRINCIPLES OF COMPUTER ORGANIZATION",
+      "courseCode": "COSC 290",
+      "courseTitle": "PRINCIPLES OF COMPUTER ORGANIZATION",
       "units": 4,
       "description": "Computer organization and architecture including computer arithmetic, digital logic, principles of assembly language, memory system organization, computer interfacing, CISC and RISC architecture. Three hours per week of laboratory work required.",
-      "prerequisites": [
-        "COSC 236",
-        "MATH 263 or MATH 267"
-      ],
+      "prerequisites": ["COSC 236", "MATH 263 or MATH 267"],
       "typical_year": ["Sophomore", "Junior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 310",
-      "title": "SPECIAL TOPICS: ADVANCED PROGRAMMING",
-      "units": 3,
-      "description": "Advanced programming concepts within the context of a specific programming language for computer science and related majors. The course may be repeated up to 6 units when a different programming language is offered. Programming languages offered may include C, C++, C#, Python, Ruby, and others.",
-      "prerequisites": [
-        "COSC 237",
-        "COSC 290"
-      ]
-    },
-    {
-      "course_code": "COSC 314",
-      "title": "INTRODUCTION TO CRYPTOGRAPHY",
-      "units": 3,
-      "description": "A broad introduction to cryptography and its mathematical foundations, including applications to computer-network security services and mechanisms (confidentiality, integrity, authentication, electronic case and others) and to various protocols in distributed computation.",
-      "prerequisites": [
-        "COSC 236",
-        "MATH 263 or MATH 267",
-        "MATH 330 or MATH 331 (may be taken concurrently)"
-      ],
-      "typical_year": ["Junior", "Senior"]
-    },
-    {
-      "course_code": "COSC 321",
-      "title": "COMPUTERIZATION AND ITS IMPACTS",
-      "units": 3,
-      "description": "Computer technology and its social and economic impacts on organizations and individuals.",
-      "prerequisites": [
-        "junior/senior status",
-        "completion of two science courses or one math and one science course"
-      ],
-      "typical_year": ["Junior", "Senior"]
-    },
-    {
-      "course_code": "COSC 336",
-      "title": "DATA STRUCTURES AND ALGORITHM ANALYSIS",
+      "courseCode": "COSC 336",
+      "courseTitle": "DATA STRUCTURES AND ALGORITHM ANALYSIS",
       "units": 4,
       "description": "Fundamental data structures used in programming and the basic techniques used to design and analyze algorithms. Topics include: complexity analysis of elementary algorithms, linear data structures, trees, heaps, graphs, search algorithms (balanced binary trees, B-trees, hashing), sorting algorithms, basic graph algorithms (graph traversal, topological sorting, shortest path, minimum spanning trees), and paradigms in the design of algorithms (divide and conquer, dynamic programming, greedy).",
-      "prerequisites": [
-        "COSC 237",
-        "MATH 274"
-      ],
+      "prerequisites": ["COSC 237", "MATH 274"],
       "typical_year": ["Sophomore", "Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 340",
-      "title": "SYSTEMS PROGRAMMING",
+      "courseCode": "COSC 340",
+      "courseTitle": "SYSTEMS PROGRAMMING",
       "units": 3,
       "description": "Covers the underlying concepts underlying all computer systems and introduces the student to the low-level abstraction of a computer system from a programmer's point of view, with an emphasis on low-level Assembly and C programming. Topics include data representation, 32-bit vs. 64-bit implementation, device driver development, the process of compiling and linking, low-level memory management and basic processor architecture.",
-      "prerequisites": [
-        "COSC 237",
-        "COSC 290",
-        "major standing"
-      ],
-      "typical_year": ["Sophmore", "Junior", "Senior"]
+      "prerequisites": ["COSC 237", "COSC 290", "major standing"],
+      "typical_year": ["Sophmore", "Junior", "Senior"],
+      "offerings": ["Fall"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 350",
-      "title": "DATA COMMUNICATIONS AND NETWORKING",
+      "courseCode": "COSC 350",
+      "courseTitle": "DATA COMMUNICATIONS AND NETWORKING",
       "units": 3,
       "description": "Network architecture and protocols, data communications, LANs and cellular networks, forwarding and routing, TCP/IP suite, network programming and packet analysis.",
       "corequisites": ["COSC 336"],
-      "prerequisites": [
-        "COSC 290"
-      ],
+      "prerequisites": ["COSC 290"],
       "typical_year": ["Sophomore", "Junior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 397",
-      "title": "INTERNSHIP IN COSC",
+      "courseCode": "COSC 397",
+      "courseTitle": "INTERNSHIP IN COSC",
       "units": 3,
       "description": "Students work in local computing facility under on-site and faculty supervision. May be repeated for a maximum of 6 units. Only 3 units can be applied to the major. Minimum of 2.75 GPA. Graded S/U.",
-      "prerequisites": [
-        "COSC 336",
-        "consent of the internship coordinator"
-      ],
+      "prerequisites": ["COSC 336", "consent of the internship coordinator"],
       "typical_year": ["Sophomore", "Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 412",
-      "title": "SOFTWARE ENGINEERING",
+      "courseCode": "COSC 412",
+      "courseTitle": "SOFTWARE ENGINEERING",
       "units": 3,
       "description": "Methodology of designing and programming for a wide area of applications with a high degree of modifiability, efficiency, reliability, and understanding.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 417",
-      "title": "INTRODUCTION TO THE THEORY OF COMPUTING",
+      "courseCode": "COSC 417",
+      "courseTitle": "INTRODUCTION TO THE THEORY OF COMPUTING",
       "units": 3,
       "description": "A general introduction to the theory of computation, including finite automata, compatibility, formal languages and their relation to automata, algorithms, and algorithmic complexity. The major emphasis will be on developing formal descriptions of computers and computational processes, and practical implications of theoretical results.",
-      "prerequisites": [
-        "COSC 336"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 336"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 418",
-      "title": "ETHICAL AND SOCIETAL CONCERNS OF COMPUTER SCIENTISTS",
+      "courseCode": "COSC 418",
+      "courseTitle": "ETHICAL AND SOCIETAL CONCERNS OF COMPUTER SCIENTISTS",
       "units": 3,
       "description": "Ethical questions and societal concerns related to the widespread use of computers and the resulting responsibilities of computer scientists.",
-      "core": "Ethical Issues & Perspectives",
-      "prerequisites": [
-        "junior/senior standing",
-        "ENGL 317 or BUSX 301",
-        "must have previously taken a computing class"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "coreTitle": "ETHICAL ISSUES & PERSPECTIVES",
+      "prerequisites": ["junior/senior standing", "ENGL 317 or BUSX 301", "must have previously taken a computing class"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 431",
-      "title": "SELECTED TOPICS COMPUTER SCIENCE",
+      "courseCode": "COSC 431",
+      "courseTitle": "SELECTED TOPICS COMPUTER SCIENCE",
       "units": [1, 3],
       "description": "Independent studies in selected areas of computer science. A maximum of 4 units may be earned in selected topics.",
-      "prerequisites": [
-        "consent of the instructor",
-        "9 units of computer science"
-      ]
+      "prerequisites": ["consent of the instructor", "9 units of computer science"],
+      "offerings": ["Fall"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 432",
-      "title": "REQUIREMENTS ANALYSIS & MODELING",
+      "courseCode": "COSC 432",
+      "courseTitle": "REQUIREMENTS ANALYSIS & MODELING",
       "units": 3,
       "description": "Introduces the basic concepts as well as the principles of software requirements development. Students will learn how to elicit, analyze, and model requirements and gain practical knowledge of tools and techniques related to these requirements activities. Develops theoretical knowledge and practitioner skills critical for real world applications.",
-      "prerequisites": [
-        "COSC 412"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 412"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering", "General Computer Science"]
     },
     {
-      "course_code": "COSC 435",
-      "title": "MOBILE APPLICATION DEVELOPMENT",
+      "courseCode": "COSC 435",
+      "courseTitle": "MOBILE APPLICATION DEVELOPMENT",
       "units": 3,
       "description": "A comprehensive, hands-on study of the design and creation of mobile applications using modern development environments and tools. Topics include mobile device architecture, event-handlers, location-based services, onboard mobile device sensors, programming languages, software engineering, user interface design, and mobile application distribution. This course has been offered as a special topic; students who have earned credit for this course as a special topic will not receive additional credit for COSC 435.",
-      "prerequisites": [
-        "COSC 336"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 336"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 436",
-      "title": "OBJECT-ORIENTED DESIGN & PROGRAMMING",
+      "courseCode": "COSC 436",
+      "courseTitle": "OBJECT-ORIENTED DESIGN & PROGRAMMING",
       "units": 3,
       "description": "Introduction to object-oriented design and programming technology (OOD/OOP). Main phases in object-oriented design and techniques in object-oriented programming. Programming language design and implementation issues for object-oriented languages.",
-      "prerequisites": [
-        "COSC 336"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 336"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "General Computer Science"]
     },
     {
-      "course_code": "COSC 439",
-      "title": "OPERATING SYSTEMS",
+      "courseCode": "COSC 439",
+      "courseTitle": "OPERATING SYSTEMS",
       "units": 3,
       "description": "Operating systems as resource managers with emphasis on file processor, memory and device management and processes. Design and implementation of a simulated multiprogramming operating system.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 440",
-      "title": "OPERATING SYSTEMS SECURITY",
+      "courseCode": "COSC 440",
+      "courseTitle": "OPERATING SYSTEMS SECURITY",
       "units": 3,
       "description": "An in-depth discussion of security concepts in operating systems. This course examines some of the security issues in current operating systems and discusses the existing tools and technologies for setting up a secure system.",
-      "prerequisites": [
-        "COSC 439"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 439"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 442",
-      "title": "SOFTWARE QUALITY ASSURANCE AND TESTING",
+      "courseCode": "COSC 442",
+      "courseTitle": "SOFTWARE QUALITY ASSURANCE AND TESTING",
       "units": 3,
       "description": "A comprehensive study of concepts, techniques, and tools for software quality assurance and testing. Software testing at the unit, subsystem and system levels; test models and test design techniques; integration, regression, and system testing methods; static and dynamic analysis; security and reliability testing and assessment.",
-      "prerequisites": [
-        "COSC 412"
-      ],
+      "prerequisites": ["COSC 412"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "General Computer Science"]
     },
     {
-      "course_code": "COSC 450",
-      "title": "NETWORK SECURITY",
+      "courseCode": "COSC 450",
+      "courseTitle": "NETWORK SECURITY",
       "units": 3,
       "description": "Network security principles and applications, including authentication applications. IP security, Web security, network management security, wireless security and system security.",
-      "prerequisites": [
-        "MATH 314",
-        "COSC 350"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["MATH 314", "COSC 350"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 455",
-      "title": "PROGRAMMING LANGUAGES: DESIGN & IMPLEMENTATION",
+      "courseCode": "COSC 455",
+      "courseTitle": "PROGRAMMING LANGUAGES: DESIGN & IMPLEMENTATION",
       "units": 3,
       "description": "Underlying concepts in high-level programming languages and techniques for their implementation, a survey of a selected group of such languages along with a discussion of the interrelationship between programming and programming languages.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 457",
-      "title": "DATABASE MANAGEMENT SYSTEMS",
+      "courseCode": "COSC 457",
+      "courseTitle": "DATABASE MANAGEMENT SYSTEMS",
       "units": 3,
       "description": "Data models and sublanguages; security and integrity problems; functions of the database administrator; implementation and use of a database management system; a comparison of widely used DBMS packages.",
       "prerequisites": [
         "COSC 336"
       ],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 458",
-      "title": "APPLICATION SOFTWARE SECURITY",
+      "courseCode": "COSC 458",
+      "courseTitle": "APPLICATION SOFTWARE SECURITY",
       "units": 3,
       "description": "A study of security concepts in developing software applications. Discusses design principles for secure software development, and some of the security issues in current programming and scripting languages, database systems and Web servers.",
-      "prerequisites": [
-        "COSC 340",
-        "COSC 455",
-        "COSC 457 (may be taken concurrently)"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 340", "COSC 455", "COSC 457 (may be taken concurrently)"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 459",
-      "title": "COMPUTER SIMULATION & MODELING",
+      "courseCode": "COSC 459",
+      "courseTitle": "COMPUTER SIMULATION & MODELING",
       "units": 3,
       "description": "Simulation models and languages, data collection and output analysis, random number generation and Monte Carlo integration, model verification and validation, variance reduction techniques, optimization, the implementation and use of simulation techniques in problem solving.",
-      "prerequisites": [
-        "COSC 336",
-        "MATH 330"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 336", "MATH 330"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 461",
-      "title": "ARTIFICIAL INTELLIGENCE",
+      "courseCode": "COSC 461",
+      "courseTitle": "ARTIFICIAL INTELLIGENCE",
       "units": 3,
       "description": "A survey of the problems and techniques involved in producing or modeling intelligence in computers. Particular emphasis will be placed on representation of knowledge and basic paradigms of problem solving. Topics include game playing, theorem proving, natural language, and learning systems.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 465",
-      "title": "ROBOTICS",
+      "courseCode": "COSC 465",
+      "courseTitle": "ROBOTICS",
       "units": 3,
       "description": "Physical mechanisms of robotics, issues of modeling, planning control and programming. Principles underlying the design and analysis of robotic systems, with emphasis on the autonomous, and behavior-based systems.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 467",
-      "title": "FOUNDATIONS OF DATA MINING",
+      "courseCode": "COSC 467",
+      "courseTitle": "FOUNDATIONS OF DATA MINING",
       "units": 3,
       "description": "A comprehensive, hands-on study of the techniques and tools in the field of data mining and knowledge discovery in data (KDD). The foundations of data mining from a number of perspectives are covered, including exploratory analysis, classification, and/or cluster analysis.",
-      "prerequisites": [
-        "COSC 457"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 457"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 471",
-      "title": "COMPUTER GRAPHICS",
+      "courseCode": "COSC 471",
+      "courseTitle": "COMPUTER GRAPHICS",
       "units": 3,
       "description": "An introduction to the field of computer generated and/or displayed graphics data. Covers the topics of representation, transformations, curve and 3-D problems, graphics hardware, and programming considerations.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 481",
-      "title": "CASE STUDIES IN COMPUTER SECURITY",
+      "courseCode": "COSC 481",
+      "courseTitle": "CASE STUDIES IN COMPUTER SECURITY",
       "units": 3,
       "description": "An in-depth study of the practical aspects of computer security, including the study of common computer security vulnerabilities in a laboratory setting.",
-      "prerequisites": [
-        "COSC 440",
-        "COSC 450"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 440", "COSC 450"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 483",
-      "title": "DESIGN & ANALYSIS ALGORITHMS",
+      "courseCode": "COSC 483",
+      "courseTitle": "DESIGN & ANALYSIS ALGORITHMS",
       "units": 3,
       "description": "Algorithm design methods such as heuristics, backtrack programming, branch and bound, recursion, simulation, divide-and-conquer, balancing, and dynamic programming. Efficiency of algorithms - NP-complete problems.",
-      "prerequisites": [
-        "COSC 336"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 336"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Fall"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 484",
-      "title": "WEB-BASED PROGRAM",
+      "courseCode": "COSC 484",
+      "courseTitle": "WEB-BASED PROGRAM",
       "units": 3,
       "description": "Applications executing on a client-server system, emphasizing client side. Technologies include HTTP protocol, dynamic HTML, server-side programming, and client-side JavaScript libraries & frameworks.",
-      "prerequisites": [
-        "COSC 336"
-      ],
+      "prerequisites": ["COSC 336"],
       "typical_year": ["Junior", "Senior"],
-      "offerings": ["Fall", "Spring"]
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 485",
-      "title": "REVERSE ENGINEERING AND MALWARE ANALYSIS",
+      "courseCode": "COSC 485",
+      "courseTitle": "REVERSE ENGINEERING AND MALWARE ANALYSIS",
       "units": 3,
       "description": "Provides students with effective conceptual as well as hands-on knowledge in the areas of Reverse Engineering and Malware Analysis. It follows a progressive approach that introduces relevant concepts and techniques while preparing students to become effective reverse engineering and malware analysts able to use standard methodologies for detecting, analyzing, reverse engineering and eradicating malware in computing systems.",
-      "prerequisites": [
-        "COSC 340",
-        "COSC 450"
-      ],
-      "typical_year": ["Junior", "Senior"]
+      "prerequisites": ["COSC 340", "COSC 450"],
+      "typical_year": ["Junior", "Senior"],
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     },
     {
-      "course_code": "COSC 490",
-      "title": "SOFTWARE PROJECT PRACTICUM",
+      "courseCode": "COSC 490",
+      "courseTitle": "SOFTWARE PROJECT PRACTICUM",
       "units": 3,
       "description": "A project-based course for computer science majors that provides students with the experience of working as part of a project team using current software design and development tools and environments. Projects will consist of all aspects of software development, including requirements analysis, design, and implementation.",
-      "prerequisites": [
-        "COSC 412",
-        "software engineering track majors only (or by department permission)",
-        "senior standing"
-      ],
-      "typical_year": "Senior",
-      "offerings": ["Fall", "Spring"]
+      "prerequisites": ["COSC 412", "software engineering track majors only (or by department permission)", "senior standing"],
+      "typical_year": ["Senior"],
+      "offerings": ["Spring"],
+			"degreeTrack": ["Software Engineering"]
     },
     {
-      "course_code": "COSC 495",
-      "title": "INDEPENDENT STUDY",
+      "courseCode": "COSC 495",
+      "courseTitle": "INDEPENDENT STUDY",
       "units": [1, 3],
       "description": "Directed study in selected areas of Computer Science for which there is no regular course offered. The use of a proposal and well-defined objectives as well as a formal paper or project report are required.",
-      "prerequisites": [
-        "senior standing in Computer Science",
-        "consent of instructor"
-      ],
-      "typical_year": "Senior",
-      "offerings": ["Fall", "Spring"]
+      "prerequisites": ["senior standing in Computer Science", "consent of instructor"],
+      "typical_year": ["Senior"],
+      "offerings": ["Fall", "Spring"],
+			"degreeTrack": ["Software Engineering", "Cybersecurity", "General Computer Science"]
     }
   ]
 }
