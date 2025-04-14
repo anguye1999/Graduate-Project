@@ -7,7 +7,7 @@
       "courseCode": "MATH 115",
       "courseTitle": "COLLEGE ALGEBRA",
       "units": 3,
-      "description": "Equations and the concept of function; linear, quadratic, higher-degree polynomial, exponential, logarithmic, and rational functions; complex numbers. Not open to those who have successfully completed MATH 119.",
+      "courseDescription": "Equations and the concept of function; linear, quadratic, higher-degree polynomial, exponential, logarithmic, and rational functions; complex numbers. Not open to those who have successfully completed MATH 119.",
       "prerequisites": ["qualifying score on Math Placement exam or MATH 102"],
       "coreTitle": "MATHEMATICS",
       "offerings": ["Fall", "Spring"]
@@ -16,7 +16,7 @@
       "courseCode": "MATH 117",
       "courseTitle": "TRIGONOMETRY AND ADVANCED COLLEGE ALGEBRA",
       "units": 3,
-      "description": "The second semester in a two-semester precalculus sequence, with a primary focus on trigonometry. Angle measures; trigonometric functions and their graphs; trigonometric identities; inverse trigonometric functions and their graphs; algebraic and graphical solutions of trigonometric equations and basic trigonometric inequalities; solving triangles; linear systems in two and three variables with applications to partial fractions; conic sections. Not open to students who have successfully completed MATH 119.",
+      "courseDescription": "The second semester in a two-semester precalculus sequence, with a primary focus on trigonometry. Angle measures; trigonometric functions and their graphs; trigonometric identities; inverse trigonometric functions and their graphs; algebraic and graphical solutions of trigonometric equations and basic trigonometric inequalities; solving triangles; linear systems in two and three variables with applications to partial fractions; conic sections. Not open to students who have successfully completed MATH 119.",
       "prerequisites": ["MATH 115"],
       "offerings": ["Fall", "Spring"]
     },
@@ -24,7 +24,7 @@
       "courseCode": "MATH 119",
       "courseTitle": "PRE-CALCULUS",
       "units": 4,
-      "description": "An overview of functions and their graphs as well as algebraic techniques and trigonometry in preparation for Calculus I (MATH 273). Functions emphasized are polynomial, rational, exponential, logarithmic, and trigonometric.",
+      "courseDescription": "An overview of functions and their graphs as well as algebraic techniques and trigonometry in preparation for Calculus I (MATH 273). Functions emphasized are polynomial, rational, exponential, logarithmic, and trigonometric.",
       "prerequisites": ["qualifying score on Math Placement exam"],
       "coreTitle": "MATHEMATICS",
       "offerings": ["Fall", "Spring"]
@@ -33,7 +33,7 @@
       "courseCode": "MATH 211",
       "courseTitle": "CALCULUS FOR APPLICATIONS",
       "units": 3,
-      "description": "Intended primarily for students in biology, business, economics, psychology and the social sciences. Elements of differential and integral calculus from an intuitive standpoint with emphasis on the use of calculus in the above fields. Exponential and logarithmic functions, partial derivatives included. Not open to mathematics majors or minors.",
+      "courseDescription": "Intended primarily for students in biology, business, economics, psychology and the social sciences. Elements of differential and integral calculus from an intuitive standpoint with emphasis on the use of calculus in the above fields. Exponential and logarithmic functions, partial derivatives included. Not open to mathematics majors or minors.",
       "prerequisites": ["qualifying score on the Math Placement Test or MATH 115 (recommended) or MATH 119"],
       "coreTitle": "MATHEMATICS",
       "offerings": ["Fall", "Spring"]
@@ -42,7 +42,7 @@
       "courseCode": "MATH 263",
       "courseTitle": "DISCRETE MATHEMATICS",
       "units": 3,
-      "description": "Sets, logic, induction, functions, relations, sequences, recursion, combinatorics, graphs and trees, matrices with an emphasis on applications in computer science.",
+      "courseDescription": "Sets, logic, induction, functions, relations, sequences, recursion, combinatorics, graphs and trees, matrices with an emphasis on applications in computer science.",
       "prerequisites": ["COSC 236"],
       "offerings": ["Fall", "Spring"]
     },
@@ -50,7 +50,7 @@
       "courseCode": "MATH 265",
       "courseTitle": "ELEMENTARY LINEAR ALGEBRA",
       "units": 4,
-      "description": "Matrix calculations and determinants, vector spaces over the real numbers, linear transformations, eigenvalues, eigenvectors, and inner products with emphasis on applications. Not open to students who successfully completed MATH 365 or MATH 463.",
+      "courseDescription": "Matrix calculations and determinants, vector spaces over the real numbers, linear transformations, eigenvalues, eigenvectors, and inner products with emphasis on applications. Not open to students who successfully completed MATH 365 or MATH 463.",
       "prerequisites": ["MATH 211 or MATH 273"],
       "offerings": ["Fall", "Spring"]
     },
@@ -58,7 +58,7 @@
       "courseCode": "MATH 267",
       "courseTitle": "INTRODUCTION TO ABSTRACT MATHEMATICS",
       "units": 4,
-      "description": "Sets, mappings, relations, logic, mathematical induction, properties of the integers, Fundamental Theorem of Arithmetic, polynomials, and elementary analytic concepts. Not open to those who successfully completed MATH 361 or MATH 467.",
+      "courseDescription": "Sets, mappings, relations, logic, mathematical induction, properties of the integers, Fundamental Theorem of Arithmetic, polynomials, and elementary analytic concepts. Not open to those who successfully completed MATH 361 or MATH 467.",
       "prerequisites": ["MATH 273 and MATH 265 or consent of the instructor"],
       "offerings": ["Fall", "Spring"]
     },
@@ -66,7 +66,7 @@
       "courseCode": "MATH 273",
       "courseTitle": "CALCULUS I",
       "units": 4,
-      "description": "Functions, limits, and continuity; differentiation of algebraic and trigonometric functions; mean value theorem; differentials; introduction to integration; applications. Four lecture hours and one laboratory hour per week. Students who have successfully completed the honors version of this course (MATH 283) will not receive additional credit for this course.",
+      "courseDescription": "Functions, limits, and continuity; differentiation of algebraic and trigonometric functions; mean value theorem; differentials; introduction to integration; applications. Four lecture hours and one laboratory hour per week. Students who have successfully completed the honors version of this course (MATH 283) will not receive additional credit for this course.",
       "prerequisites": ["qualifying score on Math Placement exam or MATH 117 or MATH 119"],
       "coreTitle": "MATHEMATICS",
       "offerings": ["Fall", "Spring"]
@@ -75,7 +75,7 @@
       "courseCode": "MATH 274",
       "courseTitle": "CALCULUS II",
       "units": 4,
-      "description": "Differentiation and integration of exponential, logarithmic, and inverse trigonometric functions; techniques of integration and applications; indeterminate forms; improper integrals; sequences and series of numbers; power series.",
+      "courseDescription": "Differentiation and integration of exponential, logarithmic, and inverse trigonometric functions; techniques of integration and applications; indeterminate forms; improper integrals; sequences and series of numbers; power series.",
       "prerequisites": ["MATH 273"],
       "coreTitle": "MATHEMATICS",
       "offerings": ["Fall", "Spring"]
@@ -84,7 +84,7 @@
       "courseCode": "MATH 275",
       "courseTitle": "CALCULUS III",
       "units": 4,
-      "description": "Vectors in two and three dimensions, differential and integral calculus of functions of several variables. Four lecture hours and one laboratory hours per week.",
+      "courseDescription": "Vectors in two and three dimensions, differential and integral calculus of functions of several variables. Four lecture hours and one laboratory hours per week.",
       "prerequisites": ["MATH 274"],
       "offerings": ["Fall", "Spring"]
     },
@@ -92,7 +92,7 @@
       "courseCode": "MATH 314",
       "courseTitle": "INTRODUCTION TO CRYPTOGRAPHY",
       "units": 3,
-      "description": "A broad introduction to cryptography and its mathematical foundations: Elementary number theory; classical and modern symmetric key cryptosystems; public key cryptography; primality tests, factoring algorithms; hash functions and digital signatures. Selected further topics may include security protocols, digital cash, elliptic curve cryptography, or quantum cryptography.",
+      "courseDescription": "A broad introduction to cryptography and its mathematical foundations: Elementary number theory; classical and modern symmetric key cryptosystems; public key cryptography; primality tests, factoring algorithms; hash functions and digital signatures. Selected further topics may include security protocols, digital cash, elliptic curve cryptography, or quantum cryptography.",
       "prerequisites": ["COSC 236; either >MATH 263 or MATH 267; and either MATH 330 or MATH 331 (may be taken concurrently)"],
       "offerings": ["Fall", "Spring"]
     },
@@ -100,7 +100,7 @@
       "courseCode": "MATH 315",
       "courseTitle": "APPLIED COMBINATORICS",
       "units": 4,
-      "description": "General counting methods, pigeonhole principle, inclusion-exclusion principle, generating functions, recurrence relations, summation techniques, partitions, permutations and pattern avoidance, Polya's enumeration, asymptotics, select topics from graph theory.",
+      "courseDescription": "General counting methods, pigeonhole principle, inclusion-exclusion principle, generating functions, recurrence relations, summation techniques, partitions, permutations and pattern avoidance, Polya's enumeration, asymptotics, select topics from graph theory.",
       "prerequisites": ["MATH 274; MATH 263 or MATH 267"],
       "offerings": ["Fall"]
     },
@@ -108,7 +108,7 @@
       "courseCode": "MATH 330",
       "courseTitle": "INTRODUCTION TO STATISTICAL METHODS",
       "units": 4,
-      "description": "An introductory course for students with mathematics and computing backgrounds emphasizing statistical ideas and techniques. Descriptive statistics, probability, estimation and sampling, hypothesis testing, regression and correlation, and analysis of variance. A statistical package such as MINITAB is introduced as a computational tool.",
+      "courseDescription": "An introductory course for students with mathematics and computing backgrounds emphasizing statistical ideas and techniques. Descriptive statistics, probability, estimation and sampling, hypothesis testing, regression and correlation, and analysis of variance. A statistical package such as MINITAB is introduced as a computational tool.",
       "prerequisites": ["MATH 274"],
       "offerings": ["Fall", "Spring"]
     },
@@ -116,7 +116,7 @@
       "courseCode": "MATH 331",
       "courseTitle": "PROBABILITY",
       "units": 4,
-      "description": "Probability in sample spaces, discrete and continuous random variables, distribution theory, Chebyshev's Theorem, Central Limit Theorem, expected values and moments.",
+      "courseDescription": "Probability in sample spaces, discrete and continuous random variables, distribution theory, Chebyshev's Theorem, Central Limit Theorem, expected values and moments.",
       "prerequisites": ["MATH 275 (may be taken concurrently)"],
       "offerings": ["Fall", "Spring"]
     },
@@ -124,7 +124,7 @@
       "courseCode": "MATH 332",
       "courseTitle": "MATHEMATICAL STATISTICS",
       "units": 3,
-      "description": "Sample theory and distributions, point estimation, confidence intervals, tests of hypothesis, and theory of statistical inference.",
+      "courseDescription": "Sample theory and distributions, point estimation, confidence intervals, tests of hypothesis, and theory of statistical inference.",
       "prerequisites": ["Math 331 (MATH 531)"],
       "offerings": ["Fall", "Spring"]
     },
@@ -132,7 +132,7 @@
       "courseCode": "MATH 369",
       "courseTitle": "INTRODUCTION TO ABSTRACT ALGEBRA",
       "units": 4,
-      "description": "Elementary number theory; congruences, groups up to and including the isomorphism theorems, commutative rings, polynomials, unique factorization, irreducibility, finite fields.",
+      "courseDescription": "Elementary number theory; congruences, groups up to and including the isomorphism theorems, commutative rings, polynomials, unique factorization, irreducibility, finite fields.",
       "prerequisites": ["MATH 265, MATH 267, and MATH 274"],
       "offerings": ["Fall", "Spring"]
     },
@@ -140,7 +140,7 @@
       "courseCode": "MATH 371",
       "courseTitle": "INTRODUCTION TO MACHINE LEARNING",
       "units": 3,
-      "description": "An introduction to the theory and implementation of machine learning. Linear methods in regression and classification; feature mapping; kernels; overfitting; model selection. Additional topics may include support vector machines or unsupervised learning. Course design integrates coding, algorithmic implementation, and mathematical theory.",
+      "courseDescription": "An introduction to the theory and implementation of machine learning. Linear methods in regression and classification; feature mapping; kernels; overfitting; model selection. Additional topics may include support vector machines or unsupervised learning. Course design integrates coding, algorithmic implementation, and mathematical theory.",
       "prerequisites": ["MATH 265 and MATH 274; MATH 331 (may be taken concurrently)"],
       "offerings": ["Fall", "Spring"]
     },
@@ -148,7 +148,7 @@
       "courseCode": "MATH 372",
       "courseTitle": "REAL ANALYSIS I",
       "units": 4,
-      "description": "An introduction to the real numbers and the analytic properties of real-valued sequences and functions. The set of real numbers; sequences and series; continuous functions and uniform continuity; differentiation; Riemann integration.",
+      "courseDescription": "An introduction to the real numbers and the analytic properties of real-valued sequences and functions. The set of real numbers; sequences and series; continuous functions and uniform continuity; differentiation; Riemann integration.",
       "prerequisites": ["MATH 267 and MATH 275"],
       "offerings": ["Fall", "Spring"]
     },
@@ -156,7 +156,7 @@
       "courseCode": "MATH 374",
       "courseTitle": "DIFFERENTIAL EQUATIONS",
       "units": 3,
-      "description": "Theory and application of linear ordinary differential equations: homogeneous and nonhomogeneous linear equations, initial and boundary value problems, exact equations, variation of parameters, Euler equations; solutions of non-linear ordinary differential equations of the first order and second order; power series solutions; system of linear equations.",
+      "courseDescription": "Theory and application of linear ordinary differential equations: homogeneous and nonhomogeneous linear equations, initial and boundary value problems, exact equations, variation of parameters, Euler equations; solutions of non-linear ordinary differential equations of the first order and second order; power series solutions; system of linear equations.",
       "prerequisites": ["MATH 274"],
       "offerings": ["Fall", "Spring"]
     },
@@ -164,14 +164,14 @@
       "courseCode": "MATH 377",
       "courseTitle": "MATHEMATICAL MODELS",
       "units": 3,
-      "description": "Developing appropriate mathematical models and techniques to solve mathematical problems in sociology, psychology, economics, management science, and ecology.",
+      "courseDescription": "Developing appropriate mathematical models and techniques to solve mathematical problems in sociology, psychology, economics, management science, and ecology.",
       "prerequisites": ["MATH 265, MATH 274, COSC 236 and at least junior standing"]
     },
     {
       "courseCode": "MATH 435",
       "courseTitle": "NUMERICAL ANALYSIS I",
       "units": 3,
-      "description": "Error analysis, interpolation, numerical differentiation and integration, numerical solution of algebraic equations, direct and iterative techniques for solving linear systems of algebraic equations. Mathematical and comparable computer algebra systems will be used.",
+      "courseDescription": "Error analysis, interpolation, numerical differentiation and integration, numerical solution of algebraic equations, direct and iterative techniques for solving linear systems of algebraic equations. Mathematical and comparable computer algebra systems will be used.",
       "prerequisites": ["MATH 265, MATH 274, and COSC 236"],
       "offerings": ["Fall"]
     },
@@ -179,14 +179,14 @@
       "courseCode": "MATH 437",
       "courseTitle": "OPERATIONS RESEARCH",
       "units": 3,
-      "description": "Introduction to linear, integer and nonlinear programming, the simplex method and interior point methods, duality and sensitivity analysis; formulation of optimization models and applications to problems from industry.",
+      "courseDescription": "Introduction to linear, integer and nonlinear programming, the simplex method and interior point methods, duality and sensitivity analysis; formulation of optimization models and applications to problems from industry.",
       "prerequisites": ["MATH 265 and MATH 331"]
     },
     {
       "courseCode": "MATH 439",
       "courseTitle": "COMPUTATIONAL PROBABILITY MODELS",
       "units": 3,
-      "description": "Markov chains, exponential distribution, Poisson process, continuous time Markov chains, Brownian motion and stationary processes.",
+      "courseDescription": "Markov chains, exponential distribution, Poisson process, continuous time Markov chains, Brownian motion and stationary processes.",
       "prerequisites": ["MATH 331"],
       "offerings": ["Spring"]
     },
@@ -194,14 +194,14 @@
       "courseCode": "MATH 451",
       "courseTitle": "GRAPH THEORY",
       "units": 3,
-      "description": "Hamiltonian and Eulerian graphs, coloring graphs, planar and non-planar graphs, connectivity problems; isomorphic graphs, and advanced topics.",
+      "courseDescription": "Hamiltonian and Eulerian graphs, coloring graphs, planar and non-planar graphs, connectivity problems; isomorphic graphs, and advanced topics.",
       "prerequisites": ["MATH 263 or MATH 267"]
     },
     {
       "courseCode": "MATH 457",
       "courseTitle": "DIFFERENTIAL GEOMETRY",
       "units": 3,
-      "description": "Curvatures of curves and surfaces in three dimensional Euclidean space, geodesics, invariants, mappings, and special surfaces.",
+      "courseDescription": "Curvatures of curves and surfaces in three dimensional Euclidean space, geodesics, invariants, mappings, and special surfaces.",
       "prerequisites": ["MATH 275 and MATH 265"]
     }
   ]
