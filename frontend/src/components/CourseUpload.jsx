@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, X, FileText, Check, AlertCircle } from 'lucide-react';
+import DegreeCompletionPlanTextTemplate from "../assets/files/DegreeCompletionPlanTextTemplate.txt"
 import '../styles/CourseUpload.css';
 
 const CourseUpload = ({ onFileProcessed, onCancel }) => {
@@ -59,6 +60,15 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
     
     setFile(selectedFile);
   };
+
+  const DownloadTextTemplate = () => {
+    const link = document.createElement('a');
+    link.href = DegreeCompletionPlanTextTemplate;
+    link.download = 'DegreeCompletionPlanTextTemplate.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   const uploadFile = async () => {
     if (!file) return;
@@ -138,6 +148,9 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
         <>
           <div className="course-upload-instructions">
             <p>Upload your degree completion plan as an Excel or text file to get personalized course recommendations.</p>
+            <p className='course-upload-download-template' onClick = {DownloadTextTemplate}>
+              To download a template to be used to format your degree completion plan, click here!
+            </p>
             <p className="course-upload-file-types">Supported formats: .xlsx, .xls, .csv, .txt</p>
           </div>
           

@@ -50,6 +50,12 @@
     font-size: 14px;
     color: #555;
   }
+
+  .course-upload-download-template{
+    cursor: pointer;
+    color: blue !important;
+    text-decoration: underline;
+  }
   
   .course-upload-file-types {
     font-size: 12px;
