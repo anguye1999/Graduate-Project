@@ -123,71 +123,73 @@ const Chatbot = () => {
 
   return (
     <div className="chat-window">
-      <div className="chat-header">
-        <div className="header-title-container">
-          <MessageCircle className="header-icon" size={24} />
-          <h3 className="header-title">Course Recommendation Assistant</h3>
-        </div>
-        <button 
-          onClick={() => {
-            console.log("Collapsing chat window");
-            setIsExpanded(false);
-          }}
-          className="close-button"
-        >
-          <X size={20} />
-        </button>
-      </div>
-
-      <div className="messages-container">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`message ${msg.isBot ? 'bot' : 'user'}`}
-          >
-            <div className="message-content">
-              {msg.text}
-            </div>
+      <div className="inner-chat-window">
+        <div className="chat-header">
+          <div className="header-title-container">
+            <MessageCircle className="header-icon" size={24} />
+            <h3 className="header-title">Course Recommendation Assistant</h3>
           </div>
-        ))}
-        {isLoading && (
-          <div className="message bot">
-            <div className="message-content loading">
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-            </div>
-          </div>
-        )}
-        <div ref={messagesEndRef} />
-      </div>
-
-      <form 
-        onSubmit={(e) => {
-          console.log("Form onSubmit triggered");
-          handleSubmit(e);
-        }} 
-        className="input-container"
-      >
-        <div className="input-form">
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Ask about course recommendations..."
-            className="chat-input"
-            disabled={isLoading}
-          />
-          <button
-            type="submit"
-            className="send-button"
-            disabled={isLoading}
-            onClick={() => console.log("Submit button clicked")}
+          <button 
+            onClick={() => {
+              console.log("Collapsing chat window");
+              setIsExpanded(false);
+            }}
+            className="close-button"
           >
-            <Send size={20} />
+            <X size={20} />
           </button>
         </div>
-      </form>
+
+        <div className="messages-container">
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              className={`message ${msg.isBot ? 'bot' : 'user'}`}
+            >
+              <div className="message-content">
+                {msg.text}
+              </div>
+            </div>
+          ))}
+          {isLoading && (
+            <div className="message bot">
+              <div className="message-content loading">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+            </div>
+          )}
+          <div ref={messagesEndRef} />
+        </div>
+
+        <form 
+          onSubmit={(e) => {
+            console.log("Form onSubmit triggered");
+            handleSubmit(e);
+          }} 
+          className="input-container"
+        >
+          <div className="input-form">
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Ask about course recommendations..."
+              className="chat-input"
+              disabled={isLoading}
+            />
+            <button
+              type="submit"
+              className="send-button"
+              disabled={isLoading}
+              onClick={() => console.log("Submit button clicked")}
+            >
+              <Send size={20} />
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

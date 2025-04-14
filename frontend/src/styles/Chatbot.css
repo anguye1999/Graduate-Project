@@ -34,6 +34,22 @@
   display: flex;
   flex-direction: column;
   resize: both;
+  transform: rotateZ(180deg);
+  overflow: hidden;
+}
+
+.inner-chat-window {
+  min-width: 300px;
+  min-height: 400px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  transform: rotateZ(180deg);
   overflow: hidden;
 }
 
