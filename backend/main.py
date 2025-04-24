@@ -6,14 +6,23 @@ import threading
 import tempfile
 import csv
 import re
+import json
 from werkzeug.utils import secure_filename
 from openai import OpenAI
 from dotenv import load_dotenv
+import os
+from validation import load_course_data, perform_course_validation, generate_validation_summary
+from course_sequence import generate_recommended_sequence
 
 # Load environment variables and initialize app
 load_dotenv()
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+
+app_directory = os.path.dirname(os.path.abspath(__file__))
+course_data = load_course_data(app_directory)
+if not course_data:
+    print("Warning: Could not load course data. Validation will not work properly.")
 
 # Configuration constants
 UPLOAD_FOLDER = tempfile.gettempdir()
@@ -35,6 +44,8 @@ ASSISTANT_ID = "asst_E8cJRwahq7uuIRJeAeerDk89"
 # Storage for sessions and course data
 user_threads = {}
 user_courses = {}
+# New: Add a dictionary to track file upload status
+user_has_uploaded = {}
 
 def allowed_file(filename):
     """Check if the uploaded file has an allowed extension"""
@@ -99,8 +110,12 @@ def extract_courses_from_text(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
             
-            # Look for course codes
-            matches = re.findall(r'([A-Z]{2,4})\s*(\d{3,4}[A-Z]?)', content)
+            # Print debug info
+            print(f"Parsing text file with content:\n{content[:500]}")
+            
+            # Look for course codes with a more specific pattern
+            # This pattern is more strict about what constitutes a course code
+            matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3,4}[A-Z]?)\b', content)
             
             for dept, number in matches:
                 key = f"{dept}{number}"
@@ -116,8 +131,12 @@ def extract_courses_from_text(file_path):
                 
                 name = ""
                 if code_pos >= 0:
+                    # Only look for course name AFTER the code, not before
                     name_text = content[code_pos:code_pos+100]
-                    name_match = re.search(r'(?::|-)?\s*([A-Za-z\s,&]+)', name_text)
+                    
+                    # More specific pattern for course names
+                    # Looking for text that follows a colon, dash, or space after the course code
+                    name_match = re.search(r'(?::|-)?\s+([A-Za-z0-9\s,&\'"\-]+?)(?:\.|$|\n)', name_text)
                     if name_match:
                         name = name_match.group(1).strip()
                 
@@ -128,6 +147,11 @@ def extract_courses_from_text(file_path):
                     'courseCode': f"{dept} {number}",
                     'completed': True
                 })
+        
+        # Print for debugging
+        print(f"Extracted {len(courses)} courses from text file:")
+        for course in courses:
+            print(f"  - {course['courseCode']}: {course['name']}")
         
         return courses
     except Exception as e:
@@ -148,6 +172,9 @@ def cleanup_expired_threads():
             del user_threads[session_id]
         if session_id in user_courses:
             del user_courses[session_id]
+        # New: Also clean up upload status 
+        if session_id in user_has_uploaded:
+            del user_has_uploaded[session_id]
     
     if expired_threads:
         print(f"Cleaned up {len(expired_threads)} expired threads")
@@ -176,12 +203,37 @@ def chat():
                 'thread_id': thread_id,
                 'last_accessed': time.time()
             }
+            
+            # New: For new threads, add a clear context message
+            client.beta.threads.messages.create(
+                thread_id=thread_id,
+                role="user",
+                content="""SYSTEM CONTEXT: This is a new conversation. 
+                The user has NOT uploaded any course files yet. 
+                Do not reference any uploaded files until the user actually uploads one.
+                The core_curriculum.json and other JSON files are your reference data, 
+                NOT files uploaded by the user."""
+            )
         
-        # Add user message to thread
+        # New: Check if this is the first message after a file upload
+        upload_context = ""
+        if session_id in user_has_uploaded and user_has_uploaded[session_id]['has_uploaded']:
+            # Include context about the file upload
+            filename = user_has_uploaded[session_id]['filename']
+            upload_context = f"CONTEXT: The user has previously uploaded a file named '{filename}'. "
+        else:
+            # Include context that no file has been uploaded
+            upload_context = "CONTEXT: The user has NOT uploaded any course files yet. Do not reference any uploaded files or claim to know the user's courses. The core_curriculum.json and other JSON files are reference data only, NOT user uploads. "
+        
+        # Add user message to thread with context
+        full_message = f"{upload_context}USER MESSAGE: {user_message}"
+        
+        print(f"Sending message to assistant: {full_message[:100]}...")
+        
         client.beta.threads.messages.create(
             thread_id=thread_id,
             role="user",
-            content=user_message
+            content=full_message
         )
         
         # Run the Assistant
@@ -257,7 +309,7 @@ def chat():
         
 @app.route('/api/upload-courses', methods=['POST'])
 def upload_courses():
-    """Handle course history file uploads"""
+    """Handle course history file uploads and validate courses"""
     # Check for file in request
     if 'file' not in request.files:
         return jsonify({'message': 'No file provided', 'success': False}), 400
@@ -288,6 +340,10 @@ def upload_courses():
         else:
             courses = []
         
+        # Read the raw file content for reference
+        with open(file_path, 'r', encoding='utf-8') as f:
+            raw_content = f.read()
+            
         # Clean up temporary file
         try:
             os.remove(file_path)
@@ -310,44 +366,81 @@ def upload_courses():
         
         user_courses[session_id] = extracted_data
         
+        # New: Set the upload flag
+        user_has_uploaded[session_id] = {
+            'has_uploaded': True,
+            'filename': filename,
+            'timestamp': time.time(),
+            'course_count': len(courses)
+        }
+        
         # Add course info to thread if it exists
         if session_id in user_threads:
             thread_id = user_threads[session_id]['thread_id']
             
-            # Create a summary for the assistant
-            message = f"The user has uploaded their course history with {len(courses)} courses:\n\n"
+            # Create a direct message about the upload that prioritizes the user's content
+            upload_message = f"""
+            SYSTEM NOTIFICATION: The user has just uploaded a file named "{filename}" containing course information.
             
-            # Group courses by department
-            courses_by_dept = {}
+            IMPORTANT INSTRUCTIONS: 
+            1. This is a user-uploaded file, NOT a reference file
+            2. In all your responses, ALWAYS prioritize discussing these specific courses rather than general program information
+            3. When discussing these courses, reference them by their exact codes as found in the file
+            
+            The raw content of their uploaded file is:
+            ---BEGIN USER UPLOADED FILE CONTENT---
+            {raw_content}
+            ---END USER UPLOADED FILE CONTENT---
+            
+            The {len(courses)} courses identified in this file are:
+            """
+            
+            # Add specific details about each course
             for course in courses:
                 dept = course.get('department', 'Unknown')
-                if dept not in courses_by_dept:
-                    courses_by_dept[dept] = []
-                courses_by_dept[dept].append(course)
-            
-            # List courses by department
-            for dept, dept_courses in courses_by_dept.items():
-                message += f"### {dept} Courses\n"
-                for course in dept_courses:
-                    # Format course line
-                    number = course.get('number', '')
-                    name = course.get('name', '')
-                    completed = "Completed" if course.get('completed') else "Not completed"
-                    
-                    message += f"- {dept} {number}"
-                    if name:
-                        message += f": {name}"
-                    message += f" ({completed})\n"
+                number = course.get('number', 'Unknown')
+                name = course.get('name', '') 
+                upload_message += f"- {dept} {number}" + (f": {name}" if name else "") + "\n"
                 
-                message += "\n"
-            
-            message += "Please provide course recommendations and advice for their degree progress."
+            # If we have course data available, include validation but with clear prioritization instructions
+            if course_data:
+                # Add validation data
+                track = "Software Engineering"  # Default track
+                validation_results = perform_course_validation(courses, course_data, track)
+                validation_summary = generate_validation_summary(validation_results)
+                
+                upload_message += f"""
+                
+                SUPPLEMENTARY INFORMATION: Below is additional validation data about how these courses relate to 
+                degree requirements. This is supplementary information only.
+                
+                STUDENT_PROGRESS: {json.dumps(validation_summary, indent=2)}
+                
+                IMPORTANT RESPONSE INSTRUCTIONS: 
+                1. In your next response, first acknowledge the specific courses uploaded by the user (e.g., "I see you've uploaded COSC 109, COSC 175, and COMM 131")
+                2. Then briefly describe what these specific courses are (by name/title)
+                3. Only after that, ask what the user would like to know about these courses
+                
+                DO NOT make claims about what program the user is in unless they specifically tell you.
+                DO NOT reference any courses that were not in this upload.
+                """
+            else:
+                upload_message += """
+                
+                IMPORTANT RESPONSE INSTRUCTIONS:
+                1. In your next response, first acknowledge the specific courses uploaded by the user
+                2. Then briefly describe what these specific courses are (by name/title if available)
+                3. Only after that, ask what the user would like to know about these courses
+                
+                DO NOT make assumptions about the user's degree program.
+                DO NOT reference any courses that were not in this upload.
+                """
             
             # Add to thread
             client.beta.threads.messages.create(
                 thread_id=thread_id,
                 role="user",
-                content=message
+                content=upload_message
             )
         
         # Return success response
@@ -359,8 +452,87 @@ def upload_courses():
         
     except Exception as e:
         print(f"Error processing upload: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return jsonify({
             'message': f'Error processing file: {str(e)}',
+            'success': False
+        }), 500
+
+@app.route('/api/validate-courses', methods=['POST'])
+def validate_courses():
+    data = request.json
+    session_id = data.get('session_id', 'default')
+
+    try:
+        if session_id in user_courses:
+            student_courses = user_courses[session_id].get('courses', [])
+
+            if course_data and student_courses:
+                track = data.get('track', 'Software Engineering')
+                validation_results = perform_course_validation(student_courses, course_data, track)
+                validation_summary = generate_validation_summary(validation_results)
+                
+                # Generate course sequence
+                sequence_results = generate_recommended_sequence(student_courses, course_data, track)
+                
+                # Add the sequence to the response
+                return jsonify({
+                    'validation': validation_results,
+                    'summary': validation_summary,
+                    'sequence': sequence_results,
+                    'success': True
+                })
+            else:
+                return jsonify({
+                    'message': 'No course data available for validation',
+                    'success': False
+                }), 400
+        else:
+            return jsonify({
+                'message': 'No courses found for this session',
+                'success': False
+            }), 404
+    
+    except Exception as e:
+        print(f"Error validating courses: {str(e)}")
+        return jsonify({
+            'message': f'Error validating courses: {str(e)}',
+            'success': False
+        }), 500
+
+@app.route('/api/course-sequence', methods=['POST'])
+def get_course_sequence():
+    data = request.json
+    session_id = data.get('session_id', 'default')
+
+    try:
+        if session_id in user_courses:
+            student_courses = user_courses[session_id].get('courses', [])
+
+            if course_data and student_courses:
+                track = data.get('track', 'Software Engineering')
+                sequence_results = generate_recommended_sequence(student_courses, course_data, track)
+                
+                return jsonify({
+                    'sequence': sequence_results,
+                    'success': True
+                })
+            else:
+                return jsonify({
+                    'message': 'No course data available for sequencing',
+                    'success': False
+                }), 400
+        else:
+            return jsonify({
+                'message': 'No courses found for this session',
+                'success': False
+            }), 404
+    
+    except Exception as e:
+        print(f"Error generating course sequence: {str(e)}")
+        return jsonify({
+            'message': f'Error generating course sequence: {str(e)}',
             'success': False
         }), 500
 
@@ -373,9 +545,36 @@ def clear_session():
         del user_threads[session_id]
         if session_id in user_courses:
             del user_courses[session_id]
+        # New: Also clear upload status
+        if session_id in user_has_uploaded:
+            del user_has_uploaded[session_id]
         return jsonify({"status": "success", "message": "Session cleared"})
     
     return jsonify({"status": "error", "message": "Session not found"}), 404
+
+@app.route('/api/has-uploaded', methods=['GET'])
+def check_upload_status():
+    """Check if a user has uploaded a file"""
+    session_id = request.args.get('session_id', '')
+    
+    if not session_id:
+        return jsonify({"status": "error", "message": "No session ID provided"}), 400
+        
+    has_uploaded = False
+    filename = None
+    course_count = 0
+    
+    if session_id in user_has_uploaded:
+        has_uploaded = user_has_uploaded[session_id]['has_uploaded']
+        filename = user_has_uploaded[session_id]['filename']
+        course_count = user_has_uploaded[session_id].get('course_count', 0)
+    
+    return jsonify({
+        "status": "success", 
+        "has_uploaded": has_uploaded,
+        "filename": filename,
+        "course_count": course_count
+    })
 
 @app.route('/api/health', methods=['GET'])
 def health_check():

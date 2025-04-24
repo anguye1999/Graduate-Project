@@ -1,0 +1,177 @@
+{
+    "majorcourseTitle": "Computer Science - Software Engineering Track",
+    "totalUnits": "87-89",
+    "minUnitsAtTowson": 30,
+    "courses": {
+      "requiredComputerScience": [
+        {
+          "courseCode": "CIS 377",
+          "courseTitle": "INTRODUCTION TO CYBERSECURITY",
+          "units": 3,
+          "prerequisites": ["Major or Minor sophomore standing"],
+          "offerings": ["Fall", "Spring"]
+        },
+        {
+          "courseCode": "COSC 236"
+        },
+        {
+          "courseCode": "COSC 237"
+        },
+        {
+          "courseCode": "COSC 290"
+        },
+        {
+          "courseCode": "COSC 336"
+        },
+        {
+          "courseCode": "COSC 350"
+        },
+        {
+          "courseCode": "COSC 412"
+        },
+        {
+          "courseCode": "COSC 439"
+        },
+        {
+          "courseCode": "COSC 455"
+        },
+        {
+          "courseCode": "COSC 457"
+        }
+      ],
+      "requiredSoftwareEngineering": [
+        {
+          "courseCode": "COSC 432"
+        },
+        {
+          "courseCode": "COSC 436"
+        },
+        {
+          "courseCode": "COSC 442"
+        },
+        {
+          "courseCode": "COSC 490"
+        }
+      ],
+      "electiveSoftwareEngineering": [
+        {
+          "courseCode": "COSC 397"
+        },
+        {
+          "courseCode": "COSC 435"
+        },
+        {
+          "courseCode": "COSC 484"
+        }
+      ],
+      "requiredMath": [
+        {
+          "courseCode": "MATH 263 or MATH 267",
+          "courseTitle": "DISCRETE MATHEMATICS or INTRODUCTION TO ABSTRACT MATHEMATICS",
+          "units": "3-4"
+        },
+        {
+          "courseCode": "MATH 273"
+        },
+        {
+          "courseCode": "MATH 274"
+        },
+        {
+          "courseCode": "MATH 330"
+        }
+      ],
+      "scienceRequirement": [
+        {
+          "courseCode": "BIOL 200 & 200L",
+          "courseTitle": "BIOLOGY I: INTRODUCTION TO CELLULAR BIOLOGY AND GENETICS [LECTURE] and BIOLOGY I: INTRODUCTION TO CELLULAR BIOLOGY AND GENETICS [LAB]",
+          "units": 4
+        },
+        {
+          "courseCode": "BIOL 206 & 206L",
+          "courseTitle": "BIOLOGY II: INTRODUCTION TO ECOLOGY AND EVOLUTION [LECTURE] and BIOLOGY II: INTRODUCTION TO ECOLOGY AND EVOLUTION [LAB]",
+          "units": 4
+        },
+        {
+          "courseCode": "CHEM 131 & 131L",
+          "courseTitle": "GENERAL CHEMISTRY I LECTURE and GENERAL CHEMISTRY I LABORATORY",
+          "units": 4
+        },
+        {
+          "courseCode": "CHEM 132 & 132L",
+          "courseTitle": "GENERAL CHEMISTRY II LECTURE and GENERAL CHEMISTRY II LABORATORY",
+          "units": 4
+        },
+        {
+          "courseCode": "GEOL 121",
+          "courseTitle": "PHYSICAL GEOLOGY",
+          "units": 4
+        },
+        {
+          "courseCode": "PHYS 241",
+          "courseTitle": "GENERAL PHYSICS I CALCULUS-BASED",
+          "units": 4
+        },
+        {
+          "courseCode": "PHYS 242",
+          "courseTitle": "GENERAL PHYSICS II CALCULUS-BASED",
+          "units": 4
+        }
+      ],
+      "electiveMath": [
+        {
+          "courseCode": "MATH 265"
+        },
+        {
+          "courseCode": "MATH 275"
+        },
+        {
+          "courseCode": "MATH 314"
+        },
+        {
+          "courseCode": "MATH 315"
+        },
+        {
+          "courseCode": "MATH 369"
+        },
+        {
+          "courseCode": "MATH 374"
+        },
+        {
+          "courseCode": "MATH 377"
+        },
+        {
+          "courseCode": "MATH 378",
+          "courseTitle": "EXPERIMENTAL MATHEMATICS",
+          "units": 3
+        },
+        {
+          "courseCode": "MATH 435"
+        },
+        {
+          "courseCode": "MATH 437"
+        },
+        {
+          "courseCode": "MATH 451"
+        }
+      ],
+      "otherRequirements": [
+        {
+          "courseCode": "COMM 131",
+          "coreTitle": "ARTS & HUMANITIES",
+          "offerings": ["Fall", "Spring"]
+        },
+        {
+          "courseCode": "COSC 418",
+          "prerequisites": ["Junior/Senior standing; ENGL 317 or BUSX 301; Must have previously taken a computing class"],
+          "coreTitle": "ETHICAL ISSUES & PERSPECTIVES",
+          "offerings": ["Fall", "Spring"]
+        },
+        {
+          "courseCode": "ENGL 317",
+          "prerequisites": ["ENGL 102 or ENGL 190 or equivalent"],
+          "coreTitle": "ADVANCED WRITING SEMINAR",
+          "offerings": ["Fall", "Spring"]
+        }
+      ]
+    }
+  }
