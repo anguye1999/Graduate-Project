@@ -89,7 +89,7 @@ ASSISTANT_ID =your_assistant_id
 ### Development Mode
 1. Start the backend server:
    ```bash
-   python main.py
+   python app.py
    ```
 
 2. In a separate terminal, start the React frontend:
@@ -102,11 +102,13 @@ ASSISTANT_ID =your_assistant_id
 
 4. Chat with chatbot about course recommendations
 
-4. Upload your Degree Completiong Plan Text file
+5. Download Degree Completion Plan Template 
 
-5. Explore:
+6. Upload your Degree Completion Plan Text file
+
+7. Explore:
    - Course Schedule for given semester
-   - Upload degree plan for recommendation/validation about graduation
+   - Upload degree plan for recommendation/validation about graduation/show degree status
 
 ## Project Structure
 
@@ -152,7 +154,7 @@ This application can be improved in several ways:
 4. Push: `git push origin feature/name`
 5. Open a PR — we'll review the changes!
 
-## 📜 License
+## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
