@@ -1,7 +1,7 @@
 # COSC 880 Graduate Project 
 
 **Introduction**  
-Job seekers spend hours tweaking their resumes and hunting for openings. ResumeMatch uses AI to instantly analyze and optimize your resume, match you to top roles, and even draft custom cover letters—saving you time and boosting your chances of landing interviews.
+This project is a specialized course recommendation assistant initially targeting Towson University's Computer Science program. It helps students navigate their academic journey by providing personalized course recommendations based on their completed coursework, program requirements, and validating graduation progress.
 
 # Team Members
 - Andy Nguyen
@@ -12,24 +12,25 @@ Job seekers spend hours tweaking their resumes and hunting for openings. ResumeM
 ## Table of Contents
 
 1. Features 
-2. Prerequisites 
-3. Installation 
-4. Environment Variables
-5. Usage  
-6. Project Structure 
-7. Built With
-8. Roadmap  
-9. Contributing  
-10. License 
-11. Contact
+2. Tech Stack
+3. Prerequisites 
+4. Installation 
+5. Environment Variables
+6. Usage  
+7. Project Structure 
+8. Built With 
+9. Future Work
+10. Contributing  
+11. License 
+12. Contact
 
 ---
 
 ## Features
   
-- **Job Matching**: Real LinkedIn job data via RapidAPI
-- **Match Scoring**: Percentage match between your resume and job descriptions
-- **Cover Letter Generation**: Tailored cover letters based on your resume and job description
+- **Course History Upload**: Students can upload their completed courses through CSV or text files
+- **Personalized Recommendations**: System suggests appropriate next courses based on prerequisites and program requirements
+- **Prerequisite Validation**: Checks that students meet all requirements before recommending courses
 ---
 
 ## Tech Stack
@@ -88,7 +89,7 @@ ASSISTANT_ID =your_assistant_id
 ### Development Mode
 1. Start the backend server:
    ```bash
-   python main.py
+   python app.py
    ```
 
 2. In a separate terminal, start the React frontend:
@@ -101,13 +102,15 @@ ASSISTANT_ID =your_assistant_id
 
 4. Chat with chatbot about course recommendations
 
-4. Upload your Degree Completiong Plan Text file
+5. Download Degree Completion Plan Template 
 
-5. Explore:
+6. Upload your Degree Completion Plan Text file
+
+7. Explore:
    - Course Schedule for given semester
-   - Upload degree plan for recommendation/validation about graduation
+   - Upload degree plan for recommendation/validation about graduation/show degree status
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── backend/
@@ -124,15 +127,14 @@ ASSISTANT_ID =your_assistant_id
 └── .env                    # Environment variables (not included in repository)
 ```
 
-## 🔨 Built With
+## Built With
 
 - **Backend**:
   - [Flask](https://flask.palletsprojects.com/) - Web framework
-  - [OpenAI GPT](https://openai.com/) - Natural language processing
+  - [OpenAI](https://platform.openai.com) - Natural language processing
 
 - **Frontend**:
   - [React](https://reactjs.org/) - UI framework
-  - [React Router](https://reactrouter.com/) - Navigation
 
 ## Future Work
 
@@ -152,7 +154,7 @@ This application can be improved in several ways:
 4. Push: `git push origin feature/name`
 5. Open a PR — we'll review the changes!
 
-## 📜 License
+## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
