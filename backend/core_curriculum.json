@@ -5,7 +5,7 @@
         "core_number": 1,
         "coreTitle": "TOWSON SEMINAR",
         "units": 3,
-        "description": "Focusing on exploration and discovery, this course introduces students to the academic expectations for college-level work and to the intellectual, communication, and collaborative skills needed for academic success. Seminar format emphasizing active learning, with variable content in different Towson-Seminar courses. Introduces multiple perspectives and may draw from more than one discipline.",
+        "coreDescription": "Focusing on exploration and discovery, this course introduces students to the academic expectations for college-level work and to the intellectual, communication, and collaborative skills needed for academic success. Seminar format emphasizing active learning, with variable content in different Towson-Seminar courses. Introduces multiple perspectives and may draw from more than one discipline.",
         "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used.",
         "courses": [
           {
@@ -17,7 +17,7 @@
             "core_number": 13,
             "coreTitle": "DIVERSITY & DIFFERENCE",
             "units": 3,
-            "description": "Courses in Diversity and Difference will explore relationships of distinctiveness and interdependence, conflict and cooperation, between and among people with varying cultures, beliefs, identities, and capabilities. Courses will cultivate in students the ability to examine and articulate differences of conviction and perception through open exchange and civil discourse. As part of that process, students will also come to understand more fully the lenses through which they view the world.",
+            "coreDescription": "Courses in Diversity and Difference will explore relationships of distinctiveness and interdependence, conflict and cooperation, between and among people with varying cultures, beliefs, identities, and capabilities. Courses will cultivate in students the ability to examine and articulate differences of conviction and perception through open exchange and civil discourse. As part of that process, students will also come to understand more fully the lenses through which they view the world.",
             "courses": [
               {
                 "courseCode": "AFST 201",
@@ -198,7 +198,7 @@
                 "core_number": 12,
                 "coreTitle": "GLOBAL PERSPECTIVES",
                 "units": 3,
-                "description": "Courses in Global Perspectives examine how the global environment is changing, and is being changed, by major social, cultural, religious, economic, political, and technological forces, and how new patterns of relationships are shaping and being shaped by the global environment.",
+                "coreDescription": "Courses in Global Perspectives examine how the global environment is changing, and is being changed, by major social, cultural, religious, economic, political, and technological forces, and how new patterns of relationships are shaping and being shaped by the global environment.",
                 "courses": [
                   {
                     "courseCode": "ANTH 207",
@@ -530,7 +530,7 @@
                 "core_number": 14,
                 "coreTitle": "ETHICAL ISSUES & PERSPECTIVES",
                 "units": 3,
-                "description": "Courses in Ethical Issues and Perspectives will develop one or more ethical issues of current importance to any of a broad range of academic disciplines. These courses are designed to help students understand different perspectives on ethical problems and different processes and techniques helpful in reaching sound judgments.",
+                "coreDescription": "Courses in Ethical Issues and Perspectives will develop one or more ethical issues of current importance to any of a broad range of academic disciplines. These courses are designed to help students understand different perspectives on ethical problems and different processes and techniques helpful in reaching sound judgments.",
                 "note": "Courses from Core 14 are considered as a discipline in the Arts & Humanities regardless of the subject code.",
                 "courses": [
                   {
@@ -667,7 +667,7 @@
                 "core_number": 10,
                 "coreTitle": "METROPOLITAN PERSPECTIVES",
                 "units": 3,
-                "description": "Courses in Metropolitan Perspectives examine and explore the metropolis (as broadly conceived) in its past and present complexities. The category includes courses that describe characteristics of specific places, like the Baltimore-Washington metropolitan areas, or that describe characteristics or dynamics of metropolises in general, whether in the US or in other countries, whether contemporary or historic, through the lens of an appropriate discipline.",
+                "coreDescription": "Courses in Metropolitan Perspectives examine and explore the metropolis (as broadly conceived) in its past and present complexities. The category includes courses that describe characteristics of specific places, like the Baltimore-Washington metropolitan areas, or that describe characteristics or dynamics of metropolises in general, whether in the US or in other countries, whether contemporary or historic, through the lens of an appropriate discipline.",
                 "note": "Courses from Core 10 are considered as a discipline in the social and behavioral sciences regardless of the subject code.",
                 "courses": [
                   {
@@ -784,7 +784,7 @@
                 "core_number": 11,
                 "coreTitle": "UNITED STATES AS A NATION",
                 "units": 3,
-                "description": "Courses addressing The United States as a Nation explore the institutions, history, culture, or traditions of the United States with an emphasis on addressing through a particular subject matter the broader experience of the nation as a whole.",
+                "coreDescription": "Courses addressing The United States as a Nation explore the institutions, history, culture, or traditions of the United States with an emphasis on addressing through a particular subject matter the broader experience of the nation as a whole.",
                 "courses": [
                   {
                     "courseCode": "AMST 201",
@@ -950,7 +950,7 @@
             "core_number": 9,
             "coreTitle": "ADVANCED WRITING SEMINAR",
             "units": "3-4",
-            "description": "Courses in this category will address (1) the discourse models and practices important to a specific discipline and (2) techniques of formatting and reporting, validation and documentation, required to write with authority and authenticity within the discipline.",
+            "coreDescription": "Courses in this category will address (1) the discourse models and practices important to a specific discipline and (2) techniques of formatting and reporting, validation and documentation, required to write with authority and authenticity within the discipline.",
             "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used unless course is a requirement for the major.",
             "courses": [
               {
@@ -1151,7 +1151,7 @@
             "core_number": 2,
             "coreTitle": "ENGLISH COMPOSITION",
             "units": 3,
-            "description": "This course focuses on exploring ways of writing and thinking in the branches of knowledge and on developing rhetorical strategies for successful college-level expository writing. Requires grade of C or better to fulfill Core requirement.",
+            "coreDescription": "This course focuses on exploring ways of writing and thinking in the branches of knowledge and on developing rhetorical strategies for successful college-level expository writing. Requires grade of C or better to fulfill Core requirement.",
             "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used unless ENGL 102(109) is a requirement for the major.",
             "courses": [
               {
@@ -1168,7 +1168,7 @@
             "core_number": 3,
             "coreTitle": "MATHEMATICS",
             "units": 3,
-            "description": "Requires skills at the level of college algebra or above. Treat concepts and skills in the mathematical sciences and emphasize both theoretical foundations and problem-solving applications such as finite mathematics, statistics, discrete mathematics, and mathematical survey courses.",
+            "courseDescription": "Requires skills at the level of college algebra or above. Treat concepts and skills in the mathematical sciences and emphasize both theoretical foundations and problem-solving applications such as finite mathematics, statistics, discrete mathematics, and mathematical survey courses.",
             "courses": [
               {
                 "courseCode": "ECON 205",
@@ -1236,7 +1236,7 @@
             "core_number": 4,
             "coreTitle": "CREATIVITY & CREATIVE DEVELOPMENT",
             "units": 3,
-            "description": "Specific creative activity emphasizing symbolic, affective, and imaginative thinking in the creative activity and understanding the creative process through participating in it. Reflect current scholarship in the field, provide reference to theoretical frameworks and methods, and explore the critical standards central to the genre or medium.",
+            "coreDescription": "Specific creative activity emphasizing symbolic, affective, and imaginative thinking in the creative activity and understanding the creative process through participating in it. Reflect current scholarship in the field, provide reference to theoretical frameworks and methods, and explore the critical standards central to the genre or medium.",
             "courses": [
               {
                 "courseCode": "ART 102",
@@ -1380,7 +1380,7 @@
             "core_number": 5,
             "coreTitle": "ARTS & HUMANITIES",
             "units": 3,
-            "description": "The arts examine aesthetics and the development of the aesthetic form. Courses in this area may include, but are not limited to fine, performing and studio art, appreciation of the arts, and history of the arts. All courses, including fine, performing and studio arts, will explore the relationship between theory and practice. The humanities examine the values and cultural heritage that establish the framework for inquiry into the meaning of life. Courses in the humanities may include but are not limited to, the language, history, literature, and philosophy of Western and other culture.",
+            "coreDescription": "The arts examine aesthetics and the development of the aesthetic form. Courses in this area may include, but are not limited to fine, performing and studio art, appreciation of the arts, and history of the arts. All courses, including fine, performing and studio arts, will explore the relationship between theory and practice. The humanities examine the values and cultural heritage that establish the framework for inquiry into the meaning of life. Courses in the humanities may include but are not limited to, the language, history, literature, and philosophy of Western and other culture.",
             "requirements": "Must be different discipline than Core 4",
             "courses": [
               {
@@ -1717,7 +1717,7 @@
             "core_number": 6,
             "coreTitle": "SOCIAL & BEHAVIORAL SCIENCE",
             "units": 3,
-            "description": "The social and behavioral sciences examine the psychology of individuals and the ways in which individuals, groups, or segments of society behave, function, and influence one another. They include, but are not limited to, subjects that focus on history and cultural diversity; on the concepts of groups, work, and political systems; on the applications of qualitative and quantitative data to social issues; and on the interdependence of individuals, society, and the physical environment.",
+            "coreDescription": "The social and behavioral sciences examine the psychology of individuals and the ways in which individuals, groups, or segments of society behave, function, and influence one another. They include, but are not limited to, subjects that focus on history and cultural diversity; on the concepts of groups, work, and political systems; on the applications of qualitative and quantitative data to social issues; and on the interdependence of individuals, society, and the physical environment.",
             "courses": [
               {
                 "courseCode": "CRMJ 201",
@@ -1801,7 +1801,7 @@
             "core_number": 7,
             "coreTitle": "BIOLOGICAL & PHYSICAL SCIENCES WITH LAB",
             "units": "4-5",
-            "description": "The Biological and Physical Sciences systematically investigate living systems and the physical universe and introduce students to methods used to collect, quantify, and interpret scientific data and to synthesize and apply scientific concepts. Courses in this category present the historical development and structural nature of the subject, illustrate the predictive nature of these sciences, and employ mathematics and computing techniques as appropriate. Students must take two courses in the Biological and Physical Sciences categories with at least one four-unit course that includes a laboratory. The laboratory experience will emphasize hands-on investigations and scientific inquiry.",
+            "coreDescription": "The Biological and Physical Sciences systematically investigate living systems and the physical universe and introduce students to methods used to collect, quantify, and interpret scientific data and to synthesize and apply scientific concepts. Courses in this category present the historical development and structural nature of the subject, illustrate the predictive nature of these sciences, and employ mathematics and computing techniques as appropriate. Students must take two courses in the Biological and Physical Sciences categories with at least one four-unit course that includes a laboratory. The laboratory experience will emphasize hands-on investigations and scientific inquiry.",
             "requirements": "Courses taken to fulfill Core 7 and Core 8 must be from different disciplines or two sequenced courses within one discipline. Courses that are bolded and listed within parenthesis are sequential courses.",
             "courses": [
               {
@@ -1926,7 +1926,7 @@
             "core_number": 8,
             "coreTitle": "BIOLOGICAL & PHYSICAL SCIENCES (LAB & NON-LAB)",
             "units": "3-4, 5",
-            "description": "",
+            "coreDescription": "",
             "requirements": "Courses taken to fulfill Core 7 and Core 8 must be from different disciplines or two sequenced courses within one discipline. Courses that are bolded and listed within parenthesis are sequential courses.",
             "courses": [
               {

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Upload, X, FileText, Check, AlertCircle } from 'lucide-react';
-import DegreeCompletionPlanTextTemplate from "../assets/files/DegreeCompletionPlanTextTemplate.txt"
 import '../styles/CourseUpload.css';
+import DegreeCompletionPlanTextTemplate from "../assets/files/DegreeCompletionPlanTextTemplate.txt"
+import { useProgress } from './ProgressContext';
 
 const CourseUpload = ({ onFileProcessed, onCancel }) => {
   const [file, setFile] = useState(null);
@@ -10,7 +11,16 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
   const [uploadError, setUploadError] = useState(null);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [processingStatus, setProcessingStatus] = useState('');
-  
+
+  // Safely use the context
+  let refreshProgress = () => console.log("Progress refresh not available");
+  try {
+    const context = useProgress();
+    refreshProgress = context ? context.refreshProgress : refreshProgress;
+  } catch (err) {
+    console.log("Progress context not available:", err);
+  }
+
   // Get the session ID from parent component or sessionStorage
   const sessionId = sessionStorage.getItem('chatSessionId') || '';
 
@@ -26,7 +36,7 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
   const handleDrop = (e) => {
     e.preventDefault();
     setIsDragging(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       validateAndSetFile(e.dataTransfer.files[0]);
     }
@@ -41,23 +51,23 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
   const validateAndSetFile = (selectedFile) => {
     // Reset previous states
     setUploadError(null);
-    
+
     // Check file extension
     const fileName = selectedFile.name.toLowerCase();
-    const validExtensions = ['xlsx', 'xls', 'csv', 'txt'];
+    const validExtensions = ['csv', 'txt']; // Removed Excel extensions
     const fileExt = fileName.split('.').pop();
-    
+
     if (!validExtensions.includes(fileExt)) {
-      setUploadError('Please upload an Excel or text file (.xlsx, .xls, .csv, .txt)');
+      setUploadError('Please upload a CSV or text file (.csv, .txt)');
       return;
     }
-    
+
     // Check file size (5MB max)
     if (selectedFile.size > 5 * 1024 * 1024) {
       setUploadError('File size exceeds 5MB limit');
       return;
     }
-    
+
     setFile(selectedFile);
   };
 
@@ -72,40 +82,54 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
 
   const uploadFile = async () => {
     if (!file) return;
-    
+
     setIsUploading(true);
     setUploadError(null);
     setProcessingStatus('Uploading file...');
-    
+
     const formData = new FormData();
     formData.append('file', file);
     formData.append('session_id', sessionId);
-    
+
     try {
       // First update status
-      setProcessingStatus('Analyzing degree plan...');
-      
+      setProcessingStatus('Analyzing course data...');
+
       const response = await fetch('http://localhost:5000/api/upload-courses', {
         method: 'POST',
         body: formData
       });
-      
+
       const data = await response.json();
-      
+
       if (!response.ok) {
         throw new Error(data.message || 'Error uploading file');
       }
-      
+
       setProcessingStatus('Processing complete!');
       setUploadSuccess(true);
-      
+
+      if (data.success) {
+        setUploadSuccess(true);
+
+        // Trigger progress refresh
+        refreshProgress();
+
+        // Pass the processed courses to parent component
+        if (onFileProcessed) {
+          setTimeout(() => {
+            onFileProcessed(data);
+          }, 1000);
+        }
+      }
+
       // Pass the processed courses to parent component
       if (onFileProcessed) {
         setTimeout(() => {
           onFileProcessed(data);
         }, 1000); // Short delay to show success state
       }
-      
+
     } catch (error) {
       console.error('Upload error:', error);
       setUploadError(error.message || 'Failed to upload file');
@@ -118,14 +142,11 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
   // Function to get a message for the selected file type
   const getFileTypeMessage = () => {
     if (!file) return null;
-    
+
     const fileName = file.name.toLowerCase();
     const fileExt = fileName.split('.').pop();
-    
-    switch(fileExt) {
-      case 'xlsx':
-      case 'xls':
-        return "Excel file detected. I'll analyze your degree plan structure.";
+
+    switch (fileExt) {
       case 'csv':
         return "CSV file detected. I'll extract course information from tabular data.";
       case 'txt':
@@ -143,32 +164,32 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
           <X size={18} />
         </button>
       </div>
-      
+
       {!uploadSuccess ? (
         <>
           <div className="course-upload-instructions">
-            <p>Upload your degree completion plan as an Excel or text file to get personalized course recommendations.</p>
-            <p className='course-upload-download-template' onClick = {DownloadTextTemplate}>
-              To download a template to be used to format your degree completion plan, click here!
-            </p>
-            <p className="course-upload-file-types">Supported formats: .xlsx, .xls, .csv, .txt</p>
+            <p>Upload your course history as a CSV or text file to get personalized course recommendations.</p>
+            <a href={DegreeCompletionPlanTextTemplate} download="DegreeCompletionPlanTextTemplate.txt" className="course-download-link">
+              Download a template for formatting your degree completion plan
+            </a>
+            <p className="course-upload-file-types">Supported formats: .csv, .txt</p>
           </div>
-          
-          <div 
+
+          <div
             className={`course-upload-area ${isDragging ? 'dragging' : ''} ${uploadError ? 'error' : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
             onClick={() => document.getElementById('courseFileInput').click()}
           >
-            <input 
+            <input
               type="file"
               id="courseFileInput"
-              accept=".xlsx,.xls,.csv,.txt"
+              accept=".csv,.txt"
               onChange={handleFileInput}
               style={{ display: 'none' }}
             />
-            
+
             {!file ? (
               <>
                 <Upload className="course-upload-icon" size={36} />
@@ -185,30 +206,30 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
               </div>
             )}
           </div>
-          
+
           {uploadError && (
             <div className="course-upload-error">
               <AlertCircle size={16} />
               <p>{uploadError}</p>
             </div>
           )}
-          
+
           {isUploading && processingStatus && (
             <div className="course-upload-processing">
               <div className="processing-spinner"></div>
               <p>{processingStatus}</p>
             </div>
           )}
-          
+
           <div className="course-upload-actions">
-            <button 
+            <button
               className="course-cancel-btn"
               onClick={onCancel}
               disabled={isUploading}
             >
               Cancel
             </button>
-            <button 
+            <button
               className={`course-upload-btn ${(!file || isUploading) ? 'disabled' : ''}`}
               disabled={!file || isUploading}
               onClick={uploadFile}

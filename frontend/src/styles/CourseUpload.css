@@ -1,195 +1,214 @@
 .course-upload {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    padding: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
-      'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  .course-upload-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .course-upload-header h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .course-upload-close-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    padding: 4px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .course-upload-close-btn:hover {
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  .course-upload-instructions {
-    margin-bottom: 16px;
-  }
-  
-  .course-upload-instructions p {
-    margin: 0 0 8px;
-    font-size: 14px;
-    color: #555;
-  }
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  overflow: hidden;
+}
 
-  .course-upload-download-template{
-    cursor: pointer;
-    color: blue !important;
-    text-decoration: underline;
-  }
-  
-  .course-upload-file-types {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  .course-upload-area {
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 32px 16px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 16px;
-    transition: all 0.2s ease;
-    background-color: #f9f9f9;
-  }
-  
-  .course-upload-area:hover {
-    border-color: #888;
-    background-color: #f5f5f5;
-  }
-  
-  .course-upload-area.dragging {
-    border-color: #4a6cf7;
-    background-color: rgba(74, 108, 247, 0.05);
-  }
-  
-  .course-upload-area.error {
-    border-color: #e53935;
-    background-color: rgba(229, 57, 53, 0.05);
-  }
-  
-  .course-upload-icon {
-    color: #888;
-    margin-bottom: 12px;
-  }
-  
-  .course-upload-area p {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .course-selected-file {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  
-  .course-file-size {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  .course-upload-error {
-    background-color: rgba(229, 57, 53, 0.1);
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-bottom: 16px;
-  }
-  
-  .course-upload-error p {
-    margin: 0;
-    color: #e53935;
-    font-size: 14px;
-  }
-  
-  .course-upload-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-  }
-  
-  .course-cancel-btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    background-color: #f5f5f5;
-    color: #555;
-  }
-  
-  .course-cancel-btn:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .course-upload-btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    background-color: #4a6cf7;
-    color: white;
-  }
-  
-  .course-upload-btn:hover {
-    background-color: #3a5ce5;
-  }
-  
-  .course-upload-btn.disabled {
-    background-color: #a0b0f8;
-    cursor: not-allowed;
-  }
-  
-  .course-upload-success {
-    text-align: center;
-    padding: 32px 16px;
-  }
-  
-  .course-success-icon {
-    width: 64px;
-    height: 64px;
-    background-color: #4caf50;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-  }
-  
-  .course-upload-success h3 {
-    margin: 0 0 8px;
-    color: #333;
-  }
-  
-  .course-upload-success p {
-    margin: 0;
-    color: #666;
-    font-size: 14px;
-  }
+.course-upload-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.course-upload-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.course-upload-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-upload-close-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.course-upload-instructions {
+  padding: 12px 16px;
+}
+
+.course-upload-instructions p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.course-download-link {
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.course-download-link:hover {
+  text-decoration: underline;
+  color: #004499;
+}
+
+.course-upload-file-types {
+  font-size: 12px;
+  color: #888;
+}
+
+.course-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  margin: 0 16px;
+  border: 2px dashed #d0d0d0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.course-upload-area:hover {
+  border-color: #999;
+  background-color: #f5f5f5;
+}
+
+.course-upload-area.dragging {
+  border-color: #2196f3;
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+.course-upload-area.error {
+  border-color: #f44336;
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.course-upload-icon {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.course-upload-area p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.course-selected-file {
+  display: flex;
+  align-items: center;
+  background-color: #e3f2fd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.course-selected-file svg {
+  color: #2196f3;
+  margin-right: 8px;
+}
+
+.course-file-size {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+.course-upload-error {
+  margin: 8px 16px;
+  padding: 8px 12px;
+  background-color: #ffebee;
+  color: #d32f2f;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.course-upload-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 8px;
+}
+
+.course-cancel-btn {
+  background: none;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+
+.course-cancel-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.course-upload-btn {
+  background-color: #2196f3;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.course-upload-btn:hover {
+  background-color: #1976d2;
+}
+
+.course-upload-btn.disabled {
+  background-color: #bbdefb;
+  cursor: not-allowed;
+}
+
+.course-upload-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.course-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background-color: #e8f5e9;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.course-success-icon svg {
+  color: #4caf50;
+}
+
+.course-upload-success h3 {
+  margin: 0 0 8px;
+  color: #388e3c;
+}
+
+.course-upload-success p {
+  margin: 0;
+  color: #555;
+}

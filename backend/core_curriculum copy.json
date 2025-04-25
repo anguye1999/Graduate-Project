@@ -1,0 +1,612 @@
+{
+  "coreCurriculum": "Core Curriculum Requirements",
+  "core_categories": [
+    {
+      "core_number": 1,
+      "coreTitle": "TOWSON SEMINAR",
+      "units": 3,
+      "description": "Focusing on exploration and discovery, this course introduces students to the academic expectations for college-level work and to the intellectual, communication, and collaborative skills needed for academic success. Seminar format emphasizing active learning, with variable content in different Towson-Seminar courses. Introduces multiple perspectives and may draw from more than one discipline.",
+      "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used.",
+      "courses": [
+        {
+          "courseCode": "TSEM 102",
+          "courseTitle": "Towson Seminar"
+        },
+        {
+          "courseCode": "TSEM 190",
+          "courseTitle": "Honors Towson Seminar"
+        }
+      ]
+    },
+    {
+      "core_number": 13,
+      "coreTitle": "DIVERSITY & DIFFERENCE",
+      "units": 3,
+      "description": "Courses in Diversity and Difference will explore relationships of distinctiveness and interdependence, conflict and cooperation, between and among people with varying cultures, beliefs, identities, and capabilities. Courses will cultivate in students the ability to examine and articulate differences of conviction and perception through open exchange and civil discourse. As part of that process, students will also come to understand more fully the lenses through which they view the world.",
+      "courses": [
+        {
+          "courseCode": "EMF 210",
+          "courseTitle": "African-American Cinema"
+        },
+        {
+          "courseCode": "ENGL 233",
+          "courseTitle": "Survey of African-American Literature"
+        },
+        {
+          "courseCode": "ENGL 234",
+          "courseTitle": "Major Writers in African-American Literature"
+        },
+        {
+          "courseCode": "ENGL 235",
+          "courseTitle": "Ethnic-American Literature"
+        }
+      ]
+    },
+    {
+      "core_number": 12,
+      "coreTitle": "GLOBAL PERSPECTIVES",
+      "units": 3,
+      "description": "Courses in Global Perspectives examine how the global environment is changing, and is being changed, by major social, cultural, religious, economic, political, and technological forces, and how new patterns of relationships are shaping and being shaped by the global environment.",
+      "courses": [
+        {
+          "courseCode": "ENGL 241",
+          "courseTitle": "Major Works of World Literature"
+        },
+        {
+          "courseCode": "ENGL 246",
+          "courseTitle": "Texts About Travel"
+        },
+        {
+          "courseCode": "ENGL 248",
+          "courseTitle": "Literature of Global Experience"
+        },
+        {
+          "courseCode": "ENGL 348",
+          "courseTitle": "Literature of African Diaspora"
+        }
+      ]
+    },
+    {
+      "core_number": 14,
+      "coreTitle": "ETHICAL ISSUES & PERSPECTIVES",
+      "units": 3,
+      "description": "Courses in Ethical Issues and Perspectives will develop one or more ethical issues of current importance to any of a broad range of academic disciplines. These courses are designed to help students understand different perspectives on ethical problems and different processes and techniques helpful in reaching sound judgments.",
+      "note": "Courses from Core 14 are considered as a discipline in the Arts & Humanities regardless of the subject code.",
+      "courses": [
+        {
+          "courseCode": "COMM 220",
+          "courseTitle": "Communication Ethics"
+        },
+        {
+          "courseCode": "COSC 418",
+          "courseTitle": "Ethical and Societal Concerns of Computer Scientists"
+        },
+        {
+          "courseCode": "HIST 205",
+          "courseTitle": "Ethical Perspectives in History"
+        },
+        {
+          "courseCode": "HIST 330",
+          "courseTitle": "Ethical Dilemmas in the History of Science and Technology"
+        },
+        {
+          "courseCode": "PHIL 103",
+          "courseTitle": "Introduction to Ethics"
+        }
+      ]
+    },
+    {
+      "core_number": 10,
+      "coreTitle": "METROPOLITAN PERSPECTIVES",
+      "units": 3,
+      "description": "Courses in Metropolitan Perspectives examine and explore the metropolis (as broadly conceived) in its past and present complexities. The category includes courses that describe characteristics of specific places, like the Baltimore-Washington metropolitan areas, or that describe characteristics or dynamics of metropolises in general, whether in the US or in other countries, whether contemporary or historic, through the lens of an appropriate discipline.",
+      "note": "Courses from Core 10 are considered as a discipline in the social and behavioral sciences regardless of the subject code.",
+      "courses": [
+        {
+          "courseCode": "FIN 202",
+          "courseTitle": "Perspectives on Money"
+        },
+        {
+          "courseCode": "FMST 201",
+          "courseTitle": "Family Resources"
+        },
+        {
+          "courseCode": "HIST 337",
+          "courseTitle": "History of Baltimore: From Mobtown to Charm City"
+        },
+        {
+          "courseCode": "HIST 338",
+          "courseTitle": "The Middle East: An Urban Perspective"
+        },
+        {
+          "courseCode": "HIST 375",
+          "courseTitle": "The City in American History"
+        }
+      ]
+    },
+    {
+      "core_number": 11,
+      "coreTitle": "UNITED STATES AS A NATION",
+      "units": 3,
+      "description": "Courses addressing The United States as a Nation explore the institutions, history, culture, or traditions of the United States with an emphasis on addressing through a particular subject matter the broader experience of the nation as a whole.",
+      "courses": [
+        {
+          "courseCode": "AMST 201",
+          "courseTitle": "Introduction to American Studies"
+        },
+        {
+          "courseCode": "CLST 201",
+          "courseTitle": "Introduction to Cultural Studies"
+        },
+        {
+          "courseCode": "CRMJ 254",
+          "courseTitle": "Introduction to Criminal Justice"
+        },
+        {
+          "courseCode": "HIST 146",
+          "courseTitle": "History of the United States Since the Civil War"
+        },
+        {
+          "courseCode": "MUSC 204",
+          "courseTitle": "Hip-Hop Music and Culture"
+        }
+      ]
+    },
+    {
+      "core_number": 9,
+      "coreTitle": "ADVANCED WRITING SEMINAR",
+      "units": "3-4",
+      "description": "Courses in this category will address (1) the discourse models and practices important to a specific discipline and (2) techniques of formatting and reporting, validation and documentation, required to write with authority and authenticity within the discipline.",
+      "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used unless course is a requirement for the major.",
+      "courses": [
+        {
+          "courseCode": "COMM 300",
+          "courseTitle": "Research Methods"
+        },
+        {
+          "courseCode": "EMF 377",
+          "courseTitle": "Broadcast/Film Writing"
+        },
+        {
+          "courseCode": "ENGL 317",
+          "courseTitle": "Writing for Business and Industry"
+        },
+        {
+          "courseCode": "ENGL 318",
+          "courseTitle": "Technical and Scientific Writing"
+        }
+      ]
+    },
+    {
+      "core_number": 2,
+      "coreTitle": "ENGLISH COMPOSITION",
+      "units": 3,
+      "description": "This course focuses on exploring ways of writing and thinking in the branches of knowledge and on developing rhetorical strategies for successful college-level expository writing. Requires grade of C or better to fulfill Core requirement.",
+      "requirements": "A grade of C (2.0) or higher is required for successful completion. Passing grade option may be used unless ENGL 102(109) is a requirement for the major.",
+      "courses": [
+        {
+          "courseCode": "ENGL 102",
+          "courseTitle": "Writing for a Liberal Education"
+        },
+        {
+          "courseCode": "ENGL 190",
+          "courseTitle": "Honors Writing Seminar"
+        }
+      ]
+    },
+    {
+      "core_number": 3,
+      "coreTitle": "MATHEMATICS",
+      "units": 3,
+      "description": "Requires skills at the level of college algebra or above. Treat concepts and skills in the mathematical sciences and emphasize both theoretical foundations and problem-solving applications such as finite mathematics, statistics, discrete mathematics, and mathematical survey courses.",
+      "courses": [
+        {
+          "courseCode": "MATH 115"
+        },
+        {
+          "courseCode": "MATH 119"
+        },
+        {
+          "courseCode": "MATH 205",
+          "courseTitle": "Mathematical Concepts & Structure II"
+        },
+        {
+          "courseCode": "MATH 211"
+        },
+        {
+          "courseCode": "MATH 231",
+          "courseTitle": "Basic Statistics"
+        },
+        {
+          "courseCode": "MATH 233",
+          "courseTitle": "Honors Basic Statistics"
+        },
+        {
+          "courseCode": "MATH 237",
+          "courseTitle": "Elementary Biostatistics"
+        },
+        {
+          "courseCode": "MATH 273"
+        },
+        {
+          "courseCode": "MATH 274"
+        },
+        {
+          "courseCode": "MATH 283",
+          "courseTitle": "Honors Calculus I"
+        },
+        {
+          "courseCode": "MATH 293",
+          "courseTitle": "Honors Seminar in Mathematics"
+        }
+      ]
+    },
+    {
+      "core_number": 4,
+      "coreTitle": "CREATIVITY & CREATIVE DEVELOPMENT",
+      "units": 3,
+      "description": "Specific creative activity emphasizing symbolic, affective, and imaginative thinking in the creative activity and understanding the creative process through participating in it. Reflect current scholarship in the field, provide reference to theoretical frameworks and methods, and explore the critical standards central to the genre or medium.",
+      "courses": [
+        {
+          "courseCode": "ART 161",
+          "courseTitle": "Digital Object Design for Non-Art Majors"
+        },
+        {
+          "courseCode": "COSC 109",
+          "courseTitle": "Computers and Creativity"
+        },
+        {
+          "courseCode": "ENGL 283",
+          "courseTitle": "Introduction to Creative Writing"
+        },
+        {
+          "courseCode": "EPHY 155",
+          "courseTitle": "Engineering Design for Society"
+        },
+        {
+          "courseCode": "IDFA 203",
+          "courseTitle": "Creativity in Arts, Media, and Communication"
+        }
+      ]
+    },
+    {
+      "core_number": 5,
+      "coreTitle": "ARTS & HUMANITIES",
+      "units": 3,
+      "description": "The arts examine aesthetics and the development of the aesthetic form. Courses in this area may include, but are not limited to fine, performing and studio art, appreciation of the arts, and history of the arts. All courses, including fine, performing and studio arts, will explore the relationship between theory and practice. The humanities examine the values and cultural heritage that establish the framework for inquiry into the meaning of life. Courses in the humanities may include but are not limited to, the language, history, literature, and philosophy of Western and other culture.",
+      "requirements": "Must be different discipline than Core 4",
+      "courses": [
+        {
+          "courseCode": "CHNS 101",
+          "courseTitle": "Elementary Chinese I"
+        },
+        {
+          "courseCode": "COMM 131",
+          "courseTitle": "Public Speaking"
+        },
+        {
+          "courseCode": "COMM 132",
+          "courseTitle": "Honors Public Speaking"
+        },
+        {
+          "courseCode": "EMF 313",
+          "courseTitle": "Film History"
+        }
+      ]
+    },
+    {
+      "core_number": 6,
+      "coreTitle": "SOCIAL & BEHAVIORAL SCIENCE",
+      "units": 3,
+      "description": "The social and behavioral sciences examine the psychology of individuals and the ways in which individuals, groups, or segments of society behave, function, and influence one another. They include, but are not limited to, subjects that focus on history and cultural diversity; on the concepts of groups, work, and political systems; on the applications of qualitative and quantitative data to social issues; and on the interdependence of individuals, society, and the physical environment.",
+      "courses": [
+        {
+          "courseCode": "ECON 201",
+          "courseTitle": "Microeconomic Principles"
+        },
+        {
+          "courseCode": "ECON 202",
+          "courseTitle": "Macroeconomic Principles"
+        },
+        {
+          "courseCode": "FMST 101",
+          "courseTitle": "Introduction to Family Studies"
+        },
+        {
+          "courseCode": "GEOG 201",
+          "courseTitle": "Environment and Society"
+        },
+        {
+          "courseCode": "HIST 280",
+          "courseTitle": "Themes in the History of Science, Medicine, & Tech"
+        }
+      ]
+    },
+    {
+      "core_number": 7,
+      "coreTitle": "BIOLOGICAL & PHYSICAL SCIENCES WITH LAB",
+      "units": "4-5",
+      "description": "The Biological and Physical Sciences systematically investigate living systems and the physical universe and introduce students to methods used to collect, quantify, and interpret scientific data and to synthesize and apply scientific concepts. Courses in this category present the historical development and structural nature of the subject, illustrate the predictive nature of these sciences, and employ mathematics and computing techniques as appropriate. Students must take two courses in the Biological and Physical Sciences categories with at least one four-unit course that includes a laboratory. The laboratory experience will emphasize hands-on investigations and scientific inquiry.",
+      "requirements": "Courses taken to fulfill Core 7 and Core 8 must be from different disciplines or two sequenced courses within one discipline. Courses that are bolded and listed within parenthesis are sequential courses.",
+      "courses": [
+        {
+          "courseCode": "ASTR 161",
+          "courseTitle": "The Sky and the Solar System"
+        },
+        {
+          "courseCode": "ASTR 181",
+          "courseTitle": "Stars, Galaxies, and the Early Universe"
+        },
+        {
+          "courseCode": "ASTR 261",
+          "courseTitle": "Introduction to Astrophysics"
+        },
+        {
+          "courseCode": "BIOL 117",
+          "courseTitle": "Honors Biology: The Science of Life"
+        },
+        {
+          "courseCode": "BIOL 120 + 120L",
+          "courseTitle": "Principles of Biology [Lecture]"
+        },
+        {
+          "courseCode": "BIOL 191 + 191L",
+          "courseTitle": "Introductory Biology Health Professions"
+        },
+        {
+          "courseCode": "BIOL 192",
+          "courseTitle": "Honors Introductory Biology for the Health Professions"
+        },
+        {
+          "courseCode": "BIOL 200 + 200L",
+          "courseTitle": "Biology I: Cellular Biology & Genetics",
+          "sequence": true
+        },
+        {
+          "courseCode": "BIOL 206 + 206L",
+          "courseTitle": "Biology II: Introduction to Ecology and Evolution",
+          "sequence": true
+        },
+        {
+          "courseCode": "BIOL 203",
+          "courseTitle": "Honors Biology I: Cellular Biology and Genetics"
+        },
+        {
+          "courseCode": "CHEM 104",
+          "courseTitle": "Introduction to Environmental Chemistry"
+        },
+        {
+          "courseCode": "CHEM 115",
+          "courseTitle": "Honors Chemistry for Allied Health Professionals I"
+        },
+        {
+          "courseCode": "CHEM 121 + 121L",
+          "courseTitle": "Chemistry Allied Health Professionals I"
+        },
+        {
+          "courseCode": "CHEM 131+ 131L",
+          "courseTitle": "General Chemistry",
+          "sequence": true
+        },
+        {
+          "courseCode": "CHEM 132 + 132L",
+          "courseTitle": "General Chemistry II",
+          "sequence": true
+        },
+        {
+          "courseCode": "GEOL 121",
+          "courseTitle": "Physical Geology"
+        },
+        {
+          "courseCode": "GEOL 122",
+          "courseTitle": "Honors Physical Geology"
+        },
+        {
+          "courseCode": "GEOL 123",
+          "courseTitle": "Historical Geology"
+        },
+        {
+          "courseCode": "PHSC 101",
+          "courseTitle": "Physical Science I"
+        },
+        {
+          "courseCode": "PHYS 131",
+          "courseTitle": "Light and Color"
+        },
+        {
+          "courseCode": "PHYS 143",
+          "courseTitle": "Physics of Sound and Music (Lab)"
+        },
+        {
+          "courseCode": "PHYS 202",
+          "courseTitle": "General Physics for the Health Sciences"
+        },
+        {
+          "courseCode": "PHYS 211",
+          "courseTitle": "General Physics I; Non Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 212",
+          "courseTitle": "General Physics II; Non Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 241",
+          "courseTitle": "General Physics I Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 242",
+          "courseTitle": "General Physics II Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 251",
+          "courseTitle": "Honors General Physics I Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 252",
+          "courseTitle": "Honor General Physics II Calculus-Based"
+        }
+      ]
+    },
+    {
+      "core_number": 8,
+      "coreTitle": "BIOLOGICAL & PHYSICAL SCIENCES (LAB & NON-LAB)",
+      "units": "3-4, 5",
+      "description": "",
+      "requirements": "Courses taken to fulfill Core 7 and Core 8 must be from different disciplines or two sequenced courses within one discipline. Courses that are bolded and listed within parenthesis are sequential courses.",
+      "courses": [
+        {
+          "courseCode": "ANTH 212",
+          "courseTitle": "Paleoanthropology and Archeology"
+        },
+        {
+          "courseCode": "ASTR 161",
+          "courseTitle": "The Sky and the Solar System"
+        },
+        {
+          "courseCode": "ASTR 181",
+          "courseTitle": "Stars, Galaxies, and the Early Universe"
+        },
+        {
+          "courseCode": "ASTRO 261",
+          "courseTitle": "Introduction to Astrophysics"
+        },
+        {
+          "courseCode": "BIOL 105",
+          "courseTitle": "Environmental Biology"
+        },
+        {
+          "courseCode": "BIOL 117",
+          "courseTitle": "Honors Biology: The Science of Life"
+        },
+        {
+          "courseCode": "BIOL 120",
+          "courseTitle": "Principles of Biology [Lecture]"
+        },
+        {
+          "courseCode": "BIOL 191 +191L",
+          "courseTitle": "Introductory Biology Health Professions"
+        },
+        {
+          "courseCode": "BIOL 192",
+          "courseTitle": "Honors Introductory Biology Health for the Professions"
+        },
+        {
+          "courseCode": "BIOL 200 + 200L",
+          "courseTitle": "Biology I: Cellular Biology & Genetics",
+          "sequence": true
+        },
+        {
+          "courseCode": "BIOL 203",
+          "courseTitle": "Honors Biology I: Cellular Biology and Genetics"
+        },
+        {
+          "courseCode": "BIOL 206 + 206L",
+          "courseTitle": "Biology II: Introduction to Ecology and Evolution",
+          "sequence": true
+        },
+        {
+          "courseCode": "CHEM 100",
+          "courseTitle": "Chemistry and Current Problems"
+        },
+        {
+          "courseCode": "CHEM 104",
+          "courseTitle": "Introduction to Environmental Chemistry"
+        },
+        {
+          "courseCode": "CHEM 115",
+          "courseTitle": "Honors Chemistry for Allied Health Professionals I"
+        },
+        {
+          "courseCode": "CHEM 121 + 121L",
+          "courseTitle": "Chemistry Allied Health Professionals I"
+        },
+        {
+          "courseCode": "CHEM 131+ 131L",
+          "courseTitle": "General Chemistry",
+          "sequence": true
+        },
+        {
+          "courseCode": "CHEM 132 + 132L",
+          "courseTitle": "General Chemistry II",
+          "sequence": true
+        },
+        {
+          "courseCode": "GEOG 101",
+          "courseTitle": "Physical Geography"
+        },
+        {
+          "courseCode": "GEOL 109",
+          "courseTitle": "Volcanoes and Earthquakes"
+        },
+        {
+          "courseCode": "GEOL 121",
+          "courseTitle": "Physical Geology"
+        },
+        {
+          "courseCode": "GEOL 122",
+          "courseTitle": "Honors Physical Geology"
+        },
+        {
+          "courseCode": "GEOL 123",
+          "courseTitle": "Historical Geology"
+        },
+        {
+          "courseCode": "HONR 227",
+          "courseTitle": "Honors Seminar in Scientific Inquiry"
+        },
+        {
+          "courseCode": "HONR 301",
+          "courseTitle": "The Polluted States of America"
+        },
+        {
+          "courseCode": "PHSC 101",
+          "courseTitle": "Physical Science I"
+        },
+        {
+          "courseCode": "PHYS 100",
+          "courseTitle": "Understanding Physics"
+        },
+        {
+          "courseCode": "PHYS 103",
+          "courseTitle": "How Things Work"
+        },
+        {
+          "courseCode": "PHYS 131",
+          "courseTitle": "Light and Color"
+        },
+        {
+          "courseCode": "PHYS 143",
+          "courseTitle": "Physics Sound and Music (Lab)"
+        },
+        {
+          "courseCode": "PHYS 202",
+          "courseTitle": "General Physics for Health Sciences"
+        },
+        {
+          "courseCode": "PHYS 211",
+          "courseTitle": "General Physics I; Non Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 212",
+          "courseTitle": "General Physics II; Non Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 241",
+          "courseTitle": "General Physics I Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 242",
+          "courseTitle": "General Physics II Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 251",
+          "courseTitle": "Honors General Physics I Calculus-Based"
+        },
+        {
+          "courseCode": "PHYS 252",
+          "courseTitle": "Honors General Physics II Calculus-Based"
+        }
+      ]
+    }
+  ]
+}

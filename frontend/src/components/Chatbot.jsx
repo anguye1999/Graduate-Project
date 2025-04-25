@@ -1,119 +1,187 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { MessageCircle, X, Send, Upload, FileText, BarChart } from 'lucide-react';
+import '../styles/CourseUpload.css';
 import '../styles/Chatbot.css';
+import CourseUpload from './CourseUpload';
+import GraduationProgressTracker from './GraduationProgressTracker';
+import { useProgress } from './ProgressContext';
 
 const Chatbot = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([
-    { text: 'Hello! How can I help you?', isBot: true }
+    { text: 'Hello! How can I help you today? You can ask me questions or upload your course history.', isBot: true, type: 'text' }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [showFileUpload, setShowFileUpload] = useState(false);
+  const [uploadedCourses, setUploadedCourses] = useState(null);
+  const [uploadStatus, setUploadStatus] = useState(null);
   const messagesEndRef = useRef(null);
   
-  // Generate a timestamp-based session ID to ensure freshness
+  // Generate a session ID
   const sessionId = useRef(`user-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
 
-  // Force reset session on component mount
+  // Store session ID and setup component
   useEffect(() => {
-    console.log("Chatbot component mounted, new session ID:", sessionId.current);
+    // Save session ID to storage
+    sessionStorage.setItem('chatSessionId', sessionId.current);
+    console.log("Chatbot component mounted, session ID:", sessionId.current);
     
-    // Explicitly clear the session on the server
+    // Clear any existing session
     fetch('http://localhost:5000/api/clear-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ session_id: sessionId.current })
     }).catch(err => {
-      // Ignore errors - if this fails, the session will be created fresh anyway
-      console.log("Clear session request failed, but that's okay:", err);
+      console.log("Clear session request failed:", err);
     });
     
-    // Function to handle page unload/refresh
+    // Setup cleanup for page unload
     const handleBeforeUnload = () => {
-      // Try to clear the session when the page unloads
       navigator.sendBeacon(
         'http://localhost:5000/api/clear-session',
         JSON.stringify({ session_id: sessionId.current })
       );
     };
     
-    // Add event listener for page unload
     window.addEventListener('beforeunload', handleBeforeUnload);
-    
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, []);
   
-  // Scroll to bottom of messages whenever messages change
+  // Scroll to bottom when messages change
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const handleSubmit = async (e) => {
-    console.log("Form submitted"); // Log when form is submitted
-    e.preventDefault();
-    if (!message.trim()) {
-      console.log("Empty message, not sending");
-      return;
+  // Function to format message text with paragraphs
+  const formatMessage = (text) => {
+    if (!text) return '';
+    
+    // Handle paragraphs
+    let formattedText = text.split('\n').map((paragraph, index) => {
+      if (paragraph.trim() === '') return null;
+      return <p key={index}>{paragraph}</p>;
+    }).filter(Boolean);
+    
+    return formattedText.length > 0 ? formattedText : text;
+  };
+
+  // Handle file processing after upload
+  const handleFileProcessed = (data) => {
+    const { extractedCourses, message, success } = data;
+    
+    if (!success || !extractedCourses) {
+      setMessages(prev => [
+        ...prev,
+        { 
+          text: `I encountered an issue processing your file. ${data.message || 'Please try again.'}`, 
+          isBot: true,
+          type: 'text'
+        }
+      ]);
+    } else {
+      // Store uploaded courses and update status
+      setUploadedCourses(extractedCourses);
+      setUploadStatus({
+        count: extractedCourses.length,
+        timestamp: new Date().toLocaleString()
+      });
+      
+      // Add bot message about the upload
+      setMessages(prev => [
+        ...prev,
+        { 
+          text: message || `I've analyzed your course history and found ${extractedCourses.length} courses. What would you like to know?`, 
+          isBot: true,
+          type: 'text'
+        }
+      ]);
     }
     
-    console.log("Preparing to send message:", message);
+    // Always hide the upload component after processing
+    setShowFileUpload(false);
+  };
+
+  // Handle message submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const trimmedMessage = message.trim();
+    if (!trimmedMessage) return;
     
-    // Add user message to UI
-    setMessages(prev => [...prev, { text: message, isBot: false }]);
-    
-    // Clear input field and show loading state
-    const userMessage = message;
+    // Add user message and reset input
+    setMessages(prev => [...prev, { text: trimmedMessage, isBot: false, type: 'text' }]);
     setMessage('');
     setIsLoading(true);
 
+    // Check if user is asking for progress
+    const progressKeywords = [
+      'show progress', 'graduation progress', 'degree progress', 
+      'track progress', 'view progress', 'my progress', 
+      'how am i doing', 'graduation tracker', 'show my courses',
+      'progress tracker', 'graduation status', 'credits completed',
+      'requirements left', 'progress visualization'
+    ];
+    
+    // Check if message contains progress keywords
+    const isProgressRequest = progressKeywords.some(keyword => 
+      trimmedMessage.toLowerCase().includes(keyword.toLowerCase())
+    );
+    
+    if (isProgressRequest) {
+      setIsLoading(false);
+      
+      // Add message from bot acknowledging the request
+      setMessages(prev => [
+        ...prev, 
+        { 
+          text: "Here's your graduation progress tracker. You can see your completed requirements and what you still need to graduate.", 
+          isBot: true,
+          type: 'text'
+        },
+        // Add the progress tracker as a special message
+        {
+          isBot: true,
+          type: 'progress-tracker',
+          sessionId: sessionId.current
+        }
+      ]);
+      return;
+    }
+
     try {
-      console.log("Making API call to backend");
-      // Make API call to backend
+      // Send message to backend
       const response = await fetch('http://localhost:5000/api/chat', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: userMessage,
+          message: trimmedMessage,
           session_id: sessionId.current
         }),
       });
-
-      console.log("Response received, status:", response.status);
       
       if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+        throw new Error(`Server error: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log("Response data:", data);
-      
-      // Add bot response to messages
-      setMessages(prev => [...prev, { text: data.message, isBot: true }]);
+      setMessages(prev => [...prev, { text: data.message, isBot: true, type: 'text' }]);
     } catch (error) {
-      console.error('Error sending message:', error);
-      // Show error message in chat
+      console.error('Error:', error);
       setMessages(prev => [...prev, { 
         text: 'Sorry, I encountered an error. Please try again later.', 
-        isBot: true 
+        isBot: true,
+        type: 'text'
       }]);
     } finally {
       setIsLoading(false);
-      console.log("Request completed");
     }
   };
 
+  // Render chat bubble when collapsed
   if (!isExpanded) {
     return (
       <button
-        onClick={() => {
-          console.log("Expanding chat window");
-          setIsExpanded(true);
-        }}
+        onClick={() => setIsExpanded(true)}
         className="chat-bubble"
       >
         <MessageCircle size={24} />
@@ -121,75 +189,113 @@ const Chatbot = () => {
     );
   }
 
+  // Render full chat interface
   return (
     <div className="chat-window">
-      <div className="inner-chat-window">
-        <div className="chat-header">
-          <div className="header-title-container">
-            <MessageCircle className="header-icon" size={24} />
-            <h3 className="header-title">Course Recommendation Assistant</h3>
-          </div>
-          <button 
-            onClick={() => {
-              console.log("Collapsing chat window");
-              setIsExpanded(false);
-            }}
-            className="close-button"
+      <div className="chat-header">
+        <div className="header-title-container">
+          <MessageCircle className="header-icon" size={24} />
+          <h3 className="header-title">Course Recommendation Assistant</h3>
+        </div>
+        <button 
+          onClick={() => setIsExpanded(false)}
+          className="close-button"
+        >
+          <X size={20} />
+        </button>
+      </div>
+
+      <div className="messages-container">
+        {/* Render messages with improved formatting */}
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`message ${msg.isBot ? 'bot' : 'user'}`}
           >
-            <X size={20} />
+            {msg.type === 'progress-tracker' ? (
+              <div className="message-progress-tracker">
+                <GraduationProgressTracker 
+                  sessionId={msg.sessionId}
+                  onClose={() => {
+                    // Optional: if you want to add close functionality
+                    setMessages(prev => prev.filter((_, i) => i !== index));
+                  }}
+                />
+              </div>
+            ) : (
+              <div className="message-content">
+                {msg.isBot ? formatMessage(msg.text) : msg.text}
+              </div>
+            )}
+          </div>
+        ))}
+        
+        {/* Loading indicator */}
+        {isLoading && (
+          <div className="message bot">
+            <div className="message-content loading">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          </div>
+        )}
+        
+        {/* File upload component */}
+        {showFileUpload && (
+          <div className="file-upload-container">
+            <CourseUpload 
+              onFileProcessed={handleFileProcessed}
+              onCancel={() => setShowFileUpload(false)}
+            />
+          </div>
+        )}
+        
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* Input form */}
+      <form onSubmit={handleSubmit} className="input-container">
+        <div className="input-form">
+          <input
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Ask about course recommendations"
+            className="chat-input"
+            disabled={isLoading}
+          />
+          
+          {/* Upload button */}
+          <button
+            type="button"
+            className={`upload-button ${uploadedCourses ? 'has-upload' : ''}`}
+            onClick={() => setShowFileUpload(true)}
+            disabled={isLoading}
+            title={uploadedCourses ? "Update course history" : "Upload course history"}
+          >
+            {uploadedCourses ? <FileText size={20} /> : <Upload size={20} />}
+          </button>
+          
+          {/* Send button */}
+          <button
+            type="submit"
+            className="send-button"
+            disabled={isLoading}
+          >
+            <Send size={20} />
           </button>
         </div>
-
-        <div className="messages-container">
-          {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`message ${msg.isBot ? 'bot' : 'user'}`}
-            >
-              <div className="message-content">
-                {msg.text}
-              </div>
-            </div>
-          ))}
-          {isLoading && (
-            <div className="message bot">
-              <div className="message-content loading">
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-              </div>
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-
-        <form 
-          onSubmit={(e) => {
-            console.log("Form onSubmit triggered");
-            handleSubmit(e);
-          }} 
-          className="input-container"
-        >
-          <div className="input-form">
-            <input
-              type="text"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Ask about course recommendations..."
-              className="chat-input"
-              disabled={isLoading}
-            />
-            <button
-              type="submit"
-              className="send-button"
-              disabled={isLoading}
-              onClick={() => console.log("Submit button clicked")}
-            >
-              <Send size={20} />
-            </button>
+        
+        {/* Upload status indicator */}
+        {uploadStatus && (
+          <div className="uploaded-status">
+            <FileText size={14} />
+            <span>{uploadStatus.count} courses uploaded</span>
+            <span className="upload-timestamp">{uploadStatus.timestamp}</span>
           </div>
-        </form>
-      </div>
+        )}
+      </form>
     </div>
   );
 };
