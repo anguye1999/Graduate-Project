@@ -48,6 +48,18 @@
   color: #555;
 }
 
+.course-download-link {
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.course-download-link:hover {
+  text-decoration: underline;
+  color: #004499;
+}
+
 .course-upload-file-types {
   font-size: 12px;
   color: #888;
