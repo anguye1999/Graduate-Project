@@ -5,9 +5,9 @@ from datetime import datetime
 def load_course_data(app_directory):
     try:
         course_data = {}
-        cosc_major_path = os.path.join(app_directory, 'cosc_major copy.json')
-        software_track_path = os.path.join(app_directory, 'software_track copy.json')
-        core_curriculum_path = os.path.join(app_directory, 'core_curriculum copy.json')
+        cosc_major_path = os.path.join(app_directory, 'cosc_major.json')
+        software_track_path = os.path.join(app_directory, 'software_track.json')
+        core_curriculum_path = os.path.join(app_directory, 'core_curriculum.json')
 
         with open(cosc_major_path, 'r') as f:
             course_data['cosc_courses'] = json.load(f)
@@ -167,12 +167,12 @@ def validate_major_requirements(student_courses, track, major_courses):
                 course_title = ""
                 for c in major_courses.get('cosc_courses', {}).get('courses', []):
                     if c.get('courseCode') == course_code:
-                        course_title = c.get('courseTitle', '')
+                        # course_title = c.get('courseTitle', '')
                         break
                 
                 validation_results["completedRequired"].append({
                     "courseCode": course_code,
-                    "courseTitle": course_title,
+                    # "courseTitle": course_title,
                     "completed": True
                 })
             else:
