@@ -192,110 +192,112 @@ const Chatbot = () => {
   // Render full chat interface
   return (
     <div className="chat-window">
-      <div className="chat-header">
-        <div className="header-title-container">
-          <MessageCircle className="header-icon" size={24} />
-          <h3 className="header-title">Course Recommendation Assistant</h3>
-        </div>
-        <button 
-          onClick={() => setIsExpanded(false)}
-          className="close-button"
-        >
-          <X size={20} />
-        </button>
-      </div>
-
-      <div className="messages-container">
-        {/* Render messages with improved formatting */}
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`message ${msg.isBot ? 'bot' : 'user'}`}
-          >
-            {msg.type === 'progress-tracker' ? (
-              <div className="message-progress-tracker">
-                <GraduationProgressTracker 
-                  sessionId={msg.sessionId}
-                  onClose={() => {
-                    // Optional: if you want to add close functionality
-                    setMessages(prev => prev.filter((_, i) => i !== index));
-                  }}
-                />
-              </div>
-            ) : (
-              <div className="message-content">
-                {msg.isBot ? formatMessage(msg.text) : msg.text}
-              </div>
-            )}
+      <div className="inner-chat-window">
+        <div className="chat-header">
+          <div className="header-title-container">
+            <MessageCircle className="header-icon" size={24} />
+            <h3 className="header-title">Course Recommendation Assistant</h3>
           </div>
-        ))}
-        
-        {/* Loading indicator */}
-        {isLoading && (
-          <div className="message bot">
-            <div className="message-content loading">
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
+          <button 
+            onClick={() => setIsExpanded(false)}
+            className="close-button"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        <div className="messages-container">
+          {/* Render messages with improved formatting */}
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              className={`message ${msg.isBot ? 'bot' : 'user'}`}
+            >
+              {msg.type === 'progress-tracker' ? (
+                <div className="message-progress-tracker">
+                  <GraduationProgressTracker 
+                    sessionId={msg.sessionId}
+                    onClose={() => {
+                      // Optional: if you want to add close functionality
+                      setMessages(prev => prev.filter((_, i) => i !== index));
+                    }}
+                  />
+                </div>
+              ) : (
+                <div className="message-content">
+                  {msg.isBot ? formatMessage(msg.text) : msg.text}
+                </div>
+              )}
             </div>
-          </div>
-        )}
-        
-        {/* File upload component */}
-        {showFileUpload && (
-          <div className="file-upload-container">
-            <CourseUpload 
-              onFileProcessed={handleFileProcessed}
-              onCancel={() => setShowFileUpload(false)}
-            />
-          </div>
-        )}
-        
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Input form */}
-      <form onSubmit={handleSubmit} className="input-container">
-        <div className="input-form">
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Ask about course recommendations"
-            className="chat-input"
-            disabled={isLoading}
-          />
+          ))}
           
-          {/* Upload button */}
-          <button
-            type="button"
-            className={`upload-button ${uploadedCourses ? 'has-upload' : ''}`}
-            onClick={() => setShowFileUpload(true)}
-            disabled={isLoading}
-            title={uploadedCourses ? "Update course history" : "Upload course history"}
-          >
-            {uploadedCourses ? <FileText size={20} /> : <Upload size={20} />}
-          </button>
+          {/* Loading indicator */}
+          {isLoading && (
+            <div className="message bot">
+              <div className="message-content loading">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+            </div>
+          )}
           
-          {/* Send button */}
-          <button
-            type="submit"
-            className="send-button"
-            disabled={isLoading}
-          >
-            <Send size={20} />
-          </button>
+          {/* File upload component */}
+          {showFileUpload && (
+            <div className="file-upload-container">
+              <CourseUpload 
+                onFileProcessed={handleFileProcessed}
+                onCancel={() => setShowFileUpload(false)}
+              />
+            </div>
+          )}
+          
+          <div ref={messagesEndRef} />
         </div>
-        
-        {/* Upload status indicator */}
-        {uploadStatus && (
-          <div className="uploaded-status">
-            <FileText size={14} />
-            <span>{uploadStatus.count} courses uploaded</span>
-            <span className="upload-timestamp">{uploadStatus.timestamp}</span>
+
+        {/* Input form */}
+        <form onSubmit={handleSubmit} className="input-container">
+          <div className="input-form">
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Ask about course recommendations"
+              className="chat-input"
+              disabled={isLoading}
+            />
+            
+            {/* Upload button */}
+            <button
+              type="button"
+              className={`upload-button ${uploadedCourses ? 'has-upload' : ''}`}
+              onClick={() => setShowFileUpload(true)}
+              disabled={isLoading}
+              title={uploadedCourses ? "Update course history" : "Upload course history"}
+            >
+              {uploadedCourses ? <FileText size={20} /> : <Upload size={20} />}
+            </button>
+            
+            {/* Send button */}
+            <button
+              type="submit"
+              className="send-button"
+              disabled={isLoading}
+            >
+              <Send size={20} />
+            </button>
           </div>
-        )}
-      </form>
+          
+          {/* Upload status indicator */}
+          {uploadStatus && (
+            <div className="uploaded-status">
+              <FileText size={14} />
+              <span>{uploadStatus.count} courses uploaded</span>
+              <span className="upload-timestamp">{uploadStatus.timestamp}</span>
+            </div>
+          )}
+        </form>
+      </div>
     </div>
   );
 };

@@ -160,5 +160,6 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Contact
 
-Andy Nguyen – nguyenandy155@gmail.com    
+Andy Nguyen – nguyenandy155@gmail.com
+Anthony Gillis Jr - ajgillis99pro@gmail.com
 Project Link: [https://github.com/anguye1999/Graduate-Project](https://github.com/anguye1999/Graduate-Project)
