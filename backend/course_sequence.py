@@ -403,7 +403,7 @@ def get_course_details(course_code, course_data):
     # Return basic info if course not found
     return {
         'code': course_code,
-        'title': 'Unknown Course',
+        # 'title': 'Unknown Course',
         'credits': 3,
         'description': ''
     }

@@ -59,9 +59,13 @@ def extract_courses_from_csv(file_path):
             reader = csv.reader(file)
             headers = next(reader, [])
             
-            # Try to identify course code columns
+            # Try to identify course code columns and time information
             code_col_idx = -1
             name_col_idx = -1
+            semester_col_idx = -1
+            year_col_idx = -1
+            term_col_idx = -1
+            status_col_idx = -1  # Add column for completion status
             
             for i, header in enumerate(headers):
                 header_lower = header.lower()
@@ -69,6 +73,15 @@ def extract_courses_from_csv(file_path):
                     code_col_idx = i
                 elif any(keyword in header_lower for keyword in ['title', 'name', 'description']):
                     name_col_idx = i
+                elif any(keyword in header_lower for keyword in ['semester', 'term', 'season']):
+                    if 'semester' in header_lower or 'season' in header_lower:
+                        semester_col_idx = i
+                    else:
+                        term_col_idx = i  # Could be "Fall 2024" format
+                elif any(keyword in header_lower for keyword in ['year', 'date']):
+                    year_col_idx = i
+                elif any(keyword in header_lower for keyword in ['status', 'complete', 'completed', 'in progress']):
+                    status_col_idx = i
             
             # If no obvious columns found, use first columns
             if code_col_idx == -1 and len(headers) >= 1:
@@ -87,14 +100,70 @@ def extract_courses_from_csv(file_path):
                 
                 if matches:
                     dept, number = matches[0]  # Take first match only
-                    name = row[name_col_idx] if name_col_idx >= 0 else ""
+                    name = row[name_col_idx] if name_col_idx >= 0 and name_col_idx < len(row) else ""
+                    
+                    # Get semester and year information
+                    semester = ""
+                    year = ""
+                    
+                    # Check for term column that might have "Fall 2024" format
+                    if term_col_idx >= 0 and term_col_idx < len(row):
+                        term_value = row[term_col_idx]
+                        term_match = re.search(r'(Spring|Fall|Summer|Winter)\s*(20\d\d)', term_value)
+                        if term_match:
+                            semester = term_match.group(1)
+                            year = term_match.group(2)
+                    
+                    # If not found in term, look for separate semester and year columns
+                    if not semester and semester_col_idx >= 0 and semester_col_idx < len(row):
+                        semester_value = row[semester_col_idx]
+                        if semester_value:
+                            # Try to normalize semester values
+                            semester_value = semester_value.lower()
+                            if 'fall' in semester_value:
+                                semester = 'Fall'
+                            elif 'spring' in semester_value:
+                                semester = 'Spring'
+                            elif 'summer' in semester_value:
+                                semester = 'Summer'
+                            elif 'winter' in semester_value:
+                                semester = 'Winter'
+                            else:
+                                semester = semester_value.capitalize()
+                    
+                    if not year and year_col_idx >= 0 and year_col_idx < len(row):
+                        year_value = row[year_col_idx]
+                        # Try to extract year from various formats
+                        year_match = re.search(r'(20\d\d)', year_value)
+                        if year_match:
+                            year = year_match.group(1)
+                    
+                    # Determine completed status
+                    completed = True  # Default to completed
+                    if status_col_idx >= 0 and status_col_idx < len(row):
+                        status_value = row[status_col_idx].lower()
+                        if any(term in status_value for term in ['in progress', 'current', 'enrolled', 'pending', 'not complete', 'incomplete']):
+                            completed = False
+                    
+                    # Create the course object with semester/year info
                     courses.append({
                         'department': dept,
                         'number': number,
                         'name': name,
                         'courseCode': f"{dept} {number}",
-                        'completed': True
+                        'semester': semester,
+                        'year': year,
+                        'completed': completed
                     })
+        
+        # Add debug logging
+        print(f"Extracted {len(courses)} courses from CSV file:")
+        for course in courses:
+            semester_info = ""
+            if course.get('semester') and course.get('year'):
+                semester_info = f"{course['semester']} {course['year']}"
+            completed_status = "Completed" if course.get('completed', True) else "In Progress"
+            print(f"  - {course['courseCode']}: {course['name']} ({semester_info}) - {completed_status}")
         
         return courses
     except Exception as e:
@@ -106,15 +175,27 @@ def extract_courses_from_text(file_path):
     try:
         courses = []
         seen = set()
+        semesters_by_position = {}
         
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
+            lines = content.split('\n')
             
-            # Print debug info
-            print(f"Parsing text file with content:\n{content[:500]}")
+            # First, identify semester/year patterns throughout the file
+            for i, line in enumerate(lines):
+                semester_match = re.search(r'\b(Spring|Fall|Summer|Winter)\s+(20\d\d)\b', line, re.IGNORECASE)
+                if semester_match:
+                    semester = semester_match.group(1).capitalize()
+                    year = semester_match.group(2)
+                    semesters_by_position[i] = (semester, year)
             
-            # Look for course codes with a more specific pattern
-            # This pattern is more strict about what constitutes a course code
+            # Look for in-progress or planned courses indicators
+            current_semester_lines = []
+            for i, line in enumerate(lines):
+                if re.search(r'\b(current|in progress|enrolled|plan|planned|future)\b', line, re.IGNORECASE):
+                    current_semester_lines.append(i)
+            
+            # Process the entire content for course codes
             matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3,4}[A-Z]?)\b', content)
             
             for dept, number in matches:
@@ -124,34 +205,69 @@ def extract_courses_from_text(file_path):
                     
                 seen.add(key)
                 
-                # Try to find course name near the code
-                code_pos = content.find(f"{dept} {number}")
-                if code_pos == -1:
-                    code_pos = content.find(f"{dept}{number}")
-                
-                name = ""
-                if code_pos >= 0:
-                    # Only look for course name AFTER the code, not before
-                    name_text = content[code_pos:code_pos+100]
-                    
-                    # More specific pattern for course names
-                    # Looking for text that follows a colon, dash, or space after the course code
-                    name_match = re.search(r'(?::|-)?\s+([A-Za-z0-9\s,&\'"\-]+?)(?:\.|$|\n)', name_text)
-                    if name_match:
-                        name = name_match.group(1).strip()
-                
-                courses.append({
-                    'department': dept,
-                    'number': number,
-                    'name': name,
-                    'courseCode': f"{dept} {number}",
-                    'completed': True
-                })
+                # Find this course in the content to determine context
+                for i, line in enumerate(lines):
+                    if f"{dept} {number}" in line or f"{dept}{number}" in line:
+                        # Found the course in this line
+                        # Check if there's a semester defined for this line or nearby
+                        semester = ""
+                        year = ""
+                        
+                        # Check if this course is in progress
+                        is_completed = True
+                        if any(abs(i - current_line) <= 3 for current_line in current_semester_lines):
+                            # This course is within 3 lines of a "current" or "in progress" indicator
+                            # or if the line itself contains such indicators
+                            if re.search(r'\b(current|in progress|enrolled|plan|planned|future)\b', line, re.IGNORECASE):
+                                is_completed = False
+                        
+                        # Look for semester directly in this line
+                        direct_match = re.search(r'\b(Spring|Fall|Summer|Winter)\s+(20\d\d)\b', line, re.IGNORECASE)
+                        if direct_match:
+                            semester = direct_match.group(1).capitalize()
+                            year = direct_match.group(2)
+                        else:
+                            # Try to find closest semester heading
+                            closest_heading = None
+                            closest_distance = float('inf')
+                            
+                            for pos, (sem, yr) in semesters_by_position.items():
+                                distance = abs(i - pos)
+                                if distance < closest_distance:
+                                    closest_distance = distance
+                                    closest_heading = (sem, yr)
+                                    
+                            # Only use if reasonably close (within 5 lines)
+                            if closest_heading and closest_distance <= 5:
+                                semester, year = closest_heading
+                        
+                        # Get course name if available
+                        name = ""
+                        name_match = re.search(r'(?:' + re.escape(f"{dept} {number}") + r'|' + re.escape(f"{dept}{number}") + r')\s*(?::|-)?\s+([A-Za-z0-9\s,&\'"\-]+?)(?:\.|$|\n)', line)
+                        if name_match:
+                            name = name_match.group(1).strip()
+                        
+                        courses.append({
+                            'department': dept,
+                            'number': number,
+                            'name': name,
+                            'courseCode': f"{dept} {number}",
+                            'semester': semester,
+                            'year': year,
+                            'completed': is_completed
+                        })
+                        
+                        # Found the course, no need to check other lines
+                        break
         
         # Print for debugging
         print(f"Extracted {len(courses)} courses from text file:")
         for course in courses:
-            print(f"  - {course['courseCode']}: {course['name']}")
+            semester_info = ""
+            if course.get('semester') and course.get('year'):
+                semester_info = f"{course['semester']} {course['year']}"
+            completed_status = "Completed" if course.get('completed', True) else "In Progress"
+            print(f"  - {course['courseCode']}: {course['name']} ({semester_info}) - {completed_status}")
         
         return courses
     except Exception as e:
@@ -366,13 +482,27 @@ def upload_courses():
         
         user_courses[session_id] = extracted_data
         
-        # New: Set the upload flag
+        # Set the upload flag
         user_has_uploaded[session_id] = {
             'has_uploaded': True,
             'filename': filename,
             'timestamp': time.time(),
             'course_count': len(courses)
         }
+        
+        # Format courses with semester/year for display
+        formatted_courses = []
+        for course in courses:
+            course_code = course.get('courseCode', '')
+            semester = course.get('semester', '')
+            year = course.get('year', '')
+            completed = course.get('completed', True)
+            status = "Completed" if completed else "In Progress"
+            
+            if semester and year:
+                formatted_courses.append(f"{course_code} - {semester} {year} ({status})")
+            else:
+                formatted_courses.append(f"{course_code} ({status})")
         
         # Add course info to thread if it exists
         if session_id in user_threads:
@@ -381,26 +511,26 @@ def upload_courses():
             # Create a direct message about the upload that prioritizes the user's content
             upload_message = f"""
             SYSTEM NOTIFICATION: The user has just uploaded a file named "{filename}" containing course information.
-            
+
             IMPORTANT INSTRUCTIONS: 
             1. This is a user-uploaded file, NOT a reference file
             2. In all your responses, ALWAYS prioritize discussing these specific courses rather than general program information
             3. When discussing these courses, reference them by their exact codes as found in the file
-            
+            4. When listing courses, use the format "COSC 175 - Fall 2024 (Completed)" when semester information is available
+            5. DO NOT include course descriptions when initially listing the courses after file upload
+            6. Organize courses by department and semester
+
             The raw content of their uploaded file is:
             ---BEGIN USER UPLOADED FILE CONTENT---
             {raw_content}
             ---END USER UPLOADED FILE CONTENT---
-            
+
             The {len(courses)} courses identified in this file are:
             """
-            
-            # Add specific details about each course
-            for course in courses:
-                dept = course.get('department', 'Unknown')
-                number = course.get('number', 'Unknown')
-                name = course.get('name', '') 
-                upload_message += f"- {dept} {number}" + (f": {name}" if name else "") + "\n"
+
+            # Add specific details about each course with improved formatting
+            for formatted_course in formatted_courses:
+                upload_message += f"- {formatted_course}\n"
                 
             # If we have course data available, include validation but with clear prioritization instructions
             if course_data:
@@ -408,6 +538,15 @@ def upload_courses():
                 track = "Software Engineering"  # Default track
                 validation_results = perform_course_validation(courses, course_data, track)
                 validation_summary = generate_validation_summary(validation_results)
+                
+                # For debugging - Print validation details to server console
+                print("\n=== VALIDATION RESULTS ===")
+                print(f"Total courses: {len(courses)}")
+                print(f"Completed courses: {len([c for c in courses if c.get('completed', True)])}")
+                print(f"In progress courses: {len([c for c in courses if not c.get('completed', True)])}")
+                print(f"Major requirements - Required: {len(validation_results['majorRequirements']['completedRequired'])} completed, {len(validation_results['majorRequirements']['missingRequired'])} missing")
+                print(f"Electives - Needed: {validation_results['majorRequirements']['electivesNeeded']}, Completed: {validation_results['majorRequirements']['electivesCompleted']}")
+                print(f"Core requirements - Completed: {len(validation_results['coreRequirements']['completedCore'])}, Missing: {len(validation_results['coreRequirements']['missingCore'])}")
                 
                 upload_message += f"""
                 
@@ -417,9 +556,13 @@ def upload_courses():
                 STUDENT_PROGRESS: {json.dumps(validation_summary, indent=2)}
                 
                 IMPORTANT RESPONSE INSTRUCTIONS: 
-                1. In your next response, first acknowledge the specific courses uploaded by the user (e.g., "I see you've uploaded COSC 109, COSC 175, and COMM 131")
-                2. Then briefly describe what these specific courses are (by name/title)
-                3. Only after that, ask what the user would like to know about these courses
+                1. In your next response, first acknowledge the specific courses uploaded by the user
+                2. List the courses by department and semester using the format "COSC 175 - Fall 2024 (Completed)" 
+                3. Do NOT include course descriptions in your initial response listing
+                4. Group the courses by completion status first (Completed vs. In Progress)
+                5. Then group the courses by semester (Fall 2024, Spring 2025, etc.)
+                6. Only include descriptions if the user specifically asks about what a course covers
+                7. Ask what the user would like to know about these courses
                 
                 DO NOT make claims about what program the user is in unless they specifically tell you.
                 DO NOT reference any courses that were not in this upload.
@@ -429,8 +572,12 @@ def upload_courses():
                 
                 IMPORTANT RESPONSE INSTRUCTIONS:
                 1. In your next response, first acknowledge the specific courses uploaded by the user
-                2. Then briefly describe what these specific courses are (by name/title if available)
-                3. Only after that, ask what the user would like to know about these courses
+                2. List the courses by department and semester using the format "COSC 175 - Fall 2024 (Completed)"
+                3. Do NOT include course descriptions in your initial response listing
+                4. Group the courses by completion status first (Completed vs. In Progress)
+                5. Then group the courses by semester (Fall 2024, Spring 2025, etc.)
+                6. Only include descriptions if the user specifically asks about what a course covers
+                7. Ask what the user would like to know about these courses
                 
                 DO NOT make assumptions about the user's degree program.
                 DO NOT reference any courses that were not in this upload.
@@ -443,10 +590,11 @@ def upload_courses():
                 content=upload_message
             )
         
-        # Return success response
+        # Return success response with formatted courses
         return jsonify({
             'message': f"I've analyzed your file and found {len(courses)} courses. What would you like to know?",
             'extractedCourses': courses,
+            'formattedCourses': formatted_courses,
             'success': True
         })
         
@@ -470,6 +618,12 @@ def validate_courses():
 
             if course_data and student_courses:
                 track = data.get('track', 'Software Engineering')
+                
+                # Debug log the courses before validation
+                print(f"Validating {len(student_courses)} courses for session {session_id}")
+                print(f"Completed courses: {len([c for c in student_courses if c.get('completed', True)])}")
+                print(f"In progress courses: {len([c for c in student_courses if not c.get('completed', True)])}")
+                
                 validation_results = perform_course_validation(student_courses, course_data, track)
                 validation_summary = generate_validation_summary(validation_results)
                 
