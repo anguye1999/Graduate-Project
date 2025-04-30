@@ -17,6 +17,15 @@ const Chatbot = () => {
   const [uploadedCourses, setUploadedCourses] = useState(null);
   const [uploadStatus, setUploadStatus] = useState(null);
   const messagesEndRef = useRef(null);
+
+   // Safely use the context
+  let refreshProgress = () => console.log("Progress refresh not available");
+  try {
+    const context = useProgress();
+    refreshProgress = context ? context.refreshProgress : refreshProgress;
+  } catch (err) {
+    console.log("Progress context not available:", err);
+  }
   
   // Generate a session ID
   const sessionId = useRef(`user-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);

@@ -122,14 +122,6 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
           }, 1000);
         }
       }
-
-      // Pass the processed courses to parent component
-      if (onFileProcessed) {
-        setTimeout(() => {
-          onFileProcessed(data);
-        }, 1000); // Short delay to show success state
-      }
-
     } catch (error) {
       console.error('Upload error:', error);
       setUploadError(error.message || 'Failed to upload file');

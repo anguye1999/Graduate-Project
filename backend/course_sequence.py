@@ -376,7 +376,7 @@ def get_course_details(course_code, course_data):
         if course.get('courseCode') == course_code:
             return {
                 'code': course_code,
-                'title': course.get('courseTitle', 'Unknown Course'),
+                # 'title': course.get('courseTitle', 'Unknown Course'),
                 'credits': course.get('units', 3),
                 'description': course.get('description', '')
             }
@@ -395,7 +395,7 @@ def get_course_details(course_code, course_data):
             if isinstance(course, dict) and course.get('courseCode') == course_code:
                 return {
                     'code': course_code,
-                    'title': course.get('courseTitle', 'Unknown Course'),
+                    # 'title': course.get('courseTitle', 'Unknown Course'),
                     'credits': course.get('units', 3),
                     'description': course.get('description', '')
                 }
@@ -403,7 +403,7 @@ def get_course_details(course_code, course_data):
     # Return basic info if course not found
     return {
         'code': course_code,
-        'title': 'Unknown Course',
+        # 'title': 'Unknown Course',
         'credits': 3,
         'description': ''
     }
