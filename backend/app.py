@@ -171,107 +171,80 @@ def extract_courses_from_csv(file_path):
         return []
 
 def extract_courses_from_text(file_path):
-    """Extract course information from plain text files"""
+    """Extract course information from plain text files with improved section detection"""
     try:
         courses = []
         seen = set()
-        semesters_by_position = {}
         
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
             lines = content.split('\n')
             
-            # First, identify semester/year patterns throughout the file
+            # Track the current section to determine completion status
+            current_section = "unknown"
+            
             for i, line in enumerate(lines):
-                semester_match = re.search(r'\b(Spring|Fall|Summer|Winter)\s+(20\d\d)\b', line, re.IGNORECASE)
-                if semester_match:
-                    semester = semester_match.group(1).capitalize()
-                    year = semester_match.group(2)
-                    semesters_by_position[i] = (semester, year)
-            
-            # Look for in-progress or planned courses indicators
-            current_semester_lines = []
-            for i, line in enumerate(lines):
-                if re.search(r'\b(current|in progress|enrolled|plan|planned|future)\b', line, re.IGNORECASE):
-                    current_semester_lines.append(i)
-            
-            # Process the entire content for course codes
-            matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3,4}[A-Z]?)\b', content)
-            
-            for dept, number in matches:
-                key = f"{dept}{number}"
-                if key in seen:
-                    continue
-                    
-                seen.add(key)
+                line_lower = line.lower().strip()
                 
-                # Find this course in the content to determine context
-                for i, line in enumerate(lines):
-                    if f"{dept} {number}" in line or f"{dept}{number}" in line:
-                        # Found the course in this line
-                        # Check if there's a semester defined for this line or nearby
-                        semester = ""
-                        year = ""
+                # Check for section headers
+                if "completed" in line_lower and ("classes" in line_lower or "courses" in line_lower):
+                    current_section = "completed"
+                    continue
+                elif any(term in line_lower for term in ["current classes", "in progress", "current courses"]):
+                    current_section = "current"
+                    continue
+                elif any(term in line_lower for term in ["planned classes", "future classes", "planned courses"]):
+                    current_section = "planned"
+                    continue
+                
+                # Skip empty lines or lines that look like headers
+                if not line_lower or line_lower.endswith(':'):
+                    continue
+                
+                # Look for course codes in this line
+                matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3,4}[A-Z]?)\b', line)
+                
+                for dept, number in matches:
+                    course_code = f"{dept} {number}"
+                    key = f"{dept}{number}"
+                    
+                    if key in seen:
+                        continue
                         
-                        # Check if this course is in progress
-                        is_completed = True
-                        if any(abs(i - current_line) <= 3 for current_line in current_semester_lines):
-                            # This course is within 3 lines of a "current" or "in progress" indicator
-                            # or if the line itself contains such indicators
-                            if re.search(r'\b(current|in progress|enrolled|plan|planned|future)\b', line, re.IGNORECASE):
-                                is_completed = False
-                        
-                        # Look for semester directly in this line
-                        direct_match = re.search(r'\b(Spring|Fall|Summer|Winter)\s+(20\d\d)\b', line, re.IGNORECASE)
-                        if direct_match:
-                            semester = direct_match.group(1).capitalize()
-                            year = direct_match.group(2)
-                        else:
-                            # Try to find closest semester heading
-                            closest_heading = None
-                            closest_distance = float('inf')
-                            
-                            for pos, (sem, yr) in semesters_by_position.items():
-                                distance = abs(i - pos)
-                                if distance < closest_distance:
-                                    closest_distance = distance
-                                    closest_heading = (sem, yr)
-                                    
-                            # Only use if reasonably close (within 5 lines)
-                            if closest_heading and closest_distance <= 5:
-                                semester, year = closest_heading
-                        
-                        # Get course name if available
-                        name = ""
-                        name_match = re.search(r'(?:' + re.escape(f"{dept} {number}") + r'|' + re.escape(f"{dept}{number}") + r')\s*(?::|-)?\s+([A-Za-z0-9\s,&\'"\-]+?)(?:\.|$|\n)', line)
-                        if name_match:
-                            name = name_match.group(1).strip()
-                        
-                        courses.append({
-                            'department': dept,
-                            'number': number,
-                            'name': name,
-                            'courseCode': f"{dept} {number}",
-                            'semester': semester,
-                            'year': year,
-                            'completed': is_completed
-                        })
-                        
-                        # Found the course, no need to check other lines
-                        break
+                    seen.add(key)
+                    
+                    # Set completion status based on section
+                    is_completed = (current_section == "completed")
+                    
+                    # Extract semester/year information if available
+                    semester = ""
+                    year = ""
+                    semester_match = re.search(r'\b(Spring|Fall|Summer|Winter)\s+(20\d\d)\b', line, re.IGNORECASE)
+                    if semester_match:
+                        semester = semester_match.group(1).capitalize()
+                        year = semester_match.group(2)
+                    
+                    courses.append({
+                        'department': dept,
+                        'number': number,
+                        'name': '',  # We'll extract names separately if needed
+                        'courseCode': course_code,
+                        'semester': semester,
+                        'year': year,
+                        'completed': is_completed
+                    })
         
-        # Print for debugging
+        # Log the extracted courses with their status
         print(f"Extracted {len(courses)} courses from text file:")
         for course in courses:
-            semester_info = ""
-            if course.get('semester') and course.get('year'):
-                semester_info = f"{course['semester']} {course['year']}"
-            completed_status = "Completed" if course.get('completed', True) else "In Progress"
-            print(f"  - {course['courseCode']}: {course['name']} ({semester_info}) - {completed_status}")
+            status = "Completed" if course['completed'] else "In Progress"
+            print(f"  - {course['courseCode']} - {status}")
         
         return courses
     except Exception as e:
         print(f"Error parsing text file: {str(e)}")
+        import traceback
+        traceback.print_exc()  # Print the full stack trace for better debugging
         return []
 
 def cleanup_expired_threads():
@@ -446,6 +419,11 @@ def upload_courses():
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
         
+        # IMPORTANT: Reset previous course data for this session
+        print(f"Uploading new file: clearing previous course data for session {session_id}")
+        if session_id in user_courses:
+            user_courses[session_id] = {'courses': [], 'student_info': {}, 'semesters': []}
+        
         # Extract courses based on file type
         file_ext = filename.rsplit('.', 1)[1].lower()
         
@@ -507,6 +485,15 @@ def upload_courses():
         # Add course info to thread if it exists
         if session_id in user_threads:
             thread_id = user_threads[session_id]['thread_id']
+            
+            # IMPORTANT: Reset the conversation thread when uploading a new file
+            # Create a new thread and store its ID
+            new_thread = client.beta.threads.create()
+            user_threads[session_id] = {
+                'thread_id': new_thread.id,
+                'last_accessed': time.time()
+            }
+            thread_id = new_thread.id
             
             # Create a direct message about the upload that prioritizes the user's content
             upload_message = f"""
@@ -616,25 +603,46 @@ def validate_courses():
         if session_id in user_courses:
             student_courses = user_courses[session_id].get('courses', [])
 
-            if course_data and student_courses:
+            if not student_courses:
+                return jsonify({
+                    'message': 'No courses found for validation',
+                    'success': False
+                }), 400
+
+            if course_data:
                 track = data.get('track', 'Software Engineering')
                 
                 # Debug log the courses before validation
                 print(f"Validating {len(student_courses)} courses for session {session_id}")
-                print(f"Completed courses: {len([c for c in student_courses if c.get('completed', True)])}")
-                print(f"In progress courses: {len([c for c in student_courses if not c.get('completed', True)])}")
+                completed_count = len([c for c in student_courses if c.get('completed', True)])
+                in_progress_count = len([c for c in student_courses if not c.get('completed', True)])
+                print(f"Completed courses: {completed_count}")
+                print(f"In progress courses: {in_progress_count}")
                 
-                validation_results = perform_course_validation(student_courses, course_data, track)
-                validation_summary = generate_validation_summary(validation_results)
+                # IMPORTANT: Use the simplified validation function that's much faster
+                # This avoids the timeout issues
+                start_time = time.time()
+                try:
+                    validation_result = perform_course_validation(student_courses, course_data, track)
+                    print(f"Validation completed in {time.time() - start_time:.2f} seconds")
+                except Exception as e:
+                    print(f"Error in validation: {str(e)}")
+                    return jsonify({
+                        'message': f'Error during validation: {str(e)}',
+                        'success': False
+                    }), 500
                 
-                # Generate course sequence
-                sequence_results = generate_recommended_sequence(student_courses, course_data, track)
+                # Generate summary from validation results
+                validation_summary = generate_validation_summary(validation_result)
                 
-                # Add the sequence to the response
+                # Skip sequence generation for now - can be added back later if needed
+                sequence_result = None
+                
+                # Return the results
                 return jsonify({
-                    'validation': validation_results,
+                    'validation': validation_result,
                     'summary': validation_summary,
-                    'sequence': sequence_results,
+                    'sequence': sequence_result,
                     'success': True
                 })
             else:
@@ -650,6 +658,8 @@ def validate_courses():
     
     except Exception as e:
         print(f"Error validating courses: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return jsonify({
             'message': f'Error validating courses: {str(e)}',
             'success': False

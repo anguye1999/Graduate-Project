@@ -1,6 +1,6 @@
-# COSC 880 Graduate Project 
+# COSC 880 Graduate Project (Towson Pathways)
 
-**Introduction**  
+# Introduction  
 This project is a specialized course recommendation assistant initially targeting Towson University's Computer Science program. It helps students navigate their academic journey by providing personalized course recommendations based on their completed coursework, program requirements, and validating graduation progress.
 
 # Team Members

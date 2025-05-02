@@ -104,6 +104,29 @@
   background-color: #ffebee;
 }
 
+/* Style for 100% completion status */
+.progress-status.complete {
+  background-color: #e1f5fe;
+  border-left: 4px solid #FFD700;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 6px;
+}
+
+.progress-status.complete svg {
+  color: #FFD700;
+  flex-shrink: 0;
+}
+
+.progress-status.complete p {
+  margin: 0;
+  font-size: 14px;
+  color: #0288d1;
+}
+
 .progress-status.excellent p {
   color: #2e7d32;
 }
@@ -149,28 +172,27 @@
   color: #9a5700;
 }
 
-.progress-actions {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.progress-action-btn {
-  padding: 10px 20px;
+/* Style for success message when degree is complete */
+.progress-success {
+  display: flex;
+  align-items: flex-start;
+  background-color: #e8f5e9;
+  padding: 12px;
   border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.progress-success svg {
+  flex-shrink: 0;
+  color: #2e7d32;
+  margin-right: 8px;
+  margin-top: 3px;
+}
+
+.progress-success p {
+  margin: 0;
   font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-}
-
-.view-recommended {
-  background-color: #FFD700;
-  color: #000;
-}
-
-.view-recommended:hover {
-  background-color: #FFC000;
+  color: #2e7d32;
 }
 
 .progress-loading {

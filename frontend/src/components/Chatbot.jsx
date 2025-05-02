@@ -36,14 +36,21 @@ const Chatbot = () => {
     sessionStorage.setItem('chatSessionId', sessionId.current);
     console.log("Chatbot component mounted, session ID:", sessionId.current);
     
-    // Clear any existing session
-    fetch('http://localhost:5000/api/clear-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ session_id: sessionId.current })
-    }).catch(err => {
-      console.log("Clear session request failed:", err);
-    });
+    // FIXED: Only clear the session if this is not a page refresh
+    const isPageRefresh = performance.navigation ? 
+      performance.navigation.type === 1 : // Older browsers
+      performance.getEntriesByType('navigation')[0]?.type === 'reload'; // Modern browsers
+    
+    if (!isPageRefresh) {
+      // Clear any existing session only on fresh visits, not refreshes
+      fetch('http://localhost:5000/api/clear-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId.current })
+      }).catch(err => {
+        console.log("Clear session request failed:", err);
+      });
+    }
     
     // Setup cleanup for page unload
     const handleBeforeUnload = () => {
