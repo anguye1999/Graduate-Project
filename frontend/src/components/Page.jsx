@@ -10,7 +10,7 @@ const Page = () => (
         className="logo"
       />
       <h2 className="welcome-text">
-        Welcome to TU Course Recommendation Assistant!
+        Welcome to Towson Pathways!
       </h2>
 
       <a href="https://www.towson.edu/">

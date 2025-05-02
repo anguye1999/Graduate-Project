@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Calendar, AlertCircle, ChevronDown, ChevronRight, CheckCircle, Info } from 'lucide-react';
+import { BookOpen, Calendar, AlertCircle, ChevronDown, ChevronRight, CheckCircle, Info, Award } from 'lucide-react';
 import '../styles/GraduationProgressTracker.css';
 import { useProgress } from './ProgressContext';
 
@@ -60,7 +60,8 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
   const [expandedSections, setExpandedSections] = useState({
     core: false,
     major: false,
-    electives: false
+    electives: false,
+    math: false
   });
   
   // Safely use the context - handle case when context might not be available
@@ -76,26 +77,33 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
     // Fetch graduation progress data from the server
     const fetchProgressData = async () => {
       setIsLoading(true);
+      setError(null);
+      
       try {
+        console.log("Fetching graduation progress data...");
+        
         const response = await fetch('http://localhost:5000/api/validate-courses', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
             session_id: sessionId, 
-            track: 'Software Engineering' // Hardcoded value
+            track: 'Software Engineering'
           })
+          // No signal or timeout - let it complete even if it takes longer
         });
         
         if (!response.ok) {
-          throw new Error('Failed to fetch graduation progress');
+          const errorText = await response.text().catch(() => "Unknown error");
+          console.error(`Error response: ${response.status} - ${errorText}`);
+          throw new Error(`Unable to load data (${response.status})`);
         }
         
         const data = await response.json();
-        console.log("Progress data loaded:", data);
+        console.log("Progress data received:", data);
         setProgressData(data);
       } catch (err) {
-        setError(err.message);
-        console.error('Error fetching graduation progress:', err);
+        console.error('Error in graduation progress tracker:', err);
+        setError(`${err.message}. Please try again later.`);
       } finally {
         setIsLoading(false);
       }
@@ -158,13 +166,14 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
   // Calculate total remaining requirements
   const coreRemaining = missingRequirements.core.length;
   const majorRemaining = missingRequirements.major.length;
+  const mathRemaining = missingRequirements.math ? missingRequirements.math.length : 0;
   
   // Ensure electives remaining is never negative
   const electivesNeeded = progressData.validation?.majorRequirements?.electivesNeeded || 0;
   const electivesCompleted = progressData.validation?.majorRequirements?.electivesCompleted || 0;
   const electivesRemaining = Math.max(0, electivesNeeded - electivesCompleted);
   
-  const totalRemaining = coreRemaining + majorRemaining + electivesRemaining;
+  const totalRemaining = coreRemaining + majorRemaining + mathRemaining + electivesRemaining;
   
   // Calculate total credits earned
   const totalCredits = progressData.validation?.graduationProgress?.totalCreditsRequired || 120;
@@ -177,6 +186,10 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
   // Get detailed missing requirements
   const missingCoreRequirements = progressData.validation?.coreRequirements?.missingCore || [];
   const missingMajorRequirements = progressData.validation?.majorRequirements?.missingRequired || [];
+  const missingMathRequirements = progressData.validation?.majorRequirements?.missingMath || [];
+
+  // Check if all requirements are complete (100% graduation)
+  const isFullyComplete = totalRemaining === 0 && graduationProgress === 100;
 
   return (
     <div className="progress-tracker-container">
@@ -200,21 +213,33 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
       <div className="progress-details-container">
         <div className="progress-detail-item">
           <Calendar size={18} />
-          <span>Estimated graduation: <strong>{estimatedGraduation}</strong></span>
+          <span>
+            {isFullyComplete 
+              ? <strong>Congratulations! You're graduating in {estimatedGraduation}</strong>
+              : <span>Estimated graduation: <strong>{estimatedGraduation}</strong></span>
+            }
+          </span>
         </div>
       </div>
       
-      <div className={`progress-status ${graduationProgress >= 85 ? 'excellent' : 
+      {isFullyComplete ? (
+        <div className="progress-status complete">
+          <Award size={24} />
+          <p>Congratulations! You've completed all requirements for your degree program. You're all set to graduate in {estimatedGraduation}!</p>
+        </div>
+      ) : (
+        <div className={`progress-status ${graduationProgress >= 85 ? 'excellent' : 
                                          graduationProgress >= 60 ? 'good' : 
                                          graduationProgress >= 30 ? 'fair' : 
                                          'poor'}`}>
-        <p>
-          {graduationProgress >= 85 ? 'Excellent progress! You\'re almost there.' :
-           graduationProgress >= 60 ? 'You\'re making good progress toward your degree.' :
-           graduationProgress >= 30 ? 'You\'re making fair progress. Keep going!' :
-           'You have a ways to go, but every course counts!'}
-        </p>
-      </div>
+          <p>
+            {graduationProgress >= 85 ? 'Excellent progress! You\'re almost there.' :
+            graduationProgress >= 60 ? 'You\'re making good progress toward your degree.' :
+            graduationProgress >= 30 ? 'You\'re making fair progress. Keep going!' :
+            'You have a ways to go, but every course counts!'}
+          </p>
+        </div>
+      )}
       
       <h3 className="progress-section-title">Remaining Requirements</h3>
       
@@ -302,6 +327,48 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
         )}
       </div>
       
+      {/* Math Requirements */}
+      <div className="requirements-section">
+        <div 
+          className="requirements-header" 
+          onClick={() => toggleSection('math')}
+        >
+          {expandedSections.math ? 
+            <ChevronDown size={20} className="expand-icon" /> : 
+            <ChevronRight size={20} className="expand-icon" />
+          }
+          <div className="requirements-header-content">
+            <BookOpen size={18} />
+            <span className="requirement-label">Math Requirements</span>
+            <span className={`requirement-count ${mathRemaining > 0 ? 'missing' : 'complete'}`}>
+              {mathRemaining}
+            </span>
+          </div>
+        </div>
+        
+        {expandedSections.math && (
+          <div className="requirements-detail">
+            {mathRemaining > 0 ? (
+              <div className="missing-requirements">
+                <h4>Missing Math Courses:</h4>
+                <ul className="missing-list">
+                  {missingMathRequirements.map((requirement, index) => (
+                    <li key={index} className="missing-item">
+                      <span className="missing-course">{requirement.courseCode}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div className="complete-requirements">
+                <CheckCircle size={18} />
+                <span>All math requirements completed</span>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+      
       {/* Electives */}
       <div className="requirements-section">
         <div 
@@ -358,10 +425,15 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
         )}
       </div>
       
-      {totalRemaining > 0 && (
+      {totalRemaining > 0 ? (
         <div className="progress-warning">
           <AlertCircle size={16} />
           <p>You have {totalRemaining} remaining course requirements to complete.</p>
+        </div>
+      ) : (
+        <div className="progress-success">
+          <CheckCircle size={16} />
+          <p>You have completed all requirements for your degree!</p>
         </div>
       )}
       
@@ -370,15 +442,6 @@ const GraduationProgressTracker = ({ sessionId, onClose }) => {
         completedCourses={completedCourses}
         detailedCourses={detailedCourses}
       />
-      
-      <div className="progress-actions">
-        <button 
-          className="progress-action-btn view-recommended"
-          onClick={() => window.location.href = '/recommended-courses'}
-        >
-          View Recommended Courses
-        </button>
-      </div>
     </div>
   );
 };
