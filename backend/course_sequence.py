@@ -1,11 +1,3 @@
-"""
-Course sequencing module for Towson University Computer Science program.
-This module provides functions to generate a recommended course sequence
-based on completed courses and degree requirements.
-"""
-
-import json
-from collections import defaultdict
 from datetime import datetime
 
 def get_course_level(course_code):
@@ -85,154 +77,195 @@ def has_prerequisites_met(course_code, completed_courses, course_data):
     
     return True
 
-def has_corequisites_met(course_code, completed_courses, planned_semester, course_data):
+def calculate_course_priority(course_code, completed_courses, remaining_courses, course_data, current_term=1):
     """
-    Check if corequisites for a course are met.
-    Corequisites can be satisfied by either:
-    1. Having already completed the corequisite
-    2. Planning to take the corequisite in the same semester
+    Calculate a priority score for a course based on:
+    1. Course sequence/term in the degree plan
+    2. Prerequisites and dependencies
+    3. Course level
+    4. How many other courses depend on it
     
     Args:
         course_code: The code of the course to check
         completed_courses: List of course codes the student has completed
-        planned_semester: List of courses planned for the current semester
-        course_data: Dictionary of course information
-        
-    Returns:
-        Boolean indicating if corequisites are met
-    """
-    # Find the course in the course data
-    course_info = None
-    for course in course_data.get('cosc_courses', {}).get('courses', []):
-        if course.get('courseCode') == course_code:
-            course_info = course
-            break
-    
-    if not course_info:
-        return True  # If we can't find the course, assume no corequisites
-    
-    # Check if course has corequisites
-    corequisites = course_info.get('corequisites', [])
-    
-    if not corequisites:
-        return True  # No corequisites, so we're good
-    
-    # Make sure corequisites are in a list format
-    if isinstance(corequisites, str):
-        corequisites = [corequisites]
-    
-    # Check each corequisite
-    for coreq in corequisites:
-        # Corequisite is met if:
-        # 1. It's already completed, or
-        # 2. It's planned for the current semester
-        if coreq not in completed_courses and coreq not in planned_semester:
-            return False
-    
-    return True
-
-def is_course_available(course_code, semester_season, course_data):
-    """
-    Check if a course is offered in the given semester.
-    
-    Args:
-        course_code: The code of the course to check
-        semester_season: "Fall" or "Spring"
-        course_data: Dictionary of course information
-        
-    Returns:
-        Boolean indicating if the course is available
-    """
-    # Find the course in the course data
-    course_info = None
-    for course in course_data.get('cosc_courses', {}).get('courses', []):
-        if course.get('courseCode') == course_code:
-            course_info = course
-            break
-    
-    if not course_info:
-        return True  # If we can't find the course, assume it's offered
-    
-    # Get the offerings for the course
-    offerings = course_info.get('offerings', [])
-    
-    # If no offering information, assume it's offered
-    if not offerings:
-        return True
-    
-    # Check if the course is offered in the given semester
-    return semester_season in offerings
-
-def calculate_course_priority(course_code, remaining_courses, course_data):
-    """
-    Calculate a priority score for a course based on:
-    1. How many other courses depend on it
-    2. Course level (lower-level courses get higher priority)
-    
-    Args:
-        course_code: The code of the course to check
         remaining_courses: List of courses still to be taken
         course_data: Dictionary of course information
+        current_term: The current term being planned (1=Freshman Term 1, etc.)
         
     Returns:
         Priority score (higher means higher priority)
     """
-    # Calculate how many other courses depend on this course
-    dependent_courses = 0
+    # Define reference sequence from degree plan
+    reference_sequence = {
+        # Freshman Term 1 (term 1)
+        "COSC 175": {"term": 1, "season": "Fall", "priority": 100},
+        "MATH 273": {"term": 1, "season": "Fall", "priority": 100},
+        "PHYS 241": {"term": 1, "season": "Fall", "priority": 90},
+        "TSEM 102": {"term": 1, "season": "Fall", "priority": 90},
+        
+        # Freshman Term 2 (term 2)
+        "COSC 236": {"term": 2, "season": "Spring", "priority": 100},
+        "PHYS 242": {"term": 2, "season": "Spring", "priority": 90},
+        "ENGL 102": {"term": 2, "season": "Spring", "priority": 90},
+        "MATH 274": {"term": 2, "season": "Spring", "priority": 95},
+        
+        # Sophomore Term 1 (term 3)
+        "COSC 237": {"term": 3, "season": "Fall", "priority": 100},
+        "CIS 377": {"term": 3, "season": "Fall", "priority": 90},
+        "COMM 131": {"term": 3, "season": "Fall", "priority": 85},
+        "MATH 263": {"term": 3, "season": "Fall", "priority": 95},
+        "ECON 201": {"term": 3, "season": "Fall", "priority": 80},
+        
+        # Sophomore Term 2 (term 4)
+        "COSC 336": {"term": 4, "season": "Spring", "priority": 100},
+        "COSC 290": {"term": 4, "season": "Spring", "priority": 95},
+        "MATH 330": {"term": 4, "season": "Spring", "priority": 90},
+        "COSC 109": {"term": 4, "season": "Spring", "priority": 85},
+        
+        # Junior Term 1 (term 5)
+        "COSC 412": {"term": 5, "season": "Fall", "priority": 95},
+        "COSC 350": {"term": 5, "season": "Fall", "priority": 95},
+        "COSC 436": {"term": 5, "season": "Fall", "priority": 90},
+        "ENGL 317": {"term": 5, "season": "Fall", "priority": 85},
+        "COSC 439": {"term": 5, "season": "Fall", "priority": 90},
+        
+        # Junior Term 2 (term 6)
+        "COSC 455": {"term": 6, "season": "Spring", "priority": 95},
+        "COSC 457": {"term": 6, "season": "Spring", "priority": 95},
+        "COSC 418": {"term": 6, "season": "Spring", "priority": 90},
+        "MATH 275": {"term": 6, "season": "Spring", "priority": 90},
+        "FMST 201": {"term": 6, "season": "Spring", "priority": 85},
+        
+        # Senior Term 1 (term 7)
+        "COSC 432": {"term": 7, "season": "Fall", "priority": 95},
+        "COSC 435": {"term": 7, "season": "Fall", "priority": 95},
+        "HIST 146": {"term": 7, "season": "Fall", "priority": 85},
+        "ENGL 241": {"term": 7, "season": "Fall", "priority": 85},
+        "CHNS 101": {"term": 7, "season": "Fall", "priority": 80},
+        
+        # Senior Term 2 (term 8)
+        "COSC 442": {"term": 8, "season": "Spring", "priority": 95},
+        "COSC 484": {"term": 8, "season": "Spring", "priority": 95},
+        "COSC 490": {"term": 8, "season": "Spring", "priority": 100},
+        "EMF 210": {"term": 8, "season": "Spring", "priority": 85},
+        "ART 161": {"term": 8, "season": "Spring", "priority": 80}
+    }
     
+    # Check if course exists in reference sequence
+    if course_code not in reference_sequence:
+        # For unknown courses, estimate term based on course level
+        try:
+            parts = course_code.split()
+            if len(parts) == 2:
+                course_level = int(parts[1][0])  # First digit of course number
+                estimated_term = max(1, min(8, course_level * 2))
+                term_priority = 50  # Default medium priority for unknown courses
+            else:
+                term_priority = 50
+                estimated_term = 4  # Default to middle of program
+        except:
+            term_priority = 50
+            estimated_term = 4
+    else:
+        # Use reference sequence for known courses
+        term_priority = reference_sequence[course_code]["priority"]
+        estimated_term = reference_sequence[course_code]["term"]
+    
+    # Find course in course data
+    course_info = None
+    for course in course_data.get('cosc_courses', {}).get('courses', []):
+        if course.get('courseCode') == course_code:
+            course_info = course
+            break
+    
+    # Check prerequisites
+    has_prereq_issue = False
+    if course_info and course_info.get('prerequisites'):
+        prerequisites = course_info.get('prerequisites', [])
+        
+        for prereq in prerequisites:
+            if isinstance(prereq, list):
+                # This is a "one of" prerequisite - at least one must be completed
+                prereq_met = False
+                for option in prereq:
+                    if option in completed_courses:
+                        prereq_met = True
+                        break
+                if not prereq_met:
+                    has_prereq_issue = True
+            elif " or " in prereq:
+                # "or" condition in prerequisite
+                prereq_options = prereq.split(" or ")
+                prereq_met = False
+                for option in prereq_options:
+                    if option.strip() in completed_courses:
+                        prereq_met = True
+                        break
+                if not prereq_met:
+                    has_prereq_issue = True
+            elif prereq not in completed_courses:
+                has_prereq_issue = True
+    
+    # If prerequisites are not met, give this course a very low priority
+    if has_prereq_issue:
+        return -100
+    
+    # Term distance factor - prioritize courses from terms closer to current term
+    # This ensures we follow the natural curriculum progression
+    term_distance = estimated_term - current_term
+    
+    if term_distance < 0:
+        # This course belongs to a previous term - high priority to catch up
+        term_factor = 50
+    elif term_distance == 0:
+        # This course is right on track - highest priority
+        term_factor = 100
+    elif term_distance == 1:
+        # Next term course - good priority
+        term_factor = 60
+    elif term_distance == 2:
+        # Two terms ahead - lower priority
+        term_factor = 30
+    else:
+        # Too far ahead - very low priority
+        term_factor = max(0, 50 - term_distance * 10)
+    
+    # Calculate dependency factor - courses that other courses depend on get higher priority
+    dependency_factor = 0
     for course in course_data.get('cosc_courses', {}).get('courses', []):
         if course.get('courseCode') not in remaining_courses:
             continue
             
         prerequisites = course.get('prerequisites', [])
         
-        # Check if this course is a direct prerequisite
+        # Check direct prerequisites
         if course_code in prerequisites:
-            dependent_courses += 1
+            dependency_factor += 20
             continue
             
-        # Check if this course is part of a "one of" prerequisite group
+        # Check prerequisites that are lists ("one of" options)
         for prereq in prerequisites:
             if isinstance(prereq, list) and course_code in prereq:
-                dependent_courses += 0.5  # Lower weight for "one of" prerequisites
+                dependency_factor += 10
                 break
     
-    # Get course level (1-4)
-    course_level = get_course_level(course_code)
+    # Course level factor - lower level courses generally come first
+    level_factor = 0
+    try:
+        parts = course_code.split()
+        if len(parts) == 2:
+            course_level = int(parts[1][0])  # First digit of course number
+            level_factor = 100 - (course_level * 15)  # Higher level = lower priority
+    except:
+        level_factor = 50  # Default if we can't determine level
     
-    # Priority formula: dependent courses + (5 - level)
-    # This prioritizes courses with more dependents and lower level courses
-    priority = dependent_courses + (5 - course_level)
-    
-    # Boost priority for key courses in the curriculum
-    key_courses = {
-        "COSC 175": 10,  # Starting CS course
-        "COSC 236": 9,   # Intro to CS I
-        "COSC 237": 8,   # Intro to CS II
-        "COSC 336": 7,   # Data Structures (gateway to many courses)
-        "COSC 290": 6,   # Computer Organization
-        "MATH 273": 5,   # Calculus I
-        "COSC 350": 4,   # Data Communications and Networking
-        "COSC 412": 3,   # Software Engineering
-    }
-    
-    if course_code in key_courses:
-        priority += key_courses[course_code]
-    
-    # Check if it's a required course for the software engineering track
-    software_track_required = []
-    for course in course_data.get('software_track', {}).get('courses', {}).get('requiredComputerScience', []):
-        if isinstance(course, dict) and 'courseCode' in course:
-            software_track_required.append(course['courseCode'])
-    
-    for course in course_data.get('software_track', {}).get('courses', {}).get('requiredSoftwareEngineering', []):
-        if isinstance(course, dict) and 'courseCode' in course:
-            software_track_required.append(course['courseCode'])
-        elif isinstance(course, str):
-            software_track_required.append(course)
-    
-    if course_code in software_track_required:
-        priority += 2  # Boost priority for required courses
+    # Final priority calculation (weighted sum of factors)
+    priority = (
+        (term_priority * 0.3) +       # Base priority from reference sequence
+        (term_factor * 0.4) +         # Term sequencing factor (highest weight)
+        (dependency_factor * 0.2) +   # How many courses depend on this
+        (level_factor * 0.1)          # Course level factor (lowest weight)
+    )
     
     return priority
 
@@ -252,7 +285,7 @@ def generate_course_sequence(student_courses, course_data, start_semester="Fall"
     # Extract completed courses
     completed_courses = [course['courseCode'] for course in student_courses if course.get('completed', True)]
     
-    # Identify major courses requirements
+    # Identify required courses
     required_courses = set()
     
     # Add required Computer Science courses
@@ -269,7 +302,14 @@ def generate_course_sequence(student_courses, course_data, start_semester="Fall"
         elif isinstance(course, str):
             required_courses.add(course)
     
-    # Add elective Software Engineering courses (we'll need some of these)
+    # Add math courses
+    for course in course_data.get('software_track', {}).get('courses', {}).get('requiredMath', []):
+        if isinstance(course, dict) and 'courseCode' in course:
+            required_courses.add(course['courseCode'])
+        elif isinstance(course, str):
+            required_courses.add(course)
+    
+    # Add elective courses
     elective_courses = set()
     for course in course_data.get('software_track', {}).get('courses', {}).get('electiveSoftwareEngineering', []):
         if isinstance(course, dict) and 'courseCode' in course:
@@ -281,91 +321,112 @@ def generate_course_sequence(student_courses, course_data, start_semester="Fall"
     remaining_required = [course for course in required_courses if course not in completed_courses]
     remaining_electives = [course for course in elective_courses if course not in completed_courses]
     
-    # We need at least one elective for the Software Engineering track
-    if len(remaining_electives) > 0 and all(course not in completed_courses for course in elective_courses):
-        remaining_required.append(remaining_electives[0])
+    # We need at least two electives for the Software Engineering track
+    electives_needed = 2
+    electives_to_add = min(electives_needed, len(remaining_electives))
+    if electives_to_add > 0:
+        # Add the most appropriate electives based on curriculum sequence
+        sorted_electives = sorted(remaining_electives, key=lambda e: 
+                                 calculate_course_priority(e, completed_courses, 
+                                                         remaining_required + remaining_electives, 
+                                                         course_data), 
+                                 reverse=True)
+        remaining_required.extend(sorted_electives[:electives_to_add])
     
     # Start building the semester plan
     semesters = []
-    current_semester = []
     current_semester_season = start_semester
     remaining_courses = remaining_required.copy()
+    current_term = 1  # Start with term 1 (Freshman Term 1)
+    
+    # Determine current term based on completed courses
+    term_mapping = {
+        # Course code -> term mapping based on the reference sequence
+        "COSC 175": 1, "MATH 273": 1, "PHYS 241": 1, "TSEM 102": 1,  # Term 1
+        "COSC 236": 2, "PHYS 242": 2, "ENGL 102": 2, "MATH 274": 2,  # Term 2
+        "COSC 237": 3, "CIS 377": 3, "COMM 131": 3, "MATH 263": 3, "ECON 201": 3,  # Term 3
+        "COSC 336": 4, "COSC 290": 4, "MATH 330": 4, "COSC 109": 4,  # Term 4
+        "COSC 412": 5, "COSC 350": 5, "COSC 436": 5, "ENGL 317": 5, "COSC 439": 5,  # Term 5
+        "COSC 455": 6, "COSC 457": 6, "COSC 418": 6, "MATH 275": 6, "FMST 201": 6,  # Term 6
+        "COSC 432": 7, "COSC 435": 7, "HIST 146": 7, "ENGL 241": 7, "CHNS 101": 7,  # Term 7
+        "COSC 442": 8, "COSC 484": 8, "COSC 490": 8, "EMF 210": 8, "ART 161": 8  # Term 8
+    }
+    
+    # Get the highest term from completed courses to set the current term
+    for course in completed_courses:
+        if course in term_mapping:
+            term = term_mapping[course]
+            current_term = max(current_term, term + 1)  # Move to the next term
     
     # Continue planning until all required courses are scheduled
     while remaining_courses:
-        # Find courses that can be taken this semester
-        available_courses = []
+        current_semester = []
         
+        # Calculate priorities for all remaining courses
+        course_priorities = []
         for course in remaining_courses:
-            # Check if prerequisites and corequisites are met
-            if has_prerequisites_met(course, completed_courses, course_data) and \
-               has_corequisites_met(course, completed_courses, current_semester, course_data) and \
-               is_course_available(course, current_semester_season, course_data):
-                available_courses.append(course)
-        
-        # If no courses can be taken, we might have a prerequisite loop or missing data
-        if not available_courses:
-            # Force add the remaining courses to finish the plan
-            # This shouldn't happen with well-formed data, but provides a fallback
-            current_semester.extend(remaining_courses[:max_courses_per_semester - len(current_semester)])
-            remaining_courses = remaining_courses[max_courses_per_semester - len(current_semester):]
-            
-            if current_semester:
-                semesters.append({
-                    "semester": len(semesters) + 1,
-                    "season": current_semester_season,
-                    "courses": current_semester.copy()
-                })
-                
-            # Reset for next semester
-            current_semester = []
-            current_semester_season = "Spring" if current_semester_season == "Fall" else "Fall"
-            
-            if not remaining_courses:
-                break
-                
-            continue
-        
-        # Calculate priority for each available course
-        course_priorities = [(course, calculate_course_priority(course, remaining_courses, course_data)) 
-                           for course in available_courses]
+            priority = calculate_course_priority(course, completed_courses, 
+                                                remaining_courses, course_data, 
+                                                current_term)
+            course_priorities.append((course, priority))
         
         # Sort by priority (highest first)
         course_priorities.sort(key=lambda x: x[1], reverse=True)
         
-        # Add courses to the current semester until it's full
-        while course_priorities and len(current_semester) < max_courses_per_semester:
-            course_to_add = course_priorities.pop(0)[0]
+        # Check if any courses can be taken this semester
+        viable_courses = []
+        for course, priority in course_priorities:
+            if priority > -50:  # Course is viable if priority is above threshold
+                viable_courses.append((course, priority))
+        
+        # If no viable courses found, we might have prerequisite issues
+        if not viable_courses:
+            # Try the next term
+            current_term += 1
+            if current_term > 8:  # Reset if we've reached the end of the program
+                current_term = 1
+            
+            # Toggle semester season
+            current_semester_season = "Spring" if current_semester_season == "Fall" else "Fall"
+            continue
+        
+        # Add courses to the current semester until full
+        while viable_courses and len(current_semester) < max_courses_per_semester:
+            course_to_add = viable_courses.pop(0)[0]
             current_semester.append(course_to_add)
             remaining_courses.remove(course_to_add)
             
-            # Update the list of completed courses
+            # Update completed courses for prerequisite checking
             completed_courses.append(course_to_add)
             
-            # Recalculate which courses are available
-            available_courses = []
+            # Recalculate priorities for remaining courses
+            viable_courses = []
             for course in remaining_courses:
-                if has_prerequisites_met(course, completed_courses, course_data) and \
-                   has_corequisites_met(course, completed_courses, current_semester, course_data) and \
-                   is_course_available(course, current_semester_season, course_data):
-                    available_courses.append(course)
+                priority = calculate_course_priority(course, completed_courses, 
+                                                    remaining_courses, course_data, 
+                                                    current_term)
+                if priority > -50:  # Course is viable
+                    viable_courses.append((course, priority))
             
-            # Recalculate priorities
-            course_priorities = [(course, calculate_course_priority(course, remaining_courses, course_data)) 
-                               for course in available_courses]
-            course_priorities.sort(key=lambda x: x[1], reverse=True)
+            # Sort again
+            viable_courses.sort(key=lambda x: x[1], reverse=True)
         
         # Add the current semester to the plan
         if current_semester:
             semesters.append({
                 "semester": len(semesters) + 1,
                 "season": current_semester_season,
+                "term": current_term,  # Add term number for reference
                 "courses": current_semester.copy()
             })
         
-        # Reset for next semester
-        current_semester = []
+        # Advance to next term and toggle semester season
+        current_term += 1
         current_semester_season = "Spring" if current_semester_season == "Fall" else "Fall"
+        
+        # Reset term counter if we've gone through all 8 terms
+        if current_term > 8:
+            current_term = 1
     
     return semesters
 
