@@ -6,10 +6,10 @@ from collections import defaultdict
 def load_course_data(app_directory):
     try:
         course_data = {}
-        cosc_major_path = os.path.join(app_directory, 'cosc_major_no_course_title.json')
-        software_track_path = os.path.join(app_directory, 'software_track_no_course_title.json')
-        core_curriculum_path = os.path.join(app_directory, 'core_curriculum_no_course_title.json')
-        math_courses_path = os.path.join(app_directory, 'math_courses_no_course_title.json')
+        cosc_major_path = os.path.join(app_directory, 'cosc_major.json')
+        software_track_path = os.path.join(app_directory, 'software_track.json')
+        core_curriculum_path = os.path.join(app_directory, 'core_curriculum.json')
+        math_courses_path = os.path.join(app_directory, 'math_courses.json')
 
         with open(cosc_major_path, 'r') as f:
             course_data['cosc_courses'] = json.load(f)
@@ -284,29 +284,51 @@ def calculate_graduation_progress(student_courses, core_curriculum, major_course
         }
     }
     
-    # Extract completed courses
+    # Extract completed courses - Add explicit debugging
     completed_courses = [course for course in student_courses if course.get('completed', True)]
     
-    # Calculate credits earned
+    # Add debug logging
+    print(f"DEBUG: Student has {len(student_courses)} total courses")
+    print(f"DEBUG: Found {len(completed_courses)} completed courses:")
+    for course in completed_courses:
+        print(f"  - {course.get('courseCode')} (Status: completed={course.get('completed')})")
+    
+    # Define default credit values for common courses
+    default_credits = {
+        "PHYS 241": 4,  # Physics with lab is typically 4 credits
+        "PHYS 242": 4,
+        "MATH 273": 4,  # Calculus is often 4 credits
+        "MATH 274": 4,
+        "COSC 175": 3,
+        "COSC 236": 3,
+        "TSEM 102": 3
+    }
+    
+    # Calculate credits earned with fixed logic
     for course in completed_courses:
         course_code = course.get('courseCode')
         
-        # Attempt to find the course across all collections
+        # Start with a default value based on common courses
+        if course_code in default_credits:
+            credit_value = default_credits[course_code]
+        else:
+            credit_value = 3  # Standard default
+        
+        # Try to find actual credit value in course data
         course_found = False
-        credit_value = 3  # Default fallback value
         
         # Search in COSC courses
         for c in major_courses.get('cosc_courses', {}).get('courses', []):
             if c.get('courseCode') == course_code:
                 course_found = True
                 # Handle case where units might be a list [min, max] or a string/int
-                units = c.get('units', 3)
+                units = c.get('units', credit_value)
                 if isinstance(units, list):
                     units = units[0]  # Take minimum units
                 try:
                     credit_value = int(units)
                 except (ValueError, TypeError):
-                    credit_value = 3  # Fallback to 3 credits
+                    pass  # Keep the default credit value
                 break
         
         # If not found in COSC, search in math courses
@@ -314,13 +336,13 @@ def calculate_graduation_progress(student_courses, core_curriculum, major_course
             for c in major_courses.get('math_courses', {}).get('courses', []):
                 if c.get('courseCode') == course_code:
                     course_found = True
-                    units = c.get('units', 3)
+                    units = c.get('units', credit_value)
                     if isinstance(units, list):
                         units = units[0]
                     try:
                         credit_value = int(units)
                     except (ValueError, TypeError):
-                        credit_value = 3
+                        pass  # Keep the default
                     break
         
         # If still not found, check other collections from the software track
@@ -338,13 +360,13 @@ def calculate_graduation_progress(student_courses, core_curriculum, major_course
                 for c in collection:
                     if isinstance(c, dict) and c.get('courseCode') == course_code:
                         course_found = True
-                        units = c.get('units', 3)
+                        units = c.get('units', credit_value)
                         if isinstance(units, list):
                             units = units[0]
                         try:
                             credit_value = int(units)
                         except (ValueError, TypeError):
-                            credit_value = 3
+                            pass  # Keep the default
                         break
                 
                 if course_found:
@@ -356,13 +378,13 @@ def calculate_graduation_progress(student_courses, core_curriculum, major_course
                 for c in category.get('courses', []):
                     if isinstance(c, dict) and c.get('courseCode') == course_code:
                         course_found = True
-                        units = c.get('units', 3)
+                        units = c.get('units', credit_value)
                         if isinstance(units, list):
                             units = units[0]
                         try:
                             credit_value = int(units)
                         except (ValueError, TypeError):
-                            credit_value = 3
+                            pass  # Keep the default
                         break
                 
                 if course_found:
@@ -381,10 +403,15 @@ def calculate_graduation_progress(student_courses, core_curriculum, major_course
                         if level >= 3:
                             credit_value = 4  # Upper division courses often have 4 credits
             except (ValueError, IndexError):
-                pass  # Keep default 3 credits
+                pass  # Keep default credits
+        
+        # Debug log
+        print(f"DEBUG: Adding {credit_value} credits for {course_code}")
         
         # Add the credits to total
         validation_results["totalCreditsEarned"] += credit_value
+    
+    print(f"DEBUG: Total credits earned: {validation_results['totalCreditsEarned']}")
     
     # Calculate remaining requirements
     core_validation = validate_core_curriculum(student_courses, core_curriculum)
@@ -447,8 +474,12 @@ def calculate_graduation_progress(student_courses, core_curriculum, major_course
             year = course.get('year')
             if semester and year:
                 semester_key = f"{semester} {year}"
-                # Simplified - in real implementation, reuse credit finding logic
-                credits = 3
+                # Use credit finding logic from above
+                course_code = course.get('courseCode', '')
+                if course_code in default_credits:
+                    credits = default_credits[course_code]
+                else:
+                    credits = 3
                 semester_credits[semester_key] += credits
         
         if semester_credits:
@@ -879,7 +910,5 @@ def get_track_electives(track, major_courses, completed_courses):
                         'courseCode': course_code,
                         'description': ''
                     })
-    
-    # Add similar logic for other tracks
     
     return elective_options

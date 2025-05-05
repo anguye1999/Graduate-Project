@@ -28,8 +28,8 @@ if not course_data:
 UPLOAD_FOLDER = tempfile.gettempdir()
 ALLOWED_EXTENSIONS = {'csv', 'txt'}
 MAX_CONTENT_LENGTH = 5 * 1024 * 1024  # 5MB limit
-SESSION_TIMEOUT = 3600  # Sessions expire after 1 hour
-CLEANUP_INTERVAL = 300  # Run cleanup every 5 minutes
+SESSION_TIMEOUT = 1800  # Sessions expire after 30 minutes
+CLEANUP_INTERVAL = 180  # Run cleanup every 3 minutes
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
@@ -50,6 +50,66 @@ user_has_uploaded = {}
 def allowed_file(filename):
     """Check if the uploaded file has an allowed extension"""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def validate_course_recommendations(completed_courses, recommendations):
+    """Validate that recommended courses respect prerequisites"""
+    valid_recommendations = []
+    
+    # Define prerequisite rules
+    prerequisites = {
+        "COSC 236": ["COSC 175"],
+        "COSC 237": ["COSC 236"],
+        "COSC 290": ["COSC 236", "MATH 263 OR MATH 267"],
+        "COSC 336": ["COSC 237"],
+        "PHYS 242": ["PHYS 241"],
+        "COSC 412": ["COSC 336"],
+        "COSC 350": ["COSC 336"],
+        "COSC 436": ["COSC 336"],
+        "COSC 439": ["COSC 336"],
+        "COSC 455": ["COSC 350"],
+        "COSC 457": ["COSC 412"],
+        "COSC 418": ["COSC 336"],
+        # Add more course prerequisites as needed
+    }
+    
+    for course in recommendations:
+        # Check if course has prerequisites
+        if course in prerequisites:
+            prereqs = prerequisites[course]
+            all_prereqs_met = True
+            
+            for prereq in prereqs:
+                if "OR" in prereq:
+                    # Handle "OR" conditions
+                    options = [opt.strip() for opt in prereq.split("OR")]
+                    one_option_met = any(opt in completed_courses for opt in options)
+                    if not one_option_met:
+                        all_prereqs_met = False
+                        break
+                elif prereq not in completed_courses:
+                    all_prereqs_met = False
+                    break
+            
+            if all_prereqs_met:
+                valid_recommendations.append(course)
+        else:
+            # No prerequisites or prerequisites unknown
+            valid_recommendations.append(course)
+    
+    return valid_recommendations
+
+def extract_course_mentions(text):
+    """Extract course codes mentioned in text"""
+    course_codes = []
+    # Pattern for course codes like COSC 175, MATH 273, etc.
+    matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3}[A-Z]?)\b', text)
+    
+    for dept, number in matches:
+        course_code = f"{dept} {number}"
+        if course_code not in course_codes:
+            course_codes.append(course_code)
+    
+    return course_codes
 
 def extract_courses_from_csv(file_path):
     """Extract course information from CSV files"""
@@ -186,31 +246,78 @@ def extract_courses_from_text(file_path):
             for i, line in enumerate(lines):
                 line_lower = line.lower().strip()
                 
-                # Check for section headers
-                if "completed" in line_lower and ("classes" in line_lower or "courses" in line_lower):
-                    current_section = "completed"
-                    continue
-                elif any(term in line_lower for term in ["current classes", "in progress", "current courses"]):
-                    current_section = "current"
-                    continue
-                elif any(term in line_lower for term in ["planned classes", "future classes", "planned courses"]):
+                # Debug output to help diagnose parsing issues
+                print(f"Processing line: '{line}'")
+                
+                # First check specific section headers
+                if "not taken classes" in line_lower:
                     current_section = "planned"
+                    print(f"  Detected section: planned")
+                    continue
+                elif "completed classes" in line_lower:
+                    current_section = "completed"
+                    print(f"  Detected section: completed")
+                    continue
+                elif "current classes" in line_lower:
+                    current_section = "current"
+                    print(f"  Detected section: current")
                     continue
                 
-                # Skip empty lines or lines that look like headers
-                if not line_lower or line_lower.endswith(':'):
+                # Process term-based course listings like "Freshman Term 1: COSC 175 - Fall 2021"
+                term_match = re.search(r'(\w+)\s+Term\s+\d+:\s+', line)
+                if term_match:
+                    # This format is for completed courses in a term
+                    term_section = "completed"
+                    print(f"  Detected term format in section: {term_section}")
+                    
+                    # Process the rest of the line for courses
+                    course_part = line[term_match.end():]
+                    # Split multiple courses on commas
+                    course_entries = course_part.split(',')
+                    
+                    for entry in course_entries:
+                        entry = entry.strip()
+                        print(f"  Processing course entry: '{entry}'")
+                        
+                        # Extract course code, semester, and year
+                        course_match = re.search(r'([A-Z]{2,4}\s*\d{3}[A-Z]?)\s*-\s*(Fall|Spring|Summer|Winter)\s*(20\d\d)', entry)
+                        if course_match:
+                            dept_code = course_match.group(1).strip()
+                            semester = course_match.group(2)
+                            year = course_match.group(3)
+                            
+                            # Extract department and number
+                            dept_num_match = re.search(r'([A-Z]{2,4})\s*(\d{3}[A-Z]?)', dept_code)
+                            if dept_num_match:
+                                dept = dept_num_match.group(1)
+                                number = dept_num_match.group(2)
+                                course_code = f"{dept} {number}"
+                                key = f"{dept}{number}"
+                                
+                                if key not in seen:
+                                    seen.add(key)
+                                    is_completed = term_section == "completed"
+                                    print(f"  Adding course: {course_code} - {semester} {year} (Completed: {is_completed})")
+                                    
+                                    courses.append({
+                                        'department': dept,
+                                        'number': number,
+                                        'courseCode': course_code,
+                                        'semester': semester,
+                                        'year': year,
+                                        'completed': is_completed
+                                    })
                     continue
                 
-                # Look for course codes in this line
-                matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3,4}[A-Z]?)\b', line)
-                
-                for dept, number in matches:
+                # Look for standalone course codes in the current section
+                course_matches = re.findall(r'\b([A-Z]{2,4})\s*(\d{3}[A-Z]?)\b', line)
+                for dept, number in course_matches:
                     course_code = f"{dept} {number}"
                     key = f"{dept}{number}"
                     
                     if key in seen:
                         continue
-                        
+                    
                     seen.add(key)
                     
                     # Set completion status based on section
@@ -224,10 +331,12 @@ def extract_courses_from_text(file_path):
                         semester = semester_match.group(1).capitalize()
                         year = semester_match.group(2)
                     
+                    print(f"  Adding course from section {current_section}: {course_code} (Completed: {is_completed})")
+                    
                     courses.append({
                         'department': dept,
                         'number': number,
-                        'name': '',  # We'll extract names separately if needed
+                        'name': '',
                         'courseCode': course_code,
                         'semester': semester,
                         'year': year,
@@ -238,7 +347,7 @@ def extract_courses_from_text(file_path):
         print(f"Extracted {len(courses)} courses from text file:")
         for course in courses:
             status = "Completed" if course['completed'] else "In Progress"
-            print(f"  - {course['courseCode']} - {status}")
+            print(f"  - {course['courseCode']} - {course.get('semester', '')} {course.get('year', '')} ({status})")
         
         return courses
     except Exception as e:
@@ -293,7 +402,7 @@ def chat():
                 'last_accessed': time.time()
             }
             
-            # New: For new threads, add a clear context message
+            # For new threads, add a clear context message
             client.beta.threads.messages.create(
                 thread_id=thread_id,
                 role="user",
@@ -304,7 +413,54 @@ def chat():
                 NOT files uploaded by the user."""
             )
         
-        # New: Check if this is the first message after a file upload
+        # NEW: Parse user message for course mentions
+        course_mentions = extract_course_mentions(user_message)
+        completed_courses = []
+        
+        # If user is talking about courses they've completed
+        if course_mentions and (
+            "completed" in user_message.lower() or 
+            "taken" in user_message.lower() or
+            "finished" in user_message.lower() or
+            "passed" in user_message.lower()
+        ):
+            print(f"Detected course mentions: {course_mentions}")
+            
+            # Initialize user courses if needed
+            if session_id not in user_courses:
+                user_courses[session_id] = {'courses': [], 'student_info': {}, 'semesters': []}
+            
+            # Add mentioned courses to the session
+            for course_code in course_mentions:
+                # Check if course already exists in session
+                existing = False
+                for course in user_courses[session_id]['courses']:
+                    if course['courseCode'] == course_code:
+                        course['completed'] = True  # Mark as completed
+                        existing = True
+                        break
+                
+                if not existing:
+                    # Extract department and number
+                    parts = course_code.split()
+                    if len(parts) == 2:
+                        dept = parts[0]
+                        number = parts[1]
+                        
+                        # Add new course
+                        user_courses[session_id]['courses'].append({
+                            'department': dept,
+                            'number': number,
+                            'courseCode': course_code,
+                            'completed': True,
+                            'name': ''  # No name available
+                        })
+            
+            # Get complete list of completed courses
+            completed_courses = [c['courseCode'] for c in user_courses[session_id]['courses'] 
+                               if c.get('completed', True)]
+        
+        # Add context about file upload
         upload_context = ""
         if session_id in user_has_uploaded and user_has_uploaded[session_id]['has_uploaded']:
             # Include context about the file upload
@@ -314,8 +470,35 @@ def chat():
             # Include context that no file has been uploaded
             upload_context = "CONTEXT: The user has NOT uploaded any course files yet. Do not reference any uploaded files or claim to know the user's courses. The core_curriculum.json and other JSON files are reference data only, NOT user uploads. "
         
+        # NEW: Add prerequisite context to the message
+        prerequisite_context = ""
+        if completed_courses:
+            prerequisite_context = f"""
+            COURSE INFORMATION: The user has mentioned completing these courses: {', '.join(completed_courses)}
+            
+            STRICT PREREQUISITE RULES:
+            1. NEVER recommend COSC 290 unless the student has already completed BOTH:
+               - COSC 236
+               - MATH 263 or MATH 267
+               
+            2. COURSE SEQUENCE MUST FOLLOW THIS EXACT ORDER:
+               - Freshman Term 1: COSC 175, MATH 273, PHYS 241, TSEM 102
+               - Freshman Term 2: COSC 236, PHYS 242, ENGL 102, MATH 274
+               - Sophomore Term 1: COSC 237, CIS 377, COMM 131, MATH 263, ECON 201
+               - Sophomore Term 2: COSC 336, COSC 290, MATH 330, COSC 109
+               
+            3. PREREQUISITE DEPENDENCY CHAIN:
+               - COSC 175 -> COSC 236 -> COSC 237 -> COSC 336
+               - MATH 273 -> MATH 274
+               - PHYS 241 -> PHYS 242
+               - COSC 236 + (MATH 263 or MATH 267) -> COSC 290
+            
+            4. When recommending courses, ALWAYS verify prerequisites have been completed.
+               If prerequisites for a course are not met, DO NOT recommend that course.
+            """
+        
         # Add user message to thread with context
-        full_message = f"{upload_context}USER MESSAGE: {user_message}"
+        full_message = f"{upload_context}{prerequisite_context}USER MESSAGE: {user_message}"
         
         print(f"Sending message to assistant: {full_message[:100]}...")
         
@@ -324,7 +507,7 @@ def chat():
             role="user",
             content=full_message
         )
-        
+                
         # Run the Assistant
         run = client.beta.threads.runs.create(
             thread_id=thread_id,
@@ -507,6 +690,26 @@ def upload_courses():
             5. DO NOT include course descriptions when initially listing the courses after file upload
             6. Organize courses by department and semester
 
+            STRICT PREREQUISITE RULES:
+            1. NEVER recommend COSC 290 unless the student has already completed BOTH:
+               - COSC 236
+               - MATH 263 or MATH 267
+               
+            2. COURSE SEQUENCE MUST FOLLOW THIS EXACT ORDER:
+               - Freshman Term 1: COSC 175, MATH 273, PHYS 241, TSEM 102
+               - Freshman Term 2: COSC 236, PHYS 242, ENGL 102, MATH 274
+               - Sophomore Term 1: COSC 237, CIS 377, COMM 131, MATH 263, ECON 201
+               - Sophomore Term 2: COSC 336, COSC 290, MATH 330, COSC 109
+               
+            3. PREREQUISITE DEPENDENCY CHAIN:
+               - COSC 175 -> COSC 236 -> COSC 237 -> COSC 336
+               - MATH 273 -> MATH 274
+               - PHYS 241 -> PHYS 242
+               - COSC 236 + (MATH 263 or MATH 267) -> COSC 290
+            
+            4. When recommending courses, ALWAYS verify prerequisites have been completed.
+               If prerequisites for a course are not met, DO NOT recommend that course.
+
             The raw content of their uploaded file is:
             ---BEGIN USER UPLOADED FILE CONTENT---
             {raw_content}
@@ -569,6 +772,28 @@ def upload_courses():
                 DO NOT make assumptions about the user's degree program.
                 DO NOT reference any courses that were not in this upload.
                 """
+            
+            # Add a system message with explicit prerequisite verification instructions
+            upload_message += """
+            
+            CRITICAL INSTRUCTION UPDATE:
+            
+            When recommending courses, you MUST verify prerequisites are satisfied.
+            
+            Specifically, DO NOT recommend:
+            1. COSC 290 unless the student has completed BOTH:
+               - COSC 236
+               - Either MATH 263 or MATH 267
+               
+            2. COSC 336 unless the student has completed COSC 237
+            
+            3. COSC 237 unless the student has completed COSC 236
+            
+            4. COSC 236 unless the student has completed COSC 175
+            
+            Check both 'completed' and 'in progress' courses when verifying prerequisites.
+            If a prerequisite course is in progress, you can recommend courses that require it for the NEXT semester only.
+            """
             
             # Add to thread
             client.beta.threads.messages.create(
@@ -673,10 +898,36 @@ def get_course_sequence():
     try:
         if session_id in user_courses:
             student_courses = user_courses[session_id].get('courses', [])
+            completed_course_codes = [c['courseCode'] for c in student_courses if c.get('completed', True)]
 
             if course_data and student_courses:
                 track = data.get('track', 'Software Engineering')
                 sequence_results = generate_recommended_sequence(student_courses, course_data, track)
+                
+                # Validate the recommended sequences
+                for semester in sequence_results.get('semesterPlan', []):
+                    semester['courses'] = validate_course_recommendations(
+                        completed_course_codes, 
+                        semester.get('courses', [])
+                    )
+                
+                # Update the detailed plan to match
+                detailed_plan = []
+                for old_sem in sequence_results.get('detailedPlan', []):
+                    # Create new semester with valid courses only
+                    valid_course_codes = set()
+                    for semester in sequence_results.get('semesterPlan', []):
+                        if semester.get('semester') == old_sem.get('semester'):
+                            valid_course_codes = set(semester.get('courses', []))
+                            break
+                    
+                    # Filter courses in detailed plan
+                    new_sem = old_sem.copy()
+                    new_sem['courses'] = [c for c in old_sem.get('courses', []) 
+                                          if c.get('code') in valid_course_codes]
+                    detailed_plan.append(new_sem)
+                
+                sequence_results['detailedPlan'] = detailed_plan
                 
                 return jsonify({
                     'sequence': sequence_results,
