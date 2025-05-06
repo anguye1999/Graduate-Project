@@ -79,6 +79,57 @@
   margin: 0;
 }
 
+/* Container for header action buttons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Style for the info button */
+.info-button {
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-button:hover {
+  color: #4a5568;
+  transform: scale(1.1);
+}
+
+.info-button:active {
+  transform: scale(0.95);
+}
+
+/* Style for the download button */
+.download-button {
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-button:hover {
+  color: #4a5568;
+  transform: scale(1.1);
+}
+
+.download-button:active {
+  transform: scale(0.95);
+}
+
 .close-button {
   color: black;
   cursor: pointer;
