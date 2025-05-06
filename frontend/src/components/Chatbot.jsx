@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Upload, FileText, BarChart } from 'lucide-react';
+import { MessageCircle, X, Send, Upload, FileText, BarChart, Download, Info } from 'lucide-react';
 import '../styles/CourseUpload.css';
 import '../styles/Chatbot.css';
 import CourseUpload from './CourseUpload';
@@ -69,6 +69,55 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Function to open advising information page
+  const openAdvisingPage = () => {
+    window.open('https://www.towson.edu/fcsm/departments/computerinfosci/resources/advising.html', '_blank');
+  };
+
+  // Function to download the conversation transcript
+  const downloadConversation = () => {
+    // Only download if there are messages
+    if (messages.length <= 1) {
+      alert("There's not enough conversation to download yet.");
+      return;
+    }
+    
+    // Format timestamp for filename
+    const timestamp = new Date().toLocaleString().replace(/[/:\\]/g, '-');
+    const filename = `course-assistant-transcript-${timestamp}.txt`;
+    
+    // Format the conversation content
+    let content = "COURSE RECOMMENDATION ASSISTANT - CONVERSATION TRANSCRIPT\n";
+    content += `Generated: ${new Date().toLocaleString()}\n\n`;
+    
+    // Add all messages to the content
+    messages.forEach(msg => {
+      const sender = msg.isBot ? "Assistant" : "You";
+      
+      // Handle different message types
+      if (msg.type === 'progress-tracker') {
+        content += `${sender}: [Graduation Progress Tracker was displayed]\n\n`;
+      } else {
+        content += `${sender}: ${msg.text}\n\n`;
+      }
+    });
+    
+    // Create a blob and download it
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
+    // Create a temporary link element to trigger the download
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    
+    // Clean up
+    URL.revokeObjectURL(url);
+    document.body.removeChild(link);
+  };
+
   // Function to format message text with paragraphs
   const formatMessage = (text) => {
     if (!text) return '';
@@ -128,6 +177,35 @@ const Chatbot = () => {
     setMessages(prev => [...prev, { text: trimmedMessage, isBot: false, type: 'text' }]);
     setMessage('');
     setIsLoading(true);
+
+    // Check if user is asking about advising
+    const advisingKeywords = [
+      'advising', 'advisor', 'academic advisor', 'academic advising', 
+      'degree completion plan', 'degree planning', 'academic planning',
+      'graduation requirements', 'advisor contact', 'advising office',
+      'advising help', 'advising resources', 'faculty advisor',
+      'advising appointment', 'where to get advising', 'more information'
+    ];
+    
+    // Check if message contains advising keywords
+    const isAdvisingRequest = advisingKeywords.some(keyword => 
+      trimmedMessage.toLowerCase().includes(keyword.toLowerCase())
+    );
+    
+    if (isAdvisingRequest) {
+      setIsLoading(false);
+      
+      // Add message from bot referencing the info button
+      setMessages(prev => [
+        ...prev, 
+        { 
+          text: "For detailed advising information and degree completion planning, you can click the information (i) button in the top-right corner of this chat window. It will take you to Towson University's official advising resources page where you'll find information about academic advising, faculty advisors, and how to schedule appointments.",
+          isBot: true,
+          type: 'text'
+        }
+      ]);
+      return;
+    }
 
     // Check if user is asking for progress
     const progressKeywords = [
@@ -214,12 +292,35 @@ const Chatbot = () => {
             <MessageCircle className="header-icon" size={24} />
             <h3 className="header-title">Course Recommendation Assistant</h3>
           </div>
-          <button 
-            onClick={() => setIsExpanded(false)}
-            className="close-button"
-          >
-            <X size={20} />
-          </button>
+          <div className="header-actions">
+            {/* Info button for advising information */}
+            <button 
+              onClick={openAdvisingPage}
+              className="info-button"
+              title="Advising information"
+            >
+              <Info size={18} />
+            </button>
+            
+            {/* Download button - only show if there's enough conversation */}
+            {messages.length > 1 && (
+              <button 
+                onClick={downloadConversation}
+                className="download-button"
+                title="Download conversation transcript"
+              >
+                <Download size={18} />
+              </button>
+            )}
+            
+            <button 
+              onClick={() => setIsExpanded(false)}
+              className="close-button"
+              title="Close chat"
+            >
+              <X size={20} />
+            </button>
+          </div>
         </div>
 
         <div className="messages-container">
