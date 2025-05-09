@@ -266,8 +266,8 @@ def extract_courses_from_text(file_path):
                 # Process term-based course listings like "Freshman Term 1: COSC 175 - Fall 2021"
                 term_match = re.search(r'(\w+)\s+Term\s+\d+:\s+', line)
                 if term_match:
-                    # This format is for completed courses in a term
-                    term_section = "completed"
+                    # FIXED: Use the current section context instead of hardcoding to "completed"
+                    term_section = current_section
                     print(f"  Detected term format in section: {term_section}")
                     
                     # Process the rest of the line for courses
@@ -296,7 +296,7 @@ def extract_courses_from_text(file_path):
                                 
                                 if key not in seen:
                                     seen.add(key)
-                                    is_completed = term_section == "completed"
+                                    is_completed = term_section != "current"  # Only mark as not completed if in current section
                                     print(f"  Adding course: {course_code} - {semester} {year} (Completed: {is_completed})")
                                     
                                     courses.append({
@@ -686,9 +686,18 @@ def upload_courses():
             1. This is a user-uploaded file, NOT a reference file
             2. In all your responses, ALWAYS prioritize discussing these specific courses rather than general program information
             3. When discussing these courses, reference them by their exact codes as found in the file
-            4. When listing courses, use the format "COSC 175 - Fall 2024 (Completed)" when semester information is available
+            4. When listing courses, use the format "COSC 175 - Fall 2024 (Completed)" or "COSC 236 - Spring 2025 (In Progress)" when semester information is available
             5. DO NOT include course descriptions when initially listing the courses after file upload
             6. Organize courses by department and semester
+            
+            SPECIFIC FORMATTING REQUIREMENTS (IMPORTANT):
+            1. ALWAYS begin your response with "Based on the file you've uploaded, here's a summary of your course progress at Towson University:"
+            2. Use "Completed Courses" as the heading for completed courses, grouped by semester
+            3. Use "Current Courses" as the heading for courses in progress
+            4. ALWAYS show status in parentheses: either "(Completed)" or "(In Progress)"
+            5. List each course with a dash prefix: "- COSC 175 - Fall 2024 (Completed)"
+            6. Include a summary statement at the end about overall progress
+            7. End with a question asking what specific information they want about their courses or academic plan
 
             STRICT PREREQUISITE RULES:
             1. NEVER recommend COSC 290 unless the student has already completed BOTH:

@@ -189,9 +189,11 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
               </>
             ) : (
               <div className="course-selected-file">
-                <FileText size={24} />
-                <span>{file.name}</span>
-                <span className="course-file-size">({(file.size / 1024).toFixed(1)} KB)</span>
+                <div className="course-file-header">
+                  <FileText size={24} />
+                  <span className="course-file-name">{file.name}</span>
+                  <span className="course-file-size">({(file.size / 1024).toFixed(1)} KB)</span>
+                </div>
                 {getFileTypeMessage() && (
                   <p className="course-file-type-message">{getFileTypeMessage()}</p>
                 )}
