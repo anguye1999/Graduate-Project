@@ -186,6 +186,7 @@ const CourseUpload = ({ onFileProcessed, onCancel }) => {
               type="file"
               id="courseFileInput"
               accept=".csv,.txt"
+              data-testid="file-input"
               onChange={handleFileInput}
               style={{ display: 'none' }}
             />
