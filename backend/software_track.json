@@ -1,281 +1,163 @@
 {
-    "majorcourseTitle": "Computer Science - Software Engineering Track",
+    "majorTitle": "Computer Science - Software Engineering Track",
     "totalUnits": "87-89",
     "minUnitsAtTowson": 30,
     "courses": {
       "requiredComputerScience": [
         {
           "courseCode": "CIS 377",
-          "courseTitle": "INTRODUCTION TO CYBERSECURITY",
           "units": 3,
-          "prerequisites": ["major or minor sophomore standing"],
+          "prerequisites": ["Major or Minor sophomore standing"],
           "offerings": ["Fall", "Spring"]
         },
         {
-          "courseCode": "COSC 236",
-          "courseTitle": "INTRODUCTION TO COMPUTER SCIENCE I",
-          "units": 4,
-          "prerequisites": ["COSC 175, COSC 236 and COSC 237, or their equivalents, must be taken at the same institution"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 236"
         },
         {
-          "courseCode": "COSC 237",
-          "courseTitle": "INTRODUCTION TO COMPUTER SCIENCE II",
-          "units": 4,
-          "prerequisites": ["COSC 236 and COSC 237, or their equivalents, must be taken at the same institution"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 237"
         },
         {
-          "courseCode": "COSC 290",
-          "courseTitle": "PRINCIPLES OF COMPUTER ORGANIZATION",
-          "units": 4,
-          "prerequisites": ["COSC 236 and MATH 263 or MATH 267"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 290"
         },
         {
-          "courseCode": "COSC 336",
-          "courseTitle": "DATA STRUCTURES AND ALGORITHM ANALYSIS",
-          "units": 4,
-          "prerequisites": ["COSC 237 and MATH 274 or MATH 274"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 336"
         },
         {
-          "courseCode": "COSC 350",
-          "courseTitle": "DATA COMMUNICATIONS AND NETWORKING",
-          "units": 3,
-          "prerequisites": ["COSC 290"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 350"
         },
         {
-          "courseCode": "COSC 412",
-          "courseTitle": "SOFTWARE ENGINEERING",
-          "units": 3,
-          "prerequisites": ["COSC 336"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 412"
         },
         {
-          "courseCode": "COSC 439",
-          "courseTitle": "OPERATING SYSTEMS",
-          "units": 3,
-          "prerequisites": ["COSC 336"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 439"
         },
         {
-          "courseCode": "COSC 455",
-          "courseTitle": "PROGRAMMING LANGUAGES: DESIGN & IMPLEMENTATION",
-          "units": 3,
-          "prerequisites": ["COSC 336"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 455"
         },
         {
-          "courseCode": "COSC 457",
-          "courseTitle": "DATABASE MANAGEMENT SYSTEMS",
-          "units": 3,
-          "prerequisites": ["COSC 336"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "COSC 457"
         }
       ],
       "requiredSoftwareEngineering": [
         {
-          "courseCode": "COSC 432",
-          "courseTitle": "REQUIREMENTS ANALYSIS & MODELING",
-          "units": 3,
-          "prerequisites": ["COSC 412"]
+          "courseCode": "COSC 432"
         },
         {
-          "courseCode": "COSC 436",
-          "courseTitle": "OBJECT-ORIENTED DESIGN & PROGRAMMING",
-          "units": 3,
-          "prerequisites": ["COSC 336"]
+          "courseCode": "COSC 436"
         },
         {
-          "courseCode": "COSC 442",
-          "courseTitle": "SOFTWARE QUALITY ASSURANCE AND TESTING",
-          "units": 3,
-          "prerequisites": ["COSC 412"]
+          "courseCode": "COSC 442"
         },
         {
-          "courseCode": "COSC 490",
-          "courseTitle": "SOFTWARE PROJECT PRACTICUM",
-          "units": 3,
-          "prerequisites": ["COSC 412; software engineering track majors only (or by department permission); senior standing"]
+          "courseCode": "COSC 490"
         }
       ],
       "electiveSoftwareEngineering": [
         {
-          "courseCode": "COSC 397",
-          "courseTitle": "INTERNSHIP IN COSC",
-          "units": 3
+          "courseCode": "COSC 397"
         },
         {
-          "courseCode": "COSC 435",
-          "courseTitle": "MOBILE APPLICATION DEVELOPMENT",
-          "units": 3
+          "courseCode": "COSC 435"
         },
         {
-          "courseCode": "COSC 484",
-          "courseTitle": "WEB-BASED PROGRAM",
-          "units": 3
+          "courseCode": "COSC 484"
         }
       ],
       "requiredMath": [
         {
           "courseCode": "MATH 263 or MATH 267",
-          "courseTitle": "DISCRETE MATHEMATICS or INTRODUCTION TO ABSTRACT MATHEMATICS",
           "units": "3-4"
         },
         {
-          "courseCode": "MATH 273",
-          "courseTitle": "CALCULUS I",
-          "units": 4,
-          "prerequisites": ["Qualifying score on Math Placement exam or MATH 117 or MATH 119"]
+          "courseCode": "MATH 273"
         },
         {
-          "courseCode": "MATH 274",
-          "courseTitle": "CALCULUS II",
-          "units": 4,
-          "prerequisites": ["MATH 273"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 274"
         },
         {
-          "courseCode": "MATH 330",
-          "courseTitle": "INTRODUCTION TO STATISTICAL METHODS",
-          "units": 4,
-          "prerequisites": ["MATH 274"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 330"
         }
       ],
       "scienceRequirement": [
         {
           "courseCode": "BIOL 200 & 200L",
-          "courseTitle": "BIOLOGY I: INTRODUCTION TO CELLULAR BIOLOGY AND GENETICS [LECTURE] and BIOLOGY I: INTRODUCTION TO CELLULAR BIOLOGY AND GENETICS [LAB]",
           "units": 4
         },
         {
           "courseCode": "BIOL 206 & 206L",
-          "courseTitle": "BIOLOGY II: INTRODUCTION TO ECOLOGY AND EVOLUTION [LECTURE] and BIOLOGY II: INTRODUCTION TO ECOLOGY AND EVOLUTION [LAB]",
           "units": 4
         },
         {
           "courseCode": "CHEM 131 & 131L",
-          "courseTitle": "GENERAL CHEMISTRY I LECTURE and GENERAL CHEMISTRY I LABORATORY",
           "units": 4
         },
         {
           "courseCode": "CHEM 132 & 132L",
-          "courseTitle": "GENERAL CHEMISTRY II LECTURE and GENERAL CHEMISTRY II LABORATORY",
           "units": 4
         },
         {
           "courseCode": "GEOL 121",
-          "courseTitle": "PHYSICAL GEOLOGY",
           "units": 4
         },
         {
           "courseCode": "PHYS 241",
-          "courseTitle": "GENERAL PHYSICS I CALCULUS-BASED",
           "units": 4
         },
         {
           "courseCode": "PHYS 242",
-          "courseTitle": "GENERAL PHYSICS II CALCULUS-BASED",
           "units": 4
         }
       ],
       "electiveMath": [
         {
-          "courseCode": "MATH 265",
-          "courseTitle": "ELEMENTARY LINEAR ALGEBRA",
-          "units": 3,
-          "prerequisites": ["MATH 211 or MATH 273"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 265"
         },
         {
-          "courseCode": "MATH 275",
-          "courseTitle": "CALCULUS III",
-          "units": 3,
-          "prerequisites": ["MATH 274"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 275"
         },
         {
-          "courseCode": "MATH 314",
-          "courseTitle": "INTRODUCTION TO CRYPTOGRAPHY",
-          "units": 3,
-          "prerequisites": ["COSC 236; either MATH 263 or MATH 267; and either MATH 330 or MATH 331 (may be taken concurrently)"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 314"
         },
         {
-          "courseCode": "MATH 315",
-          "courseTitle": "APPLIED COMBINATORICS",
-          "units": 3,
-          "prerequisites": ["MATH 274; MATH 263 or MATH 267"],
-          "offerings": ["Fall"]
+          "courseCode": "MATH 315"
         },
         {
-          "courseCode": "MATH 369",
-          "courseTitle": "INTRODUCTION TO ABSTRACT ALGEBRA",
-          "units": 3,
-          "prerequisites": ["MATH 265, MATH 267, and MATH 274"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 369"
         },
         {
-          "courseCode": "MATH 374",
-          "courseTitle": "DIFFERENTIAL EQUATIONS",
-          "units": 3,
-          "prerequisites": ["MATH 274"],
-          "offerings": ["Fall", "Spring"]
+          "courseCode": "MATH 374"
         },
         {
-          "courseCode": "MATH 377",
-          "courseTitle": "MATHEMATICAL MODELS",
-          "units": 3,
-          "prerequisites": ["MATH 265, MATH 274, COSC 236 and at least junior standing"]
+          "courseCode": "MATH 377"
         },
         {
           "courseCode": "MATH 378",
-          "courseTitle": "EXPERIMENTAL MATHEMATICS",
           "units": 3
         },
         {
-          "courseCode": "MATH 435",
-          "courseTitle": "NUMERICAL ANALYSIS I",
-          "units": 3,
-          "prerequisites": ["MATH 265, MATH 274, and COSC 236"],
-          "offerings": ["Fall"]
+          "courseCode": "MATH 435"
         },
         {
-          "courseCode": "MATH 437",
-          "courseTitle": "OPERATIONS RESEARCH",
-          "units": 3,
-          "prerequisites": ["MATH 265 and MATH 331"]
+          "courseCode": "MATH 437"
         },
         {
-          "courseCode": "MATH 451",
-          "courseTitle": "GRAPH THEORY",
-          "units": 3,
-          "prerequisites": ["MATH 263 or MATH 267"]
+          "courseCode": "MATH 451"
         }
       ],
       "otherRequirements": [
         {
           "courseCode": "COMM 131",
-          "courseTitle": "PUBLIC SPEAKING (Core 5)",
-          "units": 3,
           "coreTitle": "ARTS & HUMANITIES",
           "offerings": ["Fall", "Spring"]
         },
         {
           "courseCode": "COSC 418",
-          "courseTitle": "ETHICAL AND SOCIETAL CONCERNS OF COMPUTER SCIENTISTS (Core 14)",
-          "units": 3,
-          "prerequisites": ["junior/senior standing; ENGL 317 or BUSX 301; must have previously taken a computing class"],
+          "prerequisites": ["Junior/Senior standing; ENGL 317 or BUSX 301; Must have previously taken a computing class"],
           "coreTitle": "ETHICAL ISSUES & PERSPECTIVES",
           "offerings": ["Fall", "Spring"]
         },
         {
           "courseCode": "ENGL 317",
-          "courseTitle": "WRITING FOR BUSINESS AND INDUSTRY (Core 9)",
-          "units": 3,
           "prerequisites": ["ENGL 102 or ENGL 190 or equivalent"],
           "coreTitle": "ADVANCED WRITING SEMINAR",
           "offerings": ["Fall", "Spring"]

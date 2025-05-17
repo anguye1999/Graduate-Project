@@ -1,6 +1,8 @@
 Name:
 
+
 Student ID Number:
+
 
 Completed Classes:
 
@@ -8,11 +10,9 @@ Completed Classes:
 Current Classes:
 
 
-Not Taken Classes:
-
-
 -Delete the section starting from here when submitting
 -The format that each of your classes should follow in this template is listed below
 -Ex. MATH 263 - Spring 2024 / Ex. COSC 236 - Fall 2019
 -You would then put each class under the sections above depending on whether you haven't 
 taken the class, you're currently taking the class, or you have completed the class.
+-Note: also label which academic and term year for each courses
