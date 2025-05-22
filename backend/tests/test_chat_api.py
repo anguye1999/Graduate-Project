@@ -33,6 +33,3 @@ class TestOpenAIChatEndpoint(unittest.TestCase):
 
             self.assertEqual(response.status_code, 200)
             self.assertIn("Take COSC 237 next", data["message"])
-
-if __name__ == "__main__":
-    unittest.main()

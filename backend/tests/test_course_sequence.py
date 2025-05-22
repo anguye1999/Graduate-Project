@@ -33,6 +33,3 @@ class TestCourseSequence(unittest.TestCase):
         }
         completed = ["COSC 236"]
         self.assertFalse(has_prerequisites_met("COSC 290", completed, course_data))
-
-if __name__ == '__main__':
-    unittest.main()

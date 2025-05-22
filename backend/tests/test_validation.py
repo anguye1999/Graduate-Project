@@ -54,6 +54,3 @@ class TestValidation(unittest.TestCase):
         result = perform_course_validation(student_courses, mock_data)
         self.assertTrue(result["coreRequirements"]["valid"])
         self.assertTrue(result["majorRequirements"]["valid"])
-
-if __name__ == '__main__':
-    unittest.main()

@@ -20,6 +20,3 @@ class TestApp(unittest.TestCase):
         result = validate_course_recommendations(completed, recs)
         self.assertIn("COSC 290", result)
         self.assertIn("COSC 336", result)
-
-if __name__ == '__main__':
-    unittest.main()
